@@ -1,25 +1,65 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    redirect: "/landing",
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+    path: "/landing",
+    name: "Landing",
+    component: () => import("@/pages/Landing/Landing"),
+  },
+  {
+    path: "/main",
+    name: "MainPage",
+    component: () => import("@/pages/MainPage/MainPage"),
+  },
+  {
+    path: "/about",
+    name: "About",
+    component: () => import("@/pages/About/About"),
+  },
+  {
+    path: "/announcement",
+    name: "Announcement",
+    component: () => import("@/pages/Announcement/Announcement"),
+  },
+  {
+    path: "/ecosystem",
+    name: "EcoSystem",
+    component: () => import("@/pages/Eco/EcoSystem"),
+  },
+  {
+    path: "/partner",
+    name: "Partner",
+    component: () => import("@/pages/Partner/Partner"),
+  },
+  {
+    path: "/roadmap",
+    name: "RoadMap",
+    component: () => import("@/pages/RoadMap/RoadMap"),
+  },
+  {
+    path: "/staking",
+    name: "Staking",
+    component: () => import("@/pages/Staking/Staking"),
+  },
+  {
+    path: "/teamadvisor",
+    name: "TeamAdvisor",
+    component: () => import("@/pages/TeamAdvisor/TeamAdvisor"),
+  },
+  {
+    path: "/whitepaper",
+    name: "WhitePaper",
+    component: () => import("@/pages/WhitePaper/WhitePaper"),
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

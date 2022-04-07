@@ -1,30 +1,48 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <router-view />
+  </div>
 </template>
 
+<script>
+export default {
+  name: "App",
+
+  components: {},
+  setup() {
+    return {};
+  },
+};
+</script>
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@font-face {
+  font-family: "racing";
+  src: url("assets/font/RacingSansOne-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
-
-nav {
-  padding: 30px;
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: none;
 }
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
+/* li 장식 제거 */
+li {
+  list-style: none;
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
+/* 이미지 와 글자의 정렬로 생기는 여백 제거 */
+img {
+  vertical-align: top;
+}
+/* i,em,address */
+i,
+em,
+address {
+  font-style: normal;
+}
+input,
+button {
+  vertical-align: bottom;
 }
 </style>
