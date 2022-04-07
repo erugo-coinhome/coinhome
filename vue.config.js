@@ -1,13 +1,14 @@
-const { defineConfig } = require('@vue/cli-service')
+const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
-  transpileDependencies: [
-    'quasar'
-  ],
+  chainWebpack: (config) => {
+    config.plugins.delete("prefetch");
+  },
+  transpileDependencies: ["quasar"],
 
   pluginOptions: {
     quasar: {
-      importStrategy: 'kebab',
-      rtlSupport: false
-    }
-  }
-})
+      importStrategy: "kebab",
+      rtlSupport: false,
+    },
+  },
+});

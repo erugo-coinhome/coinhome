@@ -1,12 +1,13 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import './registerServiceWorker'
-import router from './router'
-import store from './store'
-import { Quasar } from 'quasar'
-import quasarUserOptions from './quasar-user-options'
-import CursorFx from '@luxdamore/vue-cursor-fx';
-import '@luxdamore/vue-cursor-fx/dist/CursorFx.css';
+import { createApp } from "vue";
+import App from "./App.vue";
+import "./registerServiceWorker";
+import router from "./router/router";
+import store from "./store/store";
+import { Quasar } from "quasar";
+import quasarUserOptions from "./quasar-user-options";
 
-
-createApp(App).use(Quasar, quasarUserOptions).use(store).use(router).mount('#app').use(CursorFx)
+createApp(App)
+  .use(Quasar, quasarUserOptions)
+  .use(store)
+  .use(router)
+  .mount("#app");

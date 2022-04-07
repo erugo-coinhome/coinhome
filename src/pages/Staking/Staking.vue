@@ -1,0 +1,17 @@
+<template>
+  <div class="staking">
+    <Header />
+    Staking Page
+  </div>
+</template>
+<script>
+import Header from "../../components/Header/Header.vue";
+export default {
+  components: { Header },
+};
+</script>
+<style lang="scss" scope>
+.staking {
+  font-family: "racing";
+}
+</style>

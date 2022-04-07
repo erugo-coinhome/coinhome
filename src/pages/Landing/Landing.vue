@@ -1,7 +1,12 @@
 <template>
   <div @click="$router.push('/main')">
     <div class="landingVideo">
-      <video src="./images/ewc-landing-video.mp4" autoplay muted loop></video>
+      <video
+        src="assets/videos/ewc-landing-video.mp4"
+        autoplay
+        muted
+        loop
+      ></video>
     </div>
     <div class="landingTxt">
       <p>The strong link between the virtual and reality,</p>
@@ -13,7 +18,7 @@
   </div>
 </template>
 <script>
-import StartCursor from "../../components/StartCursor.vue";
+import StartCursor from "../../components/Cursor/StartCursor.vue";
 export default {
   components: {
     StartCursor: StartCursor,

@@ -1,0 +1,149 @@
+<template>
+  <div>
+    <div class="Bigcontainer">
+      <div class="headBar">
+        <div class="logo">ERUGOWORLD COIN</div>
+        <div>
+          <q-btn
+            flat
+            rounded
+            color="bg-white"
+            icon="fas fa-chevron-left"
+            class="menuBtn"
+            size="xl"
+            @click="$router.back()"
+          />
+          <!-- 메뉴버튼 -->
+          <q-btn
+            flat
+            rounded
+            color="bg-white"
+            icon="fas fa-bars"
+            class="menuBtn"
+            size="xl"
+            @click="dialog = true"
+          />
+        </div>
+        <!-- 화면 전체 메뉴 dialog -->
+        <q-dialog
+          v-model="dialog"
+          persistent
+          :maximized="maximizedToggle"
+          transition-show="scale"
+          transition-hide="scale"
+          transition-duration="1000"
+        >
+          <q-card class="bg-black text-white q-pt-lg">
+            <q-bar>
+              <q-space></q-space>
+
+              <!-- 조건부 렌더링 : 최소화 vs 최대화 -->
+              <q-btn
+                v-if="maximizedToggle"
+                size="xl"
+                dense
+                flat
+                icon="minimize"
+                @click="maximizedToggle = false"
+                :disable="!maximizedToggle"
+              >
+                <q-tooltip v-if="maximizedToggle" class="bg-white text-black"
+                  >최소화</q-tooltip
+                >
+              </q-btn>
+              <q-btn
+                v-else
+                size="xl"
+                dense
+                flat
+                icon="crop_square"
+                @click="maximizedToggle = true"
+                :disable="maximizedToggle"
+              >
+                <q-tooltip v-if="!maximizedToggle" class="bg-white text-black"
+                  >최대화</q-tooltip
+                >
+              </q-btn>
+              <!-- 조건부 렌더링 : 최소화 vs 최대화 -->
+
+              <q-btn size="xl" dense flat icon="close" v-close-popup>
+                <q-tooltip class="bg-white text-black">닫기</q-tooltip>
+              </q-btn>
+            </q-bar>
+
+            <q-card-section class="fixed-center">
+              <!-- <div class="text-h2 q-pt-lg">About</div>
+              <div class="text-h2 q-pt-lg">Eco System</div>
+              <div class="text-h2 q-pt-lg">Partner</div>
+              <div class="text-h2 q-pt-lg">Road Map</div>
+              <div class="text-h2 q-pt-lg">Staking</div>
+              <div class="text-h2 q-pt-lg">Team Advisor</div>
+              <div class="text-h2 q-pt-lg">White Paper</div>
+              <div class="text-h2 q-pt-lg">Contact</div> -->
+              <div
+                class="text-h2 q-pt-lg menuLink"
+                v-for="(m, i) in mainMenu"
+                :key="i"
+              >
+                <router-link :to="m.path">{{ m.name }}</router-link>
+              </div>
+            </q-card-section>
+
+            <!-- <q-card-section class="q-pt-none">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+              repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
+              perferendis totam, ea at omnis vel numquam exercitationem aut,
+              natus minima, porro labore.
+            </q-card-section> -->
+          </q-card>
+        </q-dialog>
+      </div>
+    </div>
+  </div>
+</template>
+<script>
+import { ref } from "vue";
+export default {
+  data() {
+    return {
+      mainMenu: [
+        { name: "About", path: "/about" },
+        { name: "Eco System", path: "/ecosystem" },
+        { name: "Partner", path: "/partner" },
+        { name: "Road Map", path: "/roadmap" },
+        { name: "Staking", path: "/staking" },
+        { name: "Team Advisor", path: "/teamadvisor" },
+        { name: "Announcement", path: "/announcement" },
+        { name: "White Paper", path: "/whitepaper" },
+        { name: "Contact", path: "/contact" },
+      ],
+    };
+  },
+  setup() {
+    return {
+      dialog: ref(false),
+      maximizedToggle: ref(true),
+    };
+  },
+};
+</script>
+<style lang="scss" scope>
+.headBar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+.logo {
+  font-size: 50px;
+  display: inline;
+  font-family: "racing";
+}
+.menuLink {
+  font-family: "racing";
+}
+@media screen and (max-width: 800px) {
+  .logo {
+    font-size: 45px;
+  }
+}
+</style>

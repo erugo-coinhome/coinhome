@@ -21,11 +21,6 @@ const routes = [
     component: () => import("@/pages/About/About"),
   },
   {
-    path: "/announcement",
-    name: "Announcement",
-    component: () => import("@/pages/Announcement/Announcement"),
-  },
-  {
     path: "/ecosystem",
     name: "EcoSystem",
     component: () => import("@/pages/Eco/EcoSystem"),
@@ -54,6 +49,23 @@ const routes = [
     path: "/whitepaper",
     name: "WhitePaper",
     component: () => import("@/pages/WhitePaper/WhitePaper"),
+  },
+  // 게시판 페이지 :id에 따라 children 설정 필요
+  {
+    path: "/announcement",
+    name: "Announcement",
+    component: () => import("@/pages/Announcement/Announcement"),
+    children: [
+      {
+        path: "post/:id",
+        component: () => import("@/pages/Announcement/DetailPost"),
+      },
+    ],
+  },
+  // 아무 URL이나 입력되었을 때에는 Main으로
+  {
+    path: "/:anything(.*)",
+    component: () => import("@/pages/MainPage/MainPage"),
   },
 ];
 

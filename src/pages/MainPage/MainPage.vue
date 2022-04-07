@@ -1,15 +1,12 @@
 <template>
-    <div>
-        <Header />
-    </div>
+  <div>
+    <Header />
+  </div>
 </template>
 <script>
-import Header from '../../components/Header.vue';
+import Header from "../../components/Header/Header.vue";
 export default {
   components: { Header },
-    
-}
+};
 </script>
-<style lang="scss" scope>
-    
-</style>
+<style lang="scss" scope></style>
