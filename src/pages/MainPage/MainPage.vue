@@ -109,10 +109,10 @@ export default {
   position: relative;
 }
 .cardBoxs > .my-card:first-child {
-  margin-left: 2%;
+  margin-left: 3%;
 }
 .cardBoxs > .my-card:nth-child(5) {
-  margin-left: 3%;
+  margin-left: 5.736%;
 }
 .mainTitle {
   font-family: "vitro";
