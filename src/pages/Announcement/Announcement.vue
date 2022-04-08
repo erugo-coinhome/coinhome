@@ -11,7 +11,5 @@ export default {
 };
 </script>
 <style lang="scss" scope>
-.announcement {
-  font-family: "racing";
-}
+
 </style>

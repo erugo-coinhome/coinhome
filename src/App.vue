@@ -16,6 +16,96 @@ export default {
   font-weight: 400;
   font-style: normal;
 }
+
+/* 에스코어 폰트 */
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("assets/font/SCDream1.otf") format("woff");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("assets/font/SCDream2.otf") format("woff");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("assets/font/SCDream3.otf") format("woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("assets/font/SCDream4.otf") format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("assets/font/SCDream5.otf") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("assets/font/SCDream6.otf") format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("assets/font/SCDream7.otf") format("woff");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("assets/font/SCDream8.otf") format("woff");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "S-CoreDream";
+  src: url("assets/font/SCDream9.otf") format("woff");
+  font-weight: 900;
+}
+
+/* noto sans kr 폰트 */
+@font-face {
+  font-family: "NotoSansKr";
+  src: url("assets/font/NotoSansKR-Thin.otf") format("woff");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "NotoSansKr";
+  src: url("assets/font/NotoSansKR-Regular.otf") format("woff");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "NotoSansKr";
+  src: url("assets/font/NotoSansKR-Medium.otf") format("woff");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "NotoSansKr";
+  src: url("assets/font/NotoSansKR-Light.otf") format("woff");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "NotoSansKr";
+  src: url("assets/font/NotoSansKR-Bold.otf") format("woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "NotoSansKr";
+  src: url("assets/font/NotoSansKR-Black.otf") format("woff");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "vitro";
+  src: url("assets/font/vitro-core.otf") format("woff");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "vitro";
+  src: url("assets/font/vitro-pride.otf") format("woff");
+  font-weight: 100;
+}
+
 * {
   padding: 0;
   margin: 0;

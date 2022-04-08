@@ -1,9 +1,16 @@
 <template>
   <div>
     <div class="Bigcontainer">
-      <div class="headBar">
-        <div class="logo">ERUGOWORLD COIN</div>
-        <div>
+      <div class="headBar row justify-center">
+        <h1 class="logo col-9" @click="$router.push('/main')">
+          erugoworldcoin logo
+        </h1>
+        <div class="btnWrapper col-2">
+          <!-- back 버튼 -->
+          <div class="webMenu row justify-center">
+            <div class="col" @click="$router.back()">BACK</div>
+            <div class="col" @click="dialog = true">MENU</div>
+          </div>
           <q-btn
             flat
             rounded
@@ -38,7 +45,7 @@
               <q-space></q-space>
 
               <!-- 조건부 렌더링 : 최소화 vs 최대화 -->
-              <q-btn
+              <!-- <q-btn
                 v-if="maximizedToggle"
                 size="xl"
                 dense
@@ -63,7 +70,7 @@
                 <q-tooltip v-if="!maximizedToggle" class="bg-white text-black"
                   >최대화</q-tooltip
                 >
-              </q-btn>
+              </q-btn> -->
               <!-- 조건부 렌더링 : 최소화 vs 최대화 -->
 
               <q-btn size="xl" dense flat icon="close" v-close-popup>
@@ -129,21 +136,69 @@ export default {
 </script>
 <style lang="scss" scope>
 .headBar {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
+  background-color: rgba($color: #fff, $alpha: 0.5);
+  padding: 15px 0;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+.logo,
+.btnWrapper {
+  line-height: 3vw;
 }
 .logo {
-  font-size: 50px;
-  display: inline;
-  font-family: "racing";
+  background: url("mainLogo.png") no-repeat;
+  background-size: contain;
+  text-indent: -99999999999999px;
+}
+.btnWrapper {
+  font-size: 1vw;
 }
 .menuLink {
-  font-family: "racing";
+  font-family: "S-CoreDream";
+  font-weight: 700;
+  text-align: center;
+}
+.menuLink:hover {
+  color: #ff6906;
+}
+.webMenu {
+  letter-spacing: 5px;
+  text-align: center;
+  font-family: "S-CoreDream";
+  font-weight: 800;
+}
+.webMenu > div {
+  position: relative;
+  margin-right: 5%;
+}
+.webMenu > div::after {
+  content: "";
+  display: block;
+  border: 1px solid #707070;
+  position: absolute;
+  width: 2vw;
+  height: 2vw;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12%;
+  border-radius: 50%;
+}
+.menuBtn {
+  display: none;
+}
+// 가로
+@media only screen and (orientation: portrait) {
+}
+@media only screen and (orientation: landscape) {
 }
 @media screen and (max-width: 800px) {
   .logo {
     font-size: 45px;
+  }
+  .menuBtn {
+    display: block;
   }
 }
 </style>

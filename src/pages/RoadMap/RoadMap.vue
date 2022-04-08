@@ -11,7 +11,5 @@ export default {
 };
 </script>
 <style lang="scss" scope>
-.roadmap {
-  font-family: "racing";
-}
+
 </style>

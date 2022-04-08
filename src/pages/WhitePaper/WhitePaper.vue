@@ -11,7 +11,5 @@ export default {
 };
 </script>
 <style lang="scss" scope>
-.whitepaper {
-  font-family: "racing";
-}
+
 </style>

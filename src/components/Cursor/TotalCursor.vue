@@ -77,9 +77,9 @@ html {
     top: 0;
     left: 0;
     position: fixed;
-    width: 30px;
-    height: 30px;
-    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    border: 2px solid red;
     border-radius: 100%;
     z-index: 5555;
     backface-visibility: hidden;
@@ -95,7 +95,7 @@ html {
     pointer-events: none;
     user-select: none;
     border-radius: 100%;
-    background: #fff;
+    background: red;
     z-index: 55555555;
     backface-visibility: hidden;
     will-change: transform;
