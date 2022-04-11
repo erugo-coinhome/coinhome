@@ -2,9 +2,9 @@
   <div>
     <div class="Bigcontainer">
       <div class="headBar row justify-center">
-        <h1 class="logo col-9" @click="$router.push('/main')">
+        <h2 class="logo col-9" @click="$router.push('/main')">
           erugoworldcoin logo
-        </h1>
+        </h2>
         <div class="btnWrapper col-2">
           <!-- back 버튼 -->
           <div class="webMenu row justify-center">
@@ -193,9 +193,9 @@ export default {
 }
 @media only screen and (orientation: landscape) {
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .logo {
-    font-size: 45px;
+    font-size: 1.2rem;
   }
   .menuBtn {
     display: block;

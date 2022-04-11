@@ -19,47 +19,47 @@ export default {
 
 /* 에스코어 폰트 */
 @font-face {
-  font-family: "S-CoreDream";
+  font-family: "S-CoreDream1";
   src: url("assets/font/SCDream1.otf") format("woff");
   font-weight: 100;
 }
 @font-face {
-  font-family: "S-CoreDream";
+  font-family: "S-CoreDream2";
   src: url("assets/font/SCDream2.otf") format("woff");
   font-weight: 200;
 }
 @font-face {
-  font-family: "S-CoreDream";
+  font-family: "S-CoreDream3";
   src: url("assets/font/SCDream3.otf") format("woff");
   font-weight: 300;
 }
 @font-face {
-  font-family: "S-CoreDream";
+  font-family: "S-CoreDream4";
   src: url("assets/font/SCDream4.otf") format("woff");
   font-weight: 400;
 }
 @font-face {
-  font-family: "S-CoreDream";
+  font-family: "S-CoreDream5";
   src: url("assets/font/SCDream5.otf") format("woff");
   font-weight: 500;
 }
 @font-face {
-  font-family: "S-CoreDream";
+  font-family: "S-CoreDream6";
   src: url("assets/font/SCDream6.otf") format("woff");
   font-weight: 600;
 }
 @font-face {
-  font-family: "S-CoreDream";
+  font-family: "S-CoreDream7";
   src: url("assets/font/SCDream7.otf") format("woff");
   font-weight: 700;
 }
 @font-face {
-  font-family: "S-CoreDream";
+  font-family: "S-CoreDream8";
   src: url("assets/font/SCDream8.otf") format("woff");
   font-weight: 800;
 }
 @font-face {
-  font-family: "S-CoreDream";
+  font-family: "S-CoreDream9";
   src: url("assets/font/SCDream9.otf") format("woff");
   font-weight: 900;
 }

@@ -181,7 +181,9 @@ export default {
 }
 .bottomBtn {
   position: absolute;
-  bottom: -150%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -18vw;
 }
 .arrows {
   position: relative;
