@@ -5,22 +5,34 @@
     <div class="mainBg">
       <div class="container">
         <div class="cardBoxs">
-          <div class="my-card" v-for="(m, i) in mainBox" :key="i">
+          <div
+            class="my-card"
+            v-for="(m, i) in mainBox"
+            :key="i"
+            @mouseover="hover(m.key)"
+            @mouseleave="leave(m.key)"
+          >
             <img
               :src="m.src"
               style="width: 90%"
-              :id="m.name"
-              @mouseover="hover(m.name)"
+              :id="m.key"
+              @click="$router.push(`/${m.key}`)"
             />
             <div class="absolute-center text-center mainTitle">
               {{ m.name }}
             </div>
-            <div>하단 버튼</div>
+            <div class="bottomBtn" :id="m.name">
+              <img :src="m.src2" @click="$router.push(`/${m.key}`)" />
+            </div>
           </div>
         </div>
         <div class="arrows">
-          <div class="arrowRight" @click="toRight()">화살표 오</div>
-          <div class="arrowRight" @click="toLeft()">왼 화살표</div>
+          <div class="arrowRight" @click="toLeft()">
+            <img src="assets/images/leftBtn.png" />
+          </div>
+          <div class="arrowRight" @click="toRight()">
+            <img src="assets/images/rightBtn.png" />
+          </div>
         </div>
       </div>
       <TotalCursor />
@@ -32,22 +44,58 @@ import TotalCursor from "@/components/Cursor/TotalCursor.vue";
 import Header from "../../components/Header/Header.vue";
 import { ref } from "vue";
 
-// arrowRight.addEventListener("click", function () {
-//
-// });
-
 export default {
   data() {
     return {
       mainBox: [
-        { name: "ABOUT", src: "assets/images/menu01.png" },
-        { name: "ECOSYSTEM", src: "assets/images/menu02.png" },
-        { name: "TEAM", src: "assets/images/menu03.png" },
-        { name: "WHITE PAPER", src: "assets/images/menu04.png" },
-        { name: "ROADMAP", src: "assets/images/menu05.png" },
-        { name: "STAKING", src: "assets/images/menu06.png" },
-        { name: "ANNOUNCEMENT", src: "assets/images/menu07.png" },
-        { name: "CONTACT", src: "assets/images/menu08.png" },
+        {
+          key: "about",
+          name: "ABOUT",
+          src: "assets/images/menu01.png",
+          src2: "assets/images/01.png",
+        },
+        {
+          key: "ecosystem",
+          name: "ECOSYSTEM",
+          src: "assets/images/menu02.png",
+          src2: "assets/images/02.png",
+        },
+        {
+          key: "teamadvisor",
+          name: "TEAM",
+          src: "assets/images/menu03.png",
+          src2: "assets/images/03.png",
+        },
+        {
+          key: "whitepaper",
+          name: "WHITE PAPER",
+          src: "assets/images/menu04.png",
+          src2: "assets/images/04.png",
+        },
+        {
+          key: "roadmap",
+          name: "ROADMAP",
+          src: "assets/images/menu05.png",
+          src2: "assets/images/05.png",
+        },
+        {
+          key: "staking",
+          name: "STAKING",
+          src: "assets/images/menu06.png",
+          src2: "assets/images/06.png",
+        },
+        {
+          key: "announcement",
+          name: "ANNOUNCEMENT",
+          src: "assets/images/menu07.png",
+          src2: "assets/images/07.png",
+        },
+        {
+          key: "contact",
+          name: "CONTACT",
+          src: "assets/images/menu08.png",
+          src2: "assets/images/08.png",
+        },
       ],
     };
   },
@@ -64,8 +112,18 @@ export default {
       var cardBoxs = document.querySelector(".cardBoxs");
       cardBoxs.style.setProperty("transform", `translateX(0%)`);
     },
-    hover(name) {
-      console.log(name);
+    hover(e) {
+      var name = document.querySelector(`#${e}`);
+      var bottomBtn = document.querySelector(`#${e} ~ .bottomBtn`);
+      console.log(bottomBtn);
+      name.style.setProperty("transform", "scale(1.2, 1.2)");
+      bottomBtn.style.setProperty("transform", "scale(1.4, 1.4)");
+    },
+    leave(e) {
+      var name = document.querySelector(`#${e}`);
+      var bottomBtn = document.querySelector(`#${e} ~ .bottomBtn`);
+      name.style.setProperty("transform", "scale(1, 1)");
+      bottomBtn.style.setProperty("transform", "scale(1, 1)");
     },
   },
 };
@@ -121,10 +179,34 @@ export default {
   color: white;
   width: 100%;
 }
-#ABOUT {
+.bottomBtn {
+  position: absolute;
+  bottom: -150%;
 }
-#ECOSYSTEM {
+.arrows {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  .arrowRight,
+  .arrowLeft {
+    margin-top: 10%;
+  }
 }
+// #ABOUT {
+//   animation: name duration timing-function delay iteration-count direction
+//     fill-mode;
+// }
+// @keyframes about {
+//   0% {
+//     transform: scale(1, 1);
+//   }
+//   50% {
+//     transform: scale(1.2, 1.2);
+//   }
+//   100% {
+//     transform: scale(1, 1);
+//   }
+// }
 
 @keyframes gradient {
   0% {
