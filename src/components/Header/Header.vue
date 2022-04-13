@@ -79,14 +79,6 @@
             </q-bar>
 
             <q-card-section class="fixed-center">
-              <!-- <div class="text-h2 q-pt-lg">About</div>
-              <div class="text-h2 q-pt-lg">Eco System</div>
-              <div class="text-h2 q-pt-lg">Partner</div>
-              <div class="text-h2 q-pt-lg">Road Map</div>
-              <div class="text-h2 q-pt-lg">Staking</div>
-              <div class="text-h2 q-pt-lg">Team Advisor</div>
-              <div class="text-h2 q-pt-lg">White Paper</div>
-              <div class="text-h2 q-pt-lg">Contact</div> -->
               <div
                 class="text-h2 q-pt-lg menuLink"
                 v-for="(m, i) in mainMenu"
@@ -95,13 +87,6 @@
                 <router-link :to="m.path">{{ m.name }}</router-link>
               </div>
             </q-card-section>
-
-            <!-- <q-card-section class="q-pt-none">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
-              repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
-              perferendis totam, ea at omnis vel numquam exercitationem aut,
-              natus minima, porro labore.
-            </q-card-section> -->
           </q-card>
         </q-dialog>
       </div>
@@ -142,6 +127,7 @@ export default {
   position: absolute;
   z-index: 1;
   top: 0;
+  border-bottom: 0.5px solid #707070;
 }
 .logo,
 .btnWrapper {
@@ -165,9 +151,9 @@ export default {
 }
 .webMenu {
   letter-spacing: 5px;
+  font-size: 28px;
   text-align: center;
-  font-family: "S-CoreDream";
-  font-weight: 800;
+  font-family: "S-CoreDream8";
 }
 .webMenu > div {
   position: relative;
@@ -178,11 +164,11 @@ export default {
   display: block;
   border: 1px solid #707070;
   position: absolute;
-  width: 2vw;
-  height: 2vw;
+  width: 3vw;
+  height: 3vw;
   top: 50%;
   transform: translateY(-50%);
-  right: 12%;
+  right: 0;
   border-radius: 50%;
 }
 .menuBtn {

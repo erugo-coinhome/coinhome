@@ -1,7 +1,7 @@
 <template>
   <div class="q-pa-md row items-start q-gutter-md readmore">
     <q-card class="my-card" flat bordered>
-      <q-img src="assets/images/readmore.png">
+      <q-img src="assets/images/readmore.png" class="readmore-img">
         <div>
           <slot name="numbering"></slot>
         </div>

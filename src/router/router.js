@@ -50,6 +50,11 @@ const routes = [
     name: "WhitePaper",
     component: () => import("@/pages/WhitePaper/WhitePaper"),
   },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: () => import("@/pages/Contact/Contact"),
+  },
   // 게시판 페이지 :id에 따라 children 설정 필요
   {
     path: "/announcement",

@@ -1,15 +1,30 @@
 <template>
-  <div class="staking">
+  <div>
     <Header />
-    Staking Page
+    <q-layout class="staking">
+      <div class="staking-title">STAKING</div>
+      <PageController />
+    </q-layout>
   </div>
 </template>
 <script>
 import Header from "../../components/Header/Header.vue";
+import PageController from "../../components/PageController/PageController.vue";
 export default {
-  components: { Header },
+  components: { Header, PageController },
 };
 </script>
 <style lang="scss" scope>
-
+.staking {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.staking-title {
+  font-family: "S-CoreDream9";
+  font-size: 6rem;
+  margin: 10% auto;
+  margin-bottom: 3%;
+  text-align: center;
+}
 </style>

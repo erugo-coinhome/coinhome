@@ -7,11 +7,15 @@ import { Quasar } from "quasar";
 import quasarUserOptions from "./quasar-user-options";
 import AOS from "aos";
 import "aos/dist/aos.css";
-app.AOS = new AOS.init({ disable: "phone" });
+import mitt from "mitt";
+const emitter = mitt();
 
-createApp(App)
+const app = createApp(App);
+app.config.globalProperties.emitter = emitter;
+app
   .use(Quasar, quasarUserOptions)
   .use(store)
   .use(router)
   .use(AOS)
+  .use(emitter)
   .mount("#app");

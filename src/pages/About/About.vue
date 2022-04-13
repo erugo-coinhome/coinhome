@@ -27,7 +27,7 @@
       <p class="about-content text-h5">{{ readmore[0].content }}</p>
       <div class="line" />
       <div class="about-subtitle text-h2">Principles</div>
-      <p class="about-content2 text-h4">ERUGO WORLD and EVC Promotion Clip</p>
+      <p class="about-content2 text-h4">ERUGO WORLD and EWC Promotion Clip</p>
       <div class="readmore-bg">
         <ReadMore v-for="(r, i) in readmore" :key="i">
           <template #numbering>
@@ -60,16 +60,7 @@
       <div class="line" />
       <div class="about-subtitle text-h2">Rugo</div>
       <p class="about-content2 text-h4">ERUGO WORLD and EWC Promotion clip</p>
-      <!-- <q-page-scroller
-        position="bottom-right"
-        :scroll-offset="150"
-        :offset="[18, 18]"
-        style="z-index: 100"
-      >
-        <q-img src="assets/images/TOP.png" style="width: 150px" />
-      </q-page-scroller> -->
       <PageController />
-      <!-- Rugo 이미지 -->
       <div class="about-img" v-for="(a, i) in aboutImage" :key="i">
         <img
           :src="a.path"
@@ -154,16 +145,16 @@ export default {
   height: 100%;
   position: relative;
 }
-.about-going {
-  position: absolute;
-  width: 20%;
-}
 .about-title {
   font-family: "S-CoreDream9";
   font-size: 6rem;
   margin: 10% auto;
   margin-bottom: 3%;
   text-align: center;
+}
+.about-going {
+  position: absolute;
+  width: 20%;
 }
 .about-subtitle {
   font-family: "S-CoreDream6";
