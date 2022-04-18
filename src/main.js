@@ -8,9 +8,10 @@ import quasarUserOptions from "./quasar-user-options";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import mitt from "mitt";
+import { Chart, registerables } from "chart.js";
 const emitter = mitt();
-
 const app = createApp(App);
+Chart.register(...registerables);
 app.config.globalProperties.emitter = emitter;
 app
   .use(Quasar, quasarUserOptions)
