@@ -37,20 +37,32 @@ export default {
     moveCursor(e) {
       this.xChild = e.clientX;
       this.yChild = e.clientY;
-      setTimeout(() => {
-        this.xParent = e.clientX - 15;
-        this.yParent = e.clientY - 15;
-      }, 100);
+      setTimeout(
+        () => {
+          this.xParent = e.clientX - 15;
+          this.yParent = e.clientY - 15;
+        },
+        100,
+        { passive: true }
+      );
     },
   },
   mounted() {
-    document.addEventListener("mousemove", this.moveCursor);
-    document.addEventListener("mouseleave", (e) => {
-      this.hideCursor = true;
-    });
-    document.addEventListener("mouseenter", (e) => {
-      this.hideCursor = false;
-    });
+    document.addEventListener("mousemove", this.moveCursor, { passive: true });
+    document.addEventListener(
+      "mouseleave",
+      (e) => {
+        this.hideCursor = true;
+      },
+      { passive: true }
+    );
+    document.addEventListener(
+      "mouseenter",
+      (e) => {
+        this.hideCursor = false;
+      },
+      { passive: true }
+    );
   },
 };
 </script>

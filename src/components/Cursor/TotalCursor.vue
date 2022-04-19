@@ -37,10 +37,14 @@ export default {
     moveCursor(e) {
       this.xChild = e.clientX;
       this.yChild = e.clientY;
-      setTimeout(() => {
-        this.xParent = e.clientX - 15;
-        this.yParent = e.clientY - 15;
-      }, 100);
+      setTimeout(
+        () => {
+          this.xParent = e.clientX - 15;
+          this.yParent = e.clientY - 15;
+        },
+        100,
+        { passive: true }
+      );
     },
   },
   mounted() {

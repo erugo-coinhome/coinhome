@@ -73,17 +73,22 @@ export default {
 
       let totalStaking = document.querySelector(".stakingNum");
 
-      let timer = setInterval(() => {
-        if (stacking <= stakingMaxCount) {
-          totalStaking.innerHTML = formatNumber(Math.ceil(stacking));
-          stacking =
-            stacking +
-            (stakingMaxCount - stacking) / Math.ceil(stakingMaxCount / 150000) +
-            0.1;
-        } else {
-          clearInterval(timer);
-        }
-      }, 50);
+      let timer = setInterval(
+        () => {
+          if (stacking <= stakingMaxCount) {
+            totalStaking.innerHTML = formatNumber(Math.ceil(stacking));
+            stacking =
+              stacking +
+              (stakingMaxCount - stacking) /
+                Math.ceil(stakingMaxCount / 150000) +
+              0.1;
+          } else {
+            clearInterval(timer);
+          }
+        },
+        50,
+        { passive: true }
+      );
     },
     interestNum() {
       const interestMaxCount = 164923;
@@ -94,17 +99,22 @@ export default {
         return parts.join(".");
       }
       let totalInterest = document.querySelector(".interestNum");
-      let timer = setInterval(() => {
-        if (interest <= interestMaxCount) {
-          totalInterest.innerHTML = formatNumber(Math.ceil(interest));
-          interest =
-            interest +
-            (interestMaxCount - interest) / Math.ceil(interestMaxCount / 6000) +
-            0.1;
-        } else {
-          clearInterval();
-        }
-      }, 50);
+      let timer = setInterval(
+        () => {
+          if (interest <= interestMaxCount) {
+            totalInterest.innerHTML = formatNumber(Math.ceil(interest));
+            interest =
+              interest +
+              (interestMaxCount - interest) /
+                Math.ceil(interestMaxCount / 6000) +
+              0.1;
+          } else {
+            clearInterval();
+          }
+        },
+        50,
+        { passive: true }
+      );
     },
   },
   mounted() {
