@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="background: url(images/announcement_bg.png)">
     <Header />
     <q-layout class="announcement">
       <div class="announcement-title">ANNOUNCEMENT</div>
@@ -18,7 +18,9 @@ export default {
 .announcement {
   width: 100%;
   height: 100%;
-  position: relative;
+  position: absolute;
+  background: url("images/announcement_bg.png") 100% 100% no-repeat;
+  animation: gradient 4s ease-in-out infinite;
 }
 .announcement-title {
   font-family: "S-CoreDream9";
@@ -26,5 +28,16 @@ export default {
   margin: 10% auto;
   margin-bottom: 3%;
   text-align: center;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 </style>

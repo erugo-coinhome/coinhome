@@ -5,11 +5,12 @@
       <div class="staking-title">STAKING</div>
       <div class="staking-num">
         <q-img class="staking-img">
-          <p id="stakingNum">2,487,267</p>
+          <p class="stakingNum"></p>
+
           <span>Total Staking</span>
         </q-img>
         <q-img class="staking-img">
-          <p id="interestNum">164,923</p>
+          <p class="interestNum"></p>
           <span>Total Interest</span>
         </q-img>
       </div>
@@ -50,6 +51,8 @@ import BarChart from "../../components/BarChart/BarChart.vue";
 export default {
   data() {
     return {
+      count: 2487461,
+      count2: 164923,
       staking: {
         content:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
@@ -58,66 +61,55 @@ export default {
   },
   components: { Header, PageController, BarChart },
   methods: {
-    numberCount() {
-      // number count
-      let animationStartLine = 4.5;
-      let animationEndLine = 5.3;
-      let isAnimationPlay = false;
-      var left = 0;
+    stakingNum() {
       const stakingMaxCount = 2487267;
-      const interestMaxCount = 164923;
-      const stackingInitialValue = 1800000;
-      const interestInitialValue = 120000;
-      let stacking = stackingInitialValue;
-      let interest = interestInitialValue;
-      let previousTime = 0;
+      let stacking = 1800000;
 
-      document.addEventListener(
-        "scroll",
-        (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          var afterposition = document.documentElement.scrollTop;
-          let height = Math.floor(window.innerWidth / 10);
-          let transparent = 0;
-          let scrollRatio = afterposition / window.innerWidth;
-          if (
-            scrollRatio > animationStartLine &&
-            scrollRatio < animationEndLine
-          ) {
-            if (!isAnimationPlay) {
-              interest = interestInitialValue;
-              stacking = stackingInitialValue;
-              isAnimationPlay = true;
-              previousTime = new Date().getTime();
-            }
-          } else {
-            interest = interestInitialValue;
-            stacking = stackingInitialValue;
-            isAnimationPlay = false;
-          }
-          if (afterposition > height) {
-            transparent = 1;
-            document.querySelectorAll(".staking-img").forEach((menu, idx) => {
-              menu.style.color = "black";
-            });
-            document.getElementById("stakingNum").style.color = "black";
-            document.getElementById("interestNum").style.color = "black";
-          } else {
-            document.querySelectorAll(".staking-img").forEach((menu, idx) => {
-              menu.style.color = "white";
-            });
-            document.getElementById("stakingNum").style.color = "white";
-            transparent = (afterposition / height).toFixed(2);
-          }
-          //document.getElementById('floating-area').style.backgroundColor = `rgba(255,255,255,${transparent})`
-        },
-        false
-      );
+      function formatNumber(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+      }
+
+      let totalStaking = document.querySelector(".stakingNum");
+
+      let timer = setInterval(() => {
+        if (stacking <= stakingMaxCount) {
+          totalStaking.innerHTML = formatNumber(Math.ceil(stacking));
+          stacking =
+            stacking +
+            (stakingMaxCount - stacking) / Math.ceil(stakingMaxCount / 150000) +
+            0.1;
+        } else {
+          clearInterval(timer);
+        }
+      }, 50);
+    },
+    interestNum() {
+      const interestMaxCount = 164923;
+      let interest = 120000;
+      function formatNumber(x) {
+        var parts = x.toString().split(".");
+        parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        return parts.join(".");
+      }
+      let totalInterest = document.querySelector(".interestNum");
+      let timer = setInterval(() => {
+        if (interest <= interestMaxCount) {
+          totalInterest.innerHTML = formatNumber(Math.ceil(interest));
+          interest =
+            interest +
+            (interestMaxCount - interest) / Math.ceil(interestMaxCount / 6000) +
+            0.1;
+        } else {
+          clearInterval();
+        }
+      }, 50);
     },
   },
   mounted() {
-    this.numberCount();
+    this.stakingNum();
+    this.interestNum();
   },
 };
 </script>
