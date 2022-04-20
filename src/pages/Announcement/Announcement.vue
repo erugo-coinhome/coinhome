@@ -3,7 +3,7 @@
     <Header />
     <q-layout class="announcement">
       <div class="announcement-title">ANNOUNCEMENT</div>
-      <div class="q-pa-md">
+      <div class="q-pa-md announcement-table">
         <q-table
           :rows="rows"
           :columns="columns"
@@ -13,15 +13,50 @@
           hide-pagination
           binary-state-sort
           flat
-        />
-        <div class="row justify-center q-mt-md">
+        >
+        </q-table>
+        <!-- <q-card v-show="isTogglePage">
+          <q-card-section>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem,
+            eius reprehenderit eos corrupti commodi magni quaerat ex numquam,
+            dolorum officiis modi facere maiores architecto suscipit iste
+            eveniet doloribus ullam aliquid.
+          </q-card-section>
+        </q-card> -->
+        <div class="row justify-center q-pa-md flex flex-center">
           <q-pagination
+            class="announcement_page"
             v-model="pagination.page"
-            color="grey-9"
+            color="grey-6"
+            active-color="black"
             :max="pagesNumber"
-            size="lg"
+            size="1.5vw"
+            direction-links
+            flat
+            padding="1.5vw"
+            icon-prev="img:assets/images/announcement_btn_01.png"
+            icon-next="img:assets/images/announcement_btn_02.png"
           />
         </div>
+        <!-- <q-list bordered class="rounded-borders" v-for="(e, i) in 6" :key="i">
+          <q-expansion-item
+            group="somegroup"
+            icon="explore"
+            label="First"
+            caption="First"
+            default-opened
+            header-class="text-grey-10"
+          >
+            <q-card style="height: 10vw">
+              <q-card-section>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Quidem, eius reprehenderit eos corrupti commodi magni quaerat ex
+                numquam, dolorum officiis modi facere maiores architecto
+                suscipit iste eveniet doloribus ullam aliquid.
+              </q-card-section>
+            </q-card>
+          </q-expansion-item>
+        </q-list> -->
       </div>
       <PageController />
     </q-layout>
@@ -37,12 +72,12 @@ const columns = [
   {
     name: "NO",
     required: true,
-    label: "No",
-    align: "left",
+    label: "NO",
+    align: "center",
     field: (row) => row.no,
     format: (val) => `${val}`,
     sortable: true,
-    style: "width: 10%;height: 3.5vw; font-size: 1vw",
+    style: "width: 10%; height: 5vw; font-size: 1.2vw",
   },
   {
     name: "Notice",
@@ -51,17 +86,17 @@ const columns = [
     field: (row) => row.notice,
     sortable: true,
     required: true,
-    style: "width: 70%; font-size: 1vw",
+    style: "font-size: 1.2vw",
   },
 
   {
     name: "Date",
     label: "Date",
     field: (row) => row.date,
-    align: "right",
+    align: "center",
     sortable: true,
     required: true,
-    style: "width: 20%; font-size: 1vw",
+    style: "width: 10%; font-size: 1.2vw;",
   },
 ];
 
@@ -131,12 +166,13 @@ export default {
       page: 1,
       rowsPerPage: 3,
     });
+    const isTogglePage = ref(false);
 
     return {
       pagination,
       columns,
       rows,
-
+      isTogglePage,
       pagesNumber: computed(() =>
         Math.ceil(rows.length / pagination.value.rowsPerPage)
       ),
@@ -160,8 +196,38 @@ export default {
   text-align: center;
 }
 .q-table th {
-  font-size: 1.3vw;
+  font-size: 1.4vw;
   border-bottom: 5px solid grey;
+  padding-bottom: 0.5%;
+  position: relative;
+}
+.q-table th.sortable {
+  padding: 2vw;
+}
+.q-table th::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -8%;
+  width: 100%;
+  border-bottom: 3px solid #6b6b6b;
+  margin-bottom: 1vw;
+}
+.q-icon > img {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+.announcement-table {
+  position: relative;
+  padding: 1% 10%;
+}
+.announcement_page {
+  position: absolute;
+  left: 50%;
+  bottom: -20%;
+  transform: translateX(-50%);
 }
 @keyframes gradient {
   0% {
