@@ -34,10 +34,10 @@ export default {
     },
   },
   methods: {
-    moveCursor(e) {
+    async moveCursor(e) {
       this.xChild = e.clientX;
       this.yChild = e.clientY;
-      setTimeout(
+      await setTimeout(
         () => {
           this.xParent = e.clientX - 15;
           this.yParent = e.clientY - 15;

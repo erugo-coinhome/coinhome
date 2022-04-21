@@ -13,8 +13,56 @@
           hide-pagination
           binary-state-sort
           flat
+          @click="modal = !modal"
         >
         </q-table>
+
+        <!-- 모달 -->
+
+        <q-card
+          style="
+            width: 100%;
+            max-width: 80vw;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.5);
+          "
+          v-show="modal"
+        >
+          <q-card-section style="display: flex">
+            <q-card-actions style="width: 10%; text-align: center; padding: 0">
+              <q-btn
+                flat
+                label="뒤로가기"
+                color="secondary"
+                v-close-popup
+                @click="modal = !modal"
+              />
+            </q-card-actions>
+            <div class="text-h6" style="width: 90%; text-align: center">
+              Terms of Agreement
+            </div>
+          </q-card-section>
+
+          <q-separator />
+
+          <q-card-section style="max-height: 30vh" class="scroll">
+            <p v-for="n in 15" :key="n">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+              repellendus sit voluptate voluptas eveniet porro. Rerum blanditiis
+              perferendis totam, ea at omnis vel numquam exercitationem aut,
+              natus minima, porro labore.
+            </p>
+          </q-card-section>
+
+          <q-separator />
+        </q-card>
+
+        <!-- 모달 -->
+
         <!-- <q-card v-show="isTogglePage">
           <q-card-section>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem,
@@ -167,12 +215,14 @@ export default {
       rowsPerPage: 3,
     });
     const isTogglePage = ref(false);
+    const modal = ref(false);
 
     return {
       pagination,
       columns,
       rows,
       isTogglePage,
+      modal,
       pagesNumber: computed(() =>
         Math.ceil(rows.length / pagination.value.rowsPerPage)
       ),
@@ -221,12 +271,13 @@ export default {
 }
 .announcement-table {
   position: relative;
-  padding: 1% 10%;
+  background-color: skyblue;
+  margin: 1% 10%;
 }
 .announcement_page {
   position: absolute;
   left: 50%;
-  bottom: -20%;
+  bottom: -30%;
   transform: translateX(-50%);
 }
 @keyframes gradient {

@@ -10,6 +10,7 @@
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
           data-aos-delay="500"
+          data-aos-anchor-placement="top-center"
         />
         <img
           src="assets/images/going-right.png"
@@ -19,6 +20,7 @@
           data-aos-offset="300"
           data-aos-easing="ease-in-sine"
           data-aos-delay="500"
+          data-aos-anchor-placement="top-center"
         />
       </span>
       <div class="about-title">ABOUT</div>
@@ -60,14 +62,14 @@
       <div class="line" />
       <div class="about-subtitle text-h2">Rugo</div>
       <p class="about-content2 text-h4">ERUGO WORLD and EWC Promotion clip</p>
-      <PageController />
+
       <div class="about-img" v-for="(a, i) in aboutImage" :key="i">
         <img
           :src="a.path"
           :ratio="16 / 9"
           v-bind:style="a.deg"
           style="width: 80%"
-          data-aos="zoom-left-in"
+          data-aos="zoom-in"
           data-aos-offset="500"
           data-aos-duration="500"
           :data-aos-delay="500 * i"
@@ -75,6 +77,7 @@
       </div>
 
       <p class="about-content3 text-h5">{{ readmore[0].content }}</p>
+      <PageController />
     </q-layout>
   </div>
 </template>
@@ -213,4 +216,7 @@ export default {
   position: relative;
   margin-top: 45%;
 }
+// [data-aos^="zoom"][data-aos^="zoom"] {
+//   opacity: 1;
+// }
 </style>

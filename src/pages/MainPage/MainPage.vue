@@ -115,7 +115,6 @@ export default {
     hover(e) {
       var name = document.querySelector(`#${e}`);
       var bottomBtn = document.querySelector(`#${e} ~ .bottomBtn`);
-      console.log(bottomBtn);
       name.style.setProperty("transform", "scale(1.2, 1.2)");
       bottomBtn.style.setProperty("transform", "scale(1.4, 1.4)");
     },

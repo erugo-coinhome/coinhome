@@ -10,17 +10,22 @@
       <p class="whitepaper-content2 text-h5">{{ whitepaper.content }}</p>
       <div class="whitepaper-file">
         <q-img
-          class="whitepaper-img"
-          src="assets/images/wp_01.png"
-          @mouseover="hover"
-          @mouseleave="leave"
+          class="whitepaper-img1"
+          @click="
+            pdfDownload('/assets/pdf/220421_EWC_WHITEPAPER_ver_2.2(KOR).pdf')
+          "
         >
           <p class="img-text">
             WHITE PAPER <br />
             (KOR)
           </p>
         </q-img>
-        <q-img src="assets/images/wp_02.png">
+        <q-img
+          class="whitepaper-img2"
+          @click="
+            pdfDownload('/assets/pdf/220421_EWC_WHITEPAPER_ver_2.2(ENG).pdf')
+          "
+        >
           <p class="img-text">
             WHITE PAPER <br />
             (ENG)
@@ -28,13 +33,16 @@
         </q-img>
       </div>
       <div class="whitepaper-file">
-        <q-img src="assets/images/wp_03.png">
+        <q-img
+          class="whitepaper-img3"
+          @click="pdfDownload('/assets/pdf/210930+WC(Wins).pdf')"
+        >
           <p class="img-text">
             LEGAL REVIEW <br />
             (Wins)
           </p>
         </q-img>
-        <q-img src="assets/images/wp_04.png">
+        <q-img class="whitepaper-img4">
           <p class="img-text">
             LEGAL REVIEW <br />
             (J.W)
@@ -59,20 +67,20 @@ export default {
   },
   components: { Header, PageController },
   methods: {
-    hover() {
-      var whitepaper = document.querySelector(".whitepaper-img");
-      // whitepaper.style.setProperty("background-color", "#ffa1a1");
-
-      // for (var i = 1; i < 5; i++) {
-      //   document.querySelector(".whitepaper-img").removeAttribute("src");
-      //   // .setAttribute("src", "assets/images/wp_01_2.png");
-      // }
-    },
-    leave() {
-      for (var i = 1; i < 5; i++) {
-        document.querySelector(".img-text");
-        // .setAttribute("src", `"assets/images/wp_0${i}.png"`);
-      }
+    pdfDownload(url) {
+      fetch(url, {
+        method: "get",
+      })
+        .then((res) => {
+          return res.blob();
+        })
+        .then((blob) => {
+          let a = document.createElement("a");
+          a.href = window.URL.createObjectURL(blob);
+          a.download = url.split("/assets/")[1];
+          a.click();
+          window.URL.revokeObjectURL(a.href);
+        });
     },
   },
 };
@@ -123,4 +131,19 @@ export default {
   text-align: center;
   font-family: "S-CoreDream7";
 }
+@for $i from 1 to 5 {
+  .whitepaper-img#{$i} {
+    background: url("asset/images/wp_0#{$i}.png") no-repeat center;
+    background-size: cover;
+  }
+  .whitepaper-img#{$i}:hover {
+    background: url("asset/images/wp_0#{$i}_2.png") no-repeat center;
+    background-size: cover;
+  }
+}
+
+// .whitepaper-file:hover .whitepaper-img {
+//   background: url("images/wp_01_2.png") no-repeat center;
+//   background-size: cover;
+// }
 </style>

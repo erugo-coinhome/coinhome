@@ -19,12 +19,13 @@
           :name="1"
           class="teamadvisor-carousel teamadvisor-card"
         >
-          <div class="row fit no-wrap" @click="flipCard = !flipCard">
+          <div class="row fit no-wrap">
             <q-img
               v-for="(q, i) in 3"
               :key="i"
               class="rounded-borders full-height"
               :src="`assets/images/team0${i + 1}.png`"
+              @click.exact="flipCard = !flipCard"
             >
               <img
                 src="assets/images/team-arrow-01.png"
@@ -74,6 +75,17 @@
         </q-carousel-slide>
       </q-carousel>
       <div class="teamadvisor-title">ADVISOR</div>
+      <div class="advisor">
+        <img src="assets/images/advisor_01.png" />
+        <img src="assets/images/advisor_02.png" />
+        <img src="assets/images/advisor_03.png" />
+      </div>
+      <div class="teamadvisor-title">PARTNER</div>
+      <div class="partner">
+        <img src="assets/images/partner_01.png" />
+        <img src="assets/images/partner_02.png" />
+        <img src="assets/images/partner_03.png" />
+      </div>
       <PageController />
     </q-layout>
   </div>
@@ -162,5 +174,19 @@ export default {
   width: 100%;
   height: 100%;
   padding: 0;
+}
+.advisor {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+}
+.partner {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
 }
 </style>
