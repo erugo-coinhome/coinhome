@@ -100,8 +100,8 @@ export default {
     return {
       mainMenu: [
         { name: "About", path: "/about" },
-        { name: "Eco System", path: "/ecosystem" },
-        { name: "Partner", path: "/partner" },
+        { name: "EcoSystem", path: "/ecosystem" },
+        // { name: "Partner", path: "/partner" },
         { name: "Road Map", path: "/roadmap" },
         { name: "Staking", path: "/staking" },
         { name: "Team Advisor", path: "/teamadvisor" },

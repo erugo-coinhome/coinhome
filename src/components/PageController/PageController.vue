@@ -6,10 +6,18 @@
     :offset="[18, 18]"
     style="z-index: 100"
   >
-    <q-img src="assets/images/TOP.png" style="width: 150px" />
+    <q-img
+      class="pagescroller"
+      src="assets/images/TOP.png"
+      style="width: 150px"
+    />
   </q-page-scroller>
 </template>
 <script>
 export default {};
 </script>
-<style lang=""></style>
+<style lang="scss">
+.pagescroller {
+  display: inline-block;
+}
+</style>

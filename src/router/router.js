@@ -25,11 +25,11 @@ const routes = [
     name: "EcoSystem",
     component: () => import("@/pages/Eco/EcoSystem"),
   },
-  {
-    path: "/partner",
-    name: "Partner",
-    component: () => import("@/pages/Partner/Partner"),
-  },
+  // {
+  //   path: "/partner",
+  //   name: "Partner",
+  //   component: () => import("@/pages/Partner/Partner"),
+  // },
   {
     path: "/roadmap",
     name: "RoadMap",

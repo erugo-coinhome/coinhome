@@ -3,6 +3,7 @@
     <Header />
     <q-layout class="contact">
       <div class="contact-title">Contact</div>
+
       <PageController />
     </q-layout>
   </div>

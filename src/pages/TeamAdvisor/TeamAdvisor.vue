@@ -25,9 +25,10 @@
               :key="i"
               class="rounded-borders full-height"
               :src="`assets/images/team0${i + 1}.png`"
-              @click.exact="flipCard = !flipCard"
+              @click="flipCardFun(i)"
             >
               <img
+                :id="i"
                 src="assets/images/team-arrow-01.png"
                 class="teamadvisor-arrow"
               />
@@ -55,6 +56,7 @@
               :key="i"
               class="rounded-borders full-height"
               :src="`assets/images/team0${i + 4}.png`"
+              @click="flipCardFun(i + 3)"
             >
               <img
                 src="assets/images/team-arrow-01.png"
@@ -100,16 +102,22 @@ export default {
   data() {
     return {
       card: [
-        { title: "CEO", name: "Jung su Kim" },
-        { title: "DESIGN TEAM", name: "" },
-        { title: "DEVELOPMENT TEAM", name: "" },
-        { title: "TECH ADVISER", name: "Gyeong su Ham" },
-        { title: "TECH ADVISER", name: "Kwang je Cho" },
-        { title: "DEVELOPMENT TEAM", name: "" },
+        { key: "ceo", title: "CEO", name: "Jung su Kim" },
+        { key: "design", title: "DESIGN TEAM", name: "" },
+        { key: "development", title: "DEVELOPMENT TEAM", name: "" },
+        { key: "techadvisor", title: "TECH ADVISOR", name: "Gyeong su Ham" },
+        { key: "techadvisor", title: "TECH ADVISOR", name: "Kwang je Cho" },
+        { key: "development", title: "DEVELOPMENT TEAM", name: "" },
       ],
     };
   },
-  methods() {},
+  methods: {
+    flipCardFun(e) {
+      console.log(e);
+      // if (e === this.card[e].no) {
+      // }
+    },
+  },
   setup() {
     const flipCard = ref(false);
     return {
@@ -159,6 +167,7 @@ export default {
 .q-img__image {
   position: relative;
   object-fit: contain;
+  height: 100%;
 }
 .title {
   position: absolute;

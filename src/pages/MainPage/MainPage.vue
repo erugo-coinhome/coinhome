@@ -127,7 +127,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss" scope>
 .absolute-center {
   top: 47%;
   left: 45%;

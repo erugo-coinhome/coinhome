@@ -33,7 +33,6 @@
           </ul>
           <div class="row q-col-gutter-lg">
             <q-img class="staking-btn"></q-img>
-            <q-img class="staking-btn2"></q-img>
           </div>
         </div>
         <div class="col staking-box">
@@ -204,15 +203,13 @@ ul {
   color: #727272;
   margin-bottom: 2vw;
 }
-.staking-btn,
-.staking-btn2 {
-  height: 12vw;
-}
 .staking-btn {
+  height: 12vw;
   background: url("images/staking_btn_03.png") no-repeat center center;
   background-size: contain;
 }
-.staking-btn2 {
+.staking-btn:hover {
+  height: 12vw;
   background: url("images/staking_btn_04.png") no-repeat center center;
   background-size: contain;
 }

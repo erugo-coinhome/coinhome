@@ -19,21 +19,9 @@
 
         <!-- 모달 -->
 
-        <q-card
-          style="
-            width: 100%;
-            max-width: 80vw;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.5);
-          "
-          v-show="modal"
-        >
+        <q-card class="modal-card" v-show="modal">
           <q-card-section style="display: flex">
-            <q-card-actions style="width: 10%; text-align: center; padding: 0">
+            <q-card-actions class="modal-card-header">
               <q-btn
                 flat
                 label="뒤로가기"
@@ -43,7 +31,7 @@
               />
             </q-card-actions>
             <div class="text-h6" style="width: 90%; text-align: center">
-              Terms of Agreement
+              {{ rows[0].notice }}
             </div>
           </q-card-section>
 
@@ -151,37 +139,37 @@ const columns = [
 const rows = [
   {
     no: 1,
-    notice: "I'm a really great person.",
+    notice: "Announcement",
     date: date,
   },
   {
     no: 2,
-    notice: "I'm a really great person.",
+    notice: "I'm a really great person.2",
     date: date,
   },
   {
     no: 3,
-    notice: "I'm a really great person.",
+    notice: "I'm a really great person.3",
     date: date,
   },
   {
     no: 4,
-    notice: "I'm a really great person.",
+    notice: "I'm a really great person.4",
     date: date,
   },
   {
     no: 5,
-    notice: "I'm a really great person.",
+    notice: "I'm a really great person.5",
     date: date,
   },
   {
     no: 6,
-    notice: "I'm a really great person.",
+    notice: "I'm a really great person.6",
     date: date,
   },
   {
     no: 7,
-    notice: "I'm a really great person.",
+    notice: "I'm a really great person.7",
     date: date,
   },
   {
@@ -271,7 +259,6 @@ export default {
 }
 .announcement-table {
   position: relative;
-  background-color: skyblue;
   margin: 1% 10%;
 }
 .announcement_page {
@@ -279,6 +266,21 @@ export default {
   left: 50%;
   bottom: -30%;
   transform: translateX(-50%);
+}
+.modal-card {
+  width: 100%;
+  max-width: 80vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  background-color: rgba(255, 255, 255);
+  .modal-card-header {
+    width: 10%;
+    text-align: center;
+    padding: 0;
+  }
 }
 @keyframes gradient {
   0% {
