@@ -45,11 +45,7 @@
             </q-img>
           </div>
         </q-carousel-slide>
-        <q-carousel-slide
-          :name="2"
-          class="teamadvisor-carousel"
-          @click="flipCard = !flipCard"
-        >
+        <q-carousel-slide :name="2" class="teamadvisor-carousel">
           <div class="row fit no-wrap">
             <q-img
               v-for="(q, i) in 3"
