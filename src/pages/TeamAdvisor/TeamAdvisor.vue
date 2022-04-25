@@ -110,8 +110,7 @@ export default {
   methods: {
     flipCardFun(e) {
       console.log(e);
-      // if (e === this.card[e].no) {
-      // }
+      // 자기자신
     },
   },
   setup() {

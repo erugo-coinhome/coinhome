@@ -150,7 +150,7 @@ export default {
 }
 .about-title {
   font-family: "S-CoreDream9";
-  font-size: 6rem;
+  font-size: 6vmax;
   margin: 10% auto;
   margin-bottom: 3%;
   text-align: center;
