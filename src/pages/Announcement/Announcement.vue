@@ -259,13 +259,12 @@ export default {
 }
 .announcement-table {
   position: relative;
-  margin: 10% 10%;
+  margin: 1% 10%;
 }
 .announcement_page {
   position: absolute;
   left: 50%;
-  bottom: -100%;
-  transform: translate(-50%, 300%);
+  transform: translateX(-50%);
 }
 .modal-card {
   width: 100%;
@@ -296,7 +295,7 @@ export default {
 @media screen and (max-width: 1024px) {
   .announcement-title {
     font-size: 5vmax;
-    margin: 15% 0;
+    margin-top: 10%;
   }
   .q-table {
     tbody tr {
@@ -310,29 +309,27 @@ export default {
     }
   }
   .announcement-table {
-    margin: 30% 5%;
+    margin: 1% 5%;
   }
   .announcement_page {
-    bottom: -100%;
+    bottom: -10%;
   }
   @media screen and (max-width: 768px) {
     .announcement-title {
       font-size: 4vmax;
-      margin: 20% 0;
-      margin-bottom: 40%;
+      margin-top: 20%;
     }
     .announcement-table {
-      margin: 30% 2%;
+      margin: 10% 2%;
     }
     .announcement_page {
-      bottom: -50%;
+      bottom: 0;
     }
   }
   @media screen and (max-width: 440px) {
     .announcement-title {
       font-size: 3vmax;
-      margin: 20% auto;
-      margin-bottom: 50%;
+      margin-top: 20%;
     }
   }
 }

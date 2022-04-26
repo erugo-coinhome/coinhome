@@ -11,9 +11,9 @@
         animated
         arrows
         infinite
-        height="30vw"
         prev-icon="img:assets/images/team_btn_02.png"
         next-icon="img:assets/images/team_btn_01.png"
+        class="team-carousel"
       >
         <q-carousel-slide
           :name="1"
@@ -25,20 +25,27 @@
               :key="i"
               class="rounded-borders full-height"
               :src="`assets/images/team0${i + 1}.png`"
-              @click="flipCardFun(i)"
+              @click="flipCard = !flipCard"
             >
               <img
-                :id="i"
                 src="assets/images/team-arrow-01.png"
                 class="teamadvisor-arrow"
               />
               <h4 class="title">{{ card[i].title }}</h4>
+              <h6 class="content">{{ card[i].name }}</h6>
               <!-- v-show -->
               <div class="row fit no-wrap" v-show="flipCard">
                 <q-img
                   class="rounded-borders full-height flipCard-img"
                   src="assets/images/team07.png"
                 >
+                  <h6 class="content2">
+                    <h6 class="cardtitle">
+                      {{ card[i].title }} <br />
+                      <h6 class="cardtitle2">{{ card[i].name }} <br /></h6>
+                    </h6>
+                    {{ card[i].content }}
+                  </h6>
                 </q-img>
               </div>
               <!-- v-show -->
@@ -52,19 +59,27 @@
               :key="i"
               class="rounded-borders full-height"
               :src="`assets/images/team0${i + 4}.png`"
-              @click="flipCardFun(i + 3)"
+              @click="flipCard = !flipCard"
             >
               <img
                 src="assets/images/team-arrow-01.png"
                 class="teamadvisor-arrow"
               />
               <h4 class="title">{{ card[i + 3].title }}</h4>
+              <h6 class="content">{{ card[i + 3].name }}</h6>
               <!-- v-show -->
               <div class="row fit no-wrap" v-show="flipCard">
                 <q-img
                   class="rounded-borders full-height flipCard-img"
                   src="assets/images/team07.png"
                 >
+                  <h6 class="content2">
+                    <h6 class="cardtitle">
+                      {{ card[i + 3].title }} <br />
+                      <h6 class="cardtitle2">{{ card[i + 3].name }} <br /></h6>
+                    </h6>
+                    {{ card[i + 3].content }}
+                  </h6>
                 </q-img>
               </div>
               <!-- v-show -->
@@ -98,20 +113,51 @@ export default {
   data() {
     return {
       card: [
-        { key: "ceo", title: "CEO", name: "Jung su Kim" },
-        { key: "design", title: "DESIGN TEAM", name: "" },
-        { key: "development", title: "DEVELOPMENT TEAM", name: "" },
-        { key: "techadvisor", title: "TECH ADVISOR", name: "Gyeong su Ham" },
-        { key: "techadvisor", title: "TECH ADVISOR", name: "Kwang je Cho" },
-        { key: "development", title: "DEVELOPMENT TEAM", name: "" },
+        {
+          key: "ceo",
+          title: "CEO",
+          name: "Jung su Kim",
+          content:
+            "I started my career at a law firm and grew my career at an asset management firm. When I worked for a law firm, I was interested in IT business while developing web software to optimize my work. I learned how money moves while working for an asset management company. These two thing naturally served as an opportunity for me to participate in the cryptocurrency business. I am currently leading the development of metaverse 'ErugoWorld' suitable for Web 3.0. I believe I am the most reasonable in this job.",
+        },
+        {
+          key: "design",
+          title: "DESIGN TEAM",
+          name: "",
+          content:
+            "Our design team is currently recruiting. The team is working on various and unique designs for 'ErugoWorld.' In addition, the team is participating in EWC and all related design works. We are confident that we are the world's best design team for 'ErugoWorld.' Please cheer for the developing 'ErugoWorld' design team.",
+        },
+        {
+          key: "development",
+          title: "DEVELOPMENT TEAM",
+          name: "",
+          content:
+            "Our design team is currently recruiting. The team is working on various and unique designs for 'ErugoWorld.' In addition, the team is participating in EWC and all related design works. We are confident that we are the world's best design team for 'ErugoWorld.' Please cheer for the developing 'ErugoWorld' design team.",
+        },
+        {
+          key: "techadvisor",
+          title: "TECH ADVISOR",
+          name: "Gyeong su Ham",
+          content:
+            "Erugoworld: Apr. 2022 ~ Tech Adviser KoreaHudiLab: Sep. 2021 ~Director or R&D institute DataCommand Inc.: Jun. 2017 ~ Aug. 2021 Director or R&D institute AgileSoDA: Mar. 2016 ~ May. 2017 Director or R&D institute the world's best design team for 'ErugoWorld.' Datastreamst: Jun. 2013 ~ Feb. 2016 Director or R&D institute",
+        },
+        {
+          key: "techadvisor",
+          title: "TECH ADVISOR",
+          name: "Kwang je Cho",
+          content:
+            "Erugoworld: Apr. 2022 ~  Tech Adviser INNORULES CO.,LTD: Apr. 2018 ~  Development Project Leader DataCommand Inc: May. 2017 ~ Mar. 2018 Development of solutions Codelab: Jan. 2015 ~ Jan. 2017 Development Team Leader JDF: Sep. 2009 ~ Dec. 2014 Development Team Leader",
+        },
+        { key: "", title: "", name: "", content: "" },
       ],
     };
   },
   methods: {
-    flipCardFun(e) {
-      console.log(e);
-      // 자기자신
-    },
+    // flipCardFun(e) {
+    //   var arrowBtn = document.querySelector(".teamadvisor-arrow");
+    //   var teamadimg = document.querySelector(".flipCard-img");
+    //   console.log(teamadimg);
+    // },
   },
   setup() {
     const flipCard = ref(false);
@@ -130,9 +176,21 @@ export default {
   overflow: hidden;
   position: relative;
 }
+.team-carousel {
+  width: 90%;
+  margin: 0 auto;
+  height: 33vw;
+  img {
+    padding: 7%;
+  }
+}
+.q-carousel__arrow .q-icon img {
+  width: 4vw;
+  height: 4vw;
+}
 .teamadvisor-title {
   font-family: "S-CoreDream9";
-  font-size: 6rem;
+  font-size: 6vmax;
   margin: 10% auto;
   margin-bottom: 3%;
   text-align: center;
@@ -143,13 +201,9 @@ export default {
     text-align: center;
   }
 }
-.q-icon > img {
-  width: 100px;
-  height: 100px;
-}
 
 .teamadvisor-arrow {
-  width: 20%;
+  width: 28%;
   position: absolute;
   bottom: 5%;
   right: 5%;
@@ -162,16 +216,43 @@ export default {
 .q-img__image {
   position: relative;
   object-fit: contain;
-  height: 100%;
 }
-.title {
+.title,
+.content,
+.content2 {
   position: absolute;
   font-family: "S-coreDream7";
   font-size: 2vw;
+  width: 80%;
   left: 50%;
   top: 65%;
   transform: translate(-50%, -40%);
   line-height: 2vw;
+}
+.content {
+  font-size: 1.5vw;
+  top: 72%;
+}
+.content2 {
+  font-family: "S-coreDream4";
+  color: #707070;
+  text-align: left;
+  align-items: flex-start;
+  font-size: 0.8vw;
+  top: 40%;
+  line-height: 1.89;
+  .cardtitle {
+    font-family: "S-coreDream7";
+    color: #000;
+    padding-bottom: 10%;
+    .cardtitle2 {
+      font-family: "S-coreDream4";
+      font-size: 1vw;
+    }
+  }
+}
+.q-carousel__slide {
+  padding: 0;
 }
 .q-img__content > div {
   background-color: transparent;
@@ -179,18 +260,48 @@ export default {
   height: 100%;
   padding: 0;
 }
-.advisor {
-  position: relative;
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  height: 100%;
-}
+.advisor,
 .partner {
   position: relative;
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   height: 100%;
+  img {
+    width: 25vw;
+  }
+}
+
+@media all and (max-width: 1024px) {
+  .teamadvisor-title {
+    font-size: 5vmax;
+  }
+  .advisor,
+  .partner {
+    img {
+      width: 30vw;
+    }
+  }
+}
+@media all and (max-width: 420px) {
+  .teamadvisor-title {
+    font-size: 4vmax;
+    margin-top: 15%;
+  }
+  .title {
+    width: 80%;
+    font-size: 1.7vw;
+    line-height: 3vw;
+    font-family: "S-coreDream6";
+  }
+  .content {
+    font-size: 1.2vw;
+    font-family: "S-coreDream4";
+  }
+  .q-carousel__arrow .q-icon img {
+    width: 5vw;
+    height: 5vw;
+  }
 }
 </style>
