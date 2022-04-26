@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="Bigcontainer">
-      <div class="headBar row justify-center">
-        <h2 class="logo col-9" @click="$router.push('/main')"></h2>
-        <div class="btnWrapper col-2">
+      <div class="headBar">
+        <h2 class="logo" @click="$router.push('/main')"></h2>
+        <div class="btnWrapper">
           <!-- back 버튼 -->
-          <div class="webMenu row">
-            <div class="col-5" @click="$router.back()">BACK</div>
-            <div class="col-5" @click="dialog = true">MENU</div>
+          <div class="webMenu">
+            <div @click="$router.back()">BACK</div>
+            <div @click="dialog = true">MENU</div>
           </div>
         </div>
         <!-- 화면 전체 메뉴 dialog -->
@@ -121,21 +121,26 @@ export default {
 </script>
 <style lang="scss" scope>
 .headBar {
-  background-color: rgba($color: #fff, $alpha: 0.5);
-  padding: 2% 0;
+  background-color: rgba($color: #fff, $alpha: 0.6);
   width: 100%;
   position: fixed;
-  z-index: 1;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  padding: 0.5% 0;
+  z-index: 100;
   top: 0;
   border-bottom: 0.5px solid #707070;
 }
 .logo,
 .btnWrapper {
-  line-height: 4vw;
+  line-height: 3vw;
 }
 .logo {
-  background: url("mainLogo.png") no-repeat;
+  background: url("mainLogo.png") no-repeat center;
+  background-position: left;
   background-size: contain;
+  width: 70%;
   text-indent: -99999999999999px;
 }
 .btnWrapper {
@@ -146,7 +151,7 @@ export default {
   text-align: center;
   line-height: 7vmin;
 }
-.menuLink:hover {
+.menuLink:hover > a {
   color: #ff6906;
 }
 .closeBtn::after {
@@ -163,22 +168,26 @@ export default {
   border-radius: 50%;
 }
 .webMenu {
+  width: 100%;
+  display: flex;
   letter-spacing: 5px;
-  font-size: 2vmax;
+  font-size: 1.5vmax;
   text-align: center;
   font-family: "S-CoreDream8";
 }
 .webMenu > div {
   position: relative;
-  margin-right: 5%;
+  display: inline-block;
+  width: 8vmax;
+  // background-color: yellowgreen;
 }
 .webMenu > div::after {
   content: "";
   display: block;
   border: 1px solid #707070;
   position: absolute;
-  width: 3vw;
-  height: 3vw;
+  width: 3vmax;
+  height: 3vmax;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
@@ -186,96 +195,27 @@ export default {
 }
 
 // 미디어쿼리
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 920px) {
   .logo,
   .btnWrapper {
-    line-height: 5vw;
+    line-height: 4vmax;
   }
   .headBar {
-    justify-content: space-around;
-  }
-  .webMenu {
-    font-size: 2.2vmax;
-    :first-child {
-      right: 30%;
-    }
-    :nth-child(2) {
-      right: 10%;
-    }
+    padding: 1% 0;
   }
 }
-@media screen and (max-width: 1024px) {
-  .webMenu {
-    font-size: 2vmax;
-    :first-child {
-      right: 30%;
-    }
-    :nth-child(2) {
-      right: 10%;
-    }
+@media screen and (max-width: 760px) {
+  .logo {
+    width: 50%;
   }
-}
-@media screen and (max-width: 768px) {
   .menuLink {
     font-size: 8vmin;
     line-height: 10vmin;
   }
-  .logo,
-  .btnWrapper {
-    line-height: 6vw;
-  }
-  .webMenu {
-    font-size: 1.7vmax;
-    letter-spacing: 2.5px;
-    div::after {
-      width: 4vw;
-      height: 4vw;
-    }
-    :first-child {
-      right: 40%;
-    }
-    :nth-child(2) {
-      right: 10%;
-    }
-  }
 }
-@media screen and (max-width: 596px) {
-  .headBar {
-    justify-content: space-around;
-  }
-  .q-btn {
-    position: relative;
-  }
-
+@media screen and (max-width: 420px) {
   .webMenu {
-    font-size: 1.5vmax;
-    letter-spacing: 1.2px;
-    font-family: "S-CoreDream7";
-    div::after {
-      left: 90%;
-    }
-    :first-child {
-      right: 50%;
-    }
-    :nth-child(2) {
-      right: 15%;
-    }
-  }
-  @media screen and (max-width: 420px) {
-    .webMenu {
-      font-size: 1vmax;
-      letter-spacing: 1.1px;
-      font-family: "S-CoreDream6";
-      div::after {
-        left: 90%;
-      }
-      :first-child {
-        right: 60%;
-      }
-      :nth-child(2) {
-        right: 20%;
-      }
-    }
+    letter-spacing: 2px;
   }
 }
 </style>

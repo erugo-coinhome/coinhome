@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md row items-start q-gutter-md readmore">
+  <div class="q-pa-md row readmore">
     <q-card class="my-card" flat bordered>
       <q-img src="assets/images/readmore.png" class="readmore-img">
         <div>
@@ -67,7 +67,6 @@ export default {
   font-family: "S-CoreDream7";
   font-weight: 700;
   background: transparent;
-  padding-left: 7%;
 }
 .readmore-title {
   font-family: "S-CoreDream7";
@@ -75,12 +74,22 @@ export default {
 .readmore-content {
   font-family: "S-CoreDream4";
 }
+
 .readmore-btn {
-  right: 45%;
   width: 50px;
+  text-align: center;
   cursor: pointer;
 }
-.readmore-padding {
-  padding: 30px;
+.row {
+  display: flex;
+  flex-direction: column-reverse;
+}
+@media screen and (max-width: 768px) {
+  .readmore-btn {
+    width: 40px;
+  }
+  .readmore-padding {
+    margin-top: 5%;
+  }
 }
 </style>

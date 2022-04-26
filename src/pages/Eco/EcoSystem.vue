@@ -46,13 +46,13 @@ export default {
 }
 .eco-title {
   font-family: "S-CoreDream9";
-  font-size: 6rem;
-  margin: 10% auto;
+  font-size: 6vmax;
+  margin: 15% auto;
   margin-bottom: 3%;
   text-align: center;
 }
 .eco-content {
-  width: 50%;
+  width: 60%;
   margin: 3% auto;
   line-height: 3rem;
   text-align: center;
@@ -63,5 +63,14 @@ export default {
 .eco-img2 {
   position: relative;
   width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .eco-title {
+    margin-top: 20%;
+  }
+  .eco-content {
+    font-size: 1.8vmax;
+    width: 70%;
+  }
 }
 </style>

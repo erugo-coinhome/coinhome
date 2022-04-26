@@ -9,7 +9,7 @@
     <q-img
       class="pagescroller"
       src="assets/images/TOP.png"
-      style="width: 150px"
+      style="width: 10vmin"
     />
   </q-page-scroller>
 </template>

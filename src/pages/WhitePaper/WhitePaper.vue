@@ -93,7 +93,7 @@ export default {
 }
 .whitepaper-title {
   font-family: "S-CoreDream9";
-  font-size: 6rem;
+  font-size: 6vmax;
   margin: 10% auto;
   margin-bottom: 3%;
   text-align: center;
@@ -102,7 +102,7 @@ export default {
 .whitepaper-content2 {
   width: 60%;
   margin: 3% auto;
-  line-height: 3rem;
+  line-height: 3vmax;
   text-align: center;
   font-family: "S-CoreDream6";
   color: #363636;
@@ -134,11 +134,11 @@ export default {
 @for $i from 1 to 5 {
   .whitepaper-img#{$i} {
     background: url("asset/images/wp_0#{$i}.png") no-repeat center;
-    background-size: cover;
+    background-size: contain;
   }
   .whitepaper-img#{$i}:hover {
     background: url("asset/images/wp_0#{$i}_2.png") no-repeat center;
-    background-size: cover;
+    background-size: contain;
   }
 }
 
@@ -146,4 +146,29 @@ export default {
 //   background: url("images/wp_01_2.png") no-repeat center;
 //   background-size: cover;
 // }
+@media all and (max-width: 768px) {
+  .whitepaper-title {
+    margin-top: 15%;
+    font-size: 5vmax;
+  }
+  .whitepaper-content,
+  .whitepaper-content2 {
+    width: 80%;
+    margin: 5% auto;
+    line-height: 3.5vmax;
+  }
+  .whitepaper-content2 {
+    font-size: 1.8vmax;
+  }
+  .whitepaper-file {
+    display: block;
+    width: 100%;
+    .q-img {
+      width: 100vw;
+    }
+    .img-text {
+      font-size: 2vmax;
+    }
+  }
+}
 </style>

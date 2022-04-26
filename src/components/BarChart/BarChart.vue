@@ -15,7 +15,7 @@ export default {
           labels: ["6Months", "9Months", "12Months"],
           datasets: [
             {
-              label: "",
+              label: "Line Chart",
               data: [3.2, 4.2, 6.2],
               borderWidth: 0.5,
               stacked: "combined",
@@ -34,7 +34,7 @@ export default {
               order: 0,
             },
             {
-              label: "Interest rate",
+              label: "Bar Chart",
               data: [3, 4, 6],
               backgroundColor: [
                 "rgba(225, 122, 24, .8)",

@@ -6,19 +6,17 @@
       <div class="container">
         <div class="cardBoxs">
           <div
-            class="my-card"
+            class="my-card q-gutter-xs justify-center menu-card"
             v-for="(m, i) in mainBox"
             :key="i"
             @mouseover="hover(m.key)"
             @mouseleave="leave(m.key)"
           >
-            <img
-              :src="m.src"
-              style="width: 90%"
-              :id="m.key"
+            <img :src="m.src" :id="m.key" @click="$router.push(`/${m.key}`)" />
+            <div
+              class="absolute-center text-center mainTitle"
               @click="$router.push(`/${m.key}`)"
-            />
-            <div class="absolute-center text-center mainTitle">
+            >
               {{ m.name }}
             </div>
             <div class="bottomBtn" :id="m.name">
@@ -27,9 +25,10 @@
           </div>
         </div>
         <div class="arrows">
-          <div class="arrowRight" @click="toLeft()">
+          <div class="arrowLeft" @click="toLeft()">
             <img src="assets/images/leftBtn.png" />
           </div>
+          <div class="arrowLine"></div>
           <div class="arrowRight" @click="toRight()">
             <img src="assets/images/rightBtn.png" />
           </div>
@@ -43,6 +42,9 @@
 import TotalCursor from "@/components/Cursor/TotalCursor.vue";
 import Header from "../../components/Header/Header.vue";
 import { ref } from "vue";
+
+const screenWidth = screen.availWidth;
+const screenHeight = screen.availHeight;
 
 export default {
   data() {
@@ -105,33 +107,47 @@ export default {
   components: { Header, TotalCursor },
   methods: {
     toRight() {
+      var arrowRight = document.querySelector(".arrowRight");
+      var arrowLeft = document.querySelector(".arrowLeft");
       var cardBoxs = document.querySelector(".cardBoxs");
-      cardBoxs.style.setProperty("transform", `translateX(-50%)`);
+      if (screenWidth > 1024) {
+        cardBoxs.style.setProperty("transform", `translateX(-50%)`);
+        cardBoxs.style.setProperty("transition", `1.3s`);
+        arrowRight.style.setProperty("opacity", "0.3");
+        arrowLeft.style.setProperty("opacity", "1");
+      }
     },
     toLeft() {
+      var arrowRight = document.querySelector(".arrowRight");
+      var arrowLeft = document.querySelector(".arrowLeft");
       var cardBoxs = document.querySelector(".cardBoxs");
-      cardBoxs.style.setProperty("transform", `translateX(0%)`);
+      if (screenWidth > 1024) {
+        cardBoxs.style.setProperty("transform", `translateX(0%)`);
+        cardBoxs.style.setProperty("transition", `1.3s`);
+        arrowLeft.style.setProperty("opacity", "0.3");
+        arrowRight.style.setProperty("opacity", "1");
+      }
     },
     hover(e) {
       var name = document.querySelector(`#${e}`);
       var bottomBtn = document.querySelector(`#${e} ~ .bottomBtn`);
-      name.style.setProperty("transform", "scale(1.2, 1.2)");
-      bottomBtn.style.setProperty("transform", "scale(1.4, 1.4)");
+      if (screenWidth > 1024) {
+        name.style.setProperty("transform", "scale(1.1)");
+        bottomBtn.style.setProperty("width", "40%");
+      }
     },
     leave(e) {
       var name = document.querySelector(`#${e}`);
       var bottomBtn = document.querySelector(`#${e} ~ .bottomBtn`);
-      name.style.setProperty("transform", "scale(1, 1)");
-      bottomBtn.style.setProperty("transform", "scale(1, 1)");
+      if (screenWidth > 1024) {
+        name.style.setProperty("transform", "scale(1)");
+        bottomBtn.style.setProperty("width", "30%");
+      }
     },
   },
 };
 </script>
 <style lang="scss" scope>
-.absolute-center {
-  top: 47%;
-  left: 45%;
-}
 .mainBg {
   width: 100%;
   height: 100vh;
@@ -142,36 +158,51 @@ export default {
   overflow: hidden;
 }
 .mainBg::after {
-  background: url(./images/mainBg.png) no-repeat center;
   content: "";
   display: block;
-  position: absolute;
-  top: 0;
-  background-size: cover;
-  opacity: 0.6;
   width: 100%;
   height: 100%;
+  position: absolute;
+  background: url(./images/mainBg.png) no-repeat center;
+  top: 0;
+  background-size: cover;
+  opacity: 0.5;
   z-index: 0;
 }
 .container {
-  top: 20%;
+  top: 45%;
+  transform: translateY(-50%);
   z-index: 5;
   position: absolute;
+}
+.menu-card {
+  height: 100%;
+  position: relative;
+}
+.menu-card img {
+  width: 90%;
+  margin: 0;
+  transition: 0.4s;
 }
 .cardBoxs {
   display: flex;
   width: 200%;
+  justify-content: space-around;
 }
 .my-card {
   position: relative;
 }
-.cardBoxs > .my-card:first-child {
-  margin-left: 3%;
+.my-card:first-child,
+.my-card:nth-child(5) {
+  margin-left: 1%;
 }
-.cardBoxs > .my-card:nth-child(5) {
-  margin-left: 5.736%;
-}
+
 .mainTitle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-55%, -50%);
+  padding: 0;
   font-family: "vitro";
   font-weight: 200;
   font-size: 2.2vw;
@@ -182,32 +213,31 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -18vw;
-}
-.arrows {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  .arrowRight,
-  .arrowLeft {
-    margin-top: 10%;
+  bottom: -100%;
+  width: 30%;
+  transition: 0.4s;
+  img {
+    width: 100%;
   }
 }
-// #ABOUT {
-//   animation: name duration timing-function delay iteration-count direction
-//     fill-mode;
-// }
-// @keyframes about {
-//   0% {
-//     transform: scale(1, 1);
-//   }
-//   50% {
-//     transform: scale(1.2, 1.2);
-//   }
-//   100% {
-//     transform: scale(1, 1);
-//   }
-// }
+.arrows {
+  display: flex;
+  position: relative;
+  justify-content: space-evenly;
+  margin-top: 5%;
+  .arrowRight > img,
+  .arrowLeft > img {
+    width: 10vw;
+    right: 50%;
+  }
+}
+.arrowLine {
+  position: absolute;
+  top: 47%;
+  width: 47%;
+  border-bottom: 5px solid rgba($color: #ffffff, $alpha: 0.5);
+  z-index: -1s;
+}
 
 @keyframes gradient {
   0% {
@@ -218,6 +248,59 @@ export default {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+// 미디어쿼리
+@media screen and (max-width: 1920px) {
+}
+@media screen and (max-width: 1770px) {
+}
+@media screen and (max-width: 1280px) {
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+  .mainBg {
+    height: 450vh;
+  }
+  .container {
+    top: 2%;
+  }
+  .cardBoxs {
+    width: 100%;
+    display: block;
+    text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .cardBoxs > .my-card {
+    width: 100vw;
+    margin: 0;
+    padding-top: 10%;
+  }
+
+  .mainTitle {
+    font-size: 9vw;
+    color: white;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .arrows,
+  .bottomBtn {
+    display: none;
+  }
+}
+@media screen and (max-width: 576px) {
+  .mainBg {
+    height: 400vh;
+  }
+}
+@media screen and (max-width: 420px) {
+  .mainBg {
+    height: 450vh;
   }
 }
 </style>

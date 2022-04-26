@@ -36,7 +36,7 @@
             <div class="text-h4 numbering">{{ r.number }}</div>
           </template>
           <template #title>
-            <div class="text-h6 q-mt-sm q-mb-xs">
+            <div class="text-h6 q-mt-sm q-mb-xs readmoreTitle">
               {{ r.title }}
             </div>
           </template>
@@ -194,8 +194,10 @@ export default {
 }
 .numbering {
   font-family: "S-CoreDream7";
-  min-height: 2vw;
-  max-height: 2.1vw;
+  font-size: 2vmin;
+  min-height: 1.5vw;
+  line-height: 1.5vw;
+  max-height: 1.5vw;
 }
 .promotion-video,
 .about-img {
@@ -216,7 +218,89 @@ export default {
   position: relative;
   margin-top: 45%;
 }
-// [data-aos^="zoom"][data-aos^="zoom"] {
-//   opacity: 1;
-// }
+
+// 미디어쿼리
+@media screen and (max-width: 1280px) {
+  .about-subtitle {
+    font-size: 4vmin;
+  }
+  .about-content,
+  .about-content2,
+  .about-content3 {
+    font-size: 1.8vmin;
+  }
+  .readmoreTitle {
+    font-size: 1.5vmin;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .line {
+    height: 100px;
+  }
+  .about-content,
+  .about-content2,
+  .about-content3 {
+    font-size: 1.7vmin;
+    width: 70%;
+  }
+  .readmoreTitle {
+    line-height: 2.5vmin;
+  }
+}
+@media screen and (max-width: 768px) {
+  .about-title {
+    margin-top: 20%;
+  }
+  .readmore-bg {
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .about-content,
+  .about-content2,
+  .about-content3 {
+    font-size: 1.8vmax;
+    line-height: 5vmin;
+    width: 70%;
+  }
+  .numbering {
+    font-size: 3vmin;
+  }
+  .readmoreTitle {
+    font-size: 2.5vmin;
+    line-height: 3vmin;
+  }
+  .readmore-img {
+    height: 20%;
+    .q-img__image {
+      width: 100%;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .line {
+    height: 80px;
+  }
+  .about-content,
+  .about-content2,
+  .about-content3 {
+    font-size: 1.7vmax;
+    line-height: 5vmin;
+    width: 75%;
+  }
+  .about-content {
+    font-size: 1.4vmax;
+  }
+  .readmoreTitle {
+    font-size: 4vmin;
+    line-height: 6vmin;
+  }
+}
+@media screen and (max-width: 440px) {
+  .about-title {
+    font-size: 4vmax;
+  }
+}
 </style>

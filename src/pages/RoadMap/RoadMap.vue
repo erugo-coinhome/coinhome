@@ -389,13 +389,13 @@ export default {
 .roadmap-title,
 .roadmap-title2 {
   font-family: "S-CoreDream9";
-  font-size: 6rem;
+  font-size: 6vmax;
   margin: 10% auto;
   margin-bottom: 3%;
   text-align: center;
 }
 .roadmap-title2 {
-  font-size: 2rem;
+  font-size: 1vmin;
 }
 .roadmap-title3 {
   font-family: "S-CoreDream6";
@@ -406,6 +406,7 @@ export default {
 .roadmap-subtitle2 {
   font-family: "S-CoreDream6";
   margin: 0% auto;
+  font-size: 5vmax;
   text-align: center;
   width: 100%;
 }
@@ -495,5 +496,7 @@ export default {
     width: 90%;
     text-align: center;
   }
+}
+@media all and (max-width: 1024px) {
 }
 </style>

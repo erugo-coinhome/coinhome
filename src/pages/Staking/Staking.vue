@@ -21,7 +21,7 @@
         class="q-pb-md row q-gutter-sm"
         style="width: 85%; margin: 0 auto; text-align: start"
       >
-        <div class="col">
+        <div class="col col-md-6 col-sm-12 staking-bottom">
           <div class="staking-subtitle2 text-h3">
             Precautions upon Staking Option Selection
           </div>
@@ -31,12 +31,12 @@
             <li>{{ staking.content }}</li>
             <li>{{ staking.content }}</li>
           </ul>
-          <div class="row q-col-gutter-lg">
+          <div class="row q-col-gutter-lg" @click="stakingPopup">
             <q-img class="staking-btn"></q-img>
           </div>
         </div>
-        <div class="col staking-box">
-          <BarChart style="width: 90%; height: 500px; margin: auto" />
+        <div class="col col-md-5 col-sm-12 staking-box">
+          <BarChart style="width: 90%; height: 550px; margin: auto" />
         </div>
       </div>
       <PageController />
@@ -115,7 +115,15 @@ export default {
         { passive: true }
       );
     },
+    stakingPopup() {
+      open(
+        "https://erugocoin.com/stacking",
+        "Staking",
+        "width=1400,height=750"
+      );
+    },
   },
+
   mounted() {
     this.stakingNum();
     this.interestNum();
@@ -130,7 +138,7 @@ export default {
 }
 .staking-title {
   font-family: "S-CoreDream9";
-  font-size: 6rem;
+  font-size: 6vmax;
   margin: 10% auto;
   margin-bottom: 3%;
   text-align: center;
@@ -142,6 +150,8 @@ export default {
   margin-top: 10%;
   text-align: center;
   width: 100%;
+  font-size: 4vmax;
+  line-height: 5vmax;
 }
 .staking-subtitle2 {
   text-align: start;
@@ -150,7 +160,7 @@ export default {
 .staking-content2 {
   width: 60%;
   margin: 3% auto;
-  line-height: 3rem;
+  line-height: 3vmax;
   text-align: center;
   font-family: "S-CoreDream4";
   color: #727272;
@@ -215,5 +225,32 @@ ul {
 }
 .staking-box {
   margin: auto;
+}
+@media screen and (max-width: 1024px) {
+  .staking-content,
+  .staking-content2 {
+    font-size: 2vmax;
+    line-height: 2.5vmax;
+  }
+  @media screen and (max-width: 768px) {
+    .staking-title {
+      margin-top: 15%;
+    }
+    .staking-subtitle,
+    .staking-subtitle2 {
+      font-size: 3vmax;
+    }
+    .staking-content,
+    .staking-content2 {
+      font-size: 1.5vmax;
+      line-height: 2.5vmax;
+    }
+    .staking-btn {
+      margin-top: 5%;
+    }
+    .staking-box {
+      height: 500px;
+    }
+  }
 }
 </style>
