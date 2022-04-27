@@ -23,21 +23,24 @@
             <q-img
               v-for="(q, i) in 3"
               :key="i"
-              class="rounded-borders full-height"
+              :class="`rounded-borders full-height front${i + 1}`"
               :src="`assets/images/team0${i + 1}.png`"
-              @click="flipCard = !flipCard"
+              @mouseover="flipCardFun(i + 1)"
+              @mouseleave="flipCardBack(i + 1)"
             >
               <img
                 src="assets/images/team-arrow-01.png"
                 class="teamadvisor-arrow"
+                :id="`arrowBtn${i + 1}`"
               />
               <h4 class="title">{{ card[i].title }}</h4>
               <h6 class="content">{{ card[i].name }}</h6>
               <!-- v-show -->
-              <div class="row fit no-wrap" v-show="flipCard">
+              <div :class="`row fit no-wrap toggleBack${i + 1}`">
                 <q-img
-                  class="rounded-borders full-height flipCard-img"
+                  :class="`rounded-borders full-height back${i + 1}`"
                   src="assets/images/team07.png"
+                  v-show="flipCard"
                 >
                   <h6 class="content2">
                     <h6 class="cardtitle">
@@ -46,20 +49,29 @@
                     </h6>
                     {{ card[i].content }}
                   </h6>
+                  <img
+                    src="assets/images/teamadvisor-back.png"
+                    class="teamadvisor-arrow hide"
+                    :id="`arrowBtn${i + 1}`"
+                    @click="flipCardFun(i + 1)"
+                  />
                 </q-img>
               </div>
               <!-- v-show -->
             </q-img>
           </div>
         </q-carousel-slide>
+
+        <!-- 두번쨰 -->
         <q-carousel-slide :name="2" class="teamadvisor-carousel">
           <div class="row fit no-wrap">
             <q-img
               v-for="(q, i) in 3"
               :key="i"
-              class="rounded-borders full-height"
+              :class="`rounded-borders full-height front${i + 4}`"
               :src="`assets/images/team0${i + 4}.png`"
-              @click="flipCard = !flipCard"
+              @mouseover="flipCardFun(i + 4)"
+              @mouseleave="flipCardBack(i + 4)"
             >
               <img
                 src="assets/images/team-arrow-01.png"
@@ -68,10 +80,11 @@
               <h4 class="title">{{ card[i + 3].title }}</h4>
               <h6 class="content">{{ card[i + 3].name }}</h6>
               <!-- v-show -->
-              <div class="row fit no-wrap" v-show="flipCard">
+              <div :class="`row fit no-wrap toggleBack${i + 4}`">
                 <q-img
-                  class="rounded-borders full-height flipCard-img"
+                  :class="`rounded-borders full-height  back${i + 4}`"
                   src="assets/images/team07.png"
+                  v-show="flipCard"
                 >
                   <h6 class="content2">
                     <h6 class="cardtitle">
@@ -80,6 +93,11 @@
                     </h6>
                     {{ card[i + 3].content }}
                   </h6>
+                  <img
+                    src="assets/images/teamadvisor-back.png"
+                    class="teamadvisor-arrow hide"
+                    @click="flipCardFun(i + 4)"
+                  />
                 </q-img>
               </div>
               <!-- v-show -->
@@ -121,6 +139,20 @@ export default {
             "I started my career at a law firm and grew my career at an asset management firm. When I worked for a law firm, I was interested in IT business while developing web software to optimize my work. I learned how money moves while working for an asset management company. These two thing naturally served as an opportunity for me to participate in the cryptocurrency business. I am currently leading the development of metaverse 'ErugoWorld' suitable for Web 3.0. I believe I am the most reasonable in this job.",
         },
         {
+          key: "techadvisor",
+          title: "TECH ADVISOR",
+          name: "Gyeong su Ham",
+          content:
+            "Erugoworld: Apr. 2022 ~ Tech Adviser KoreaHudiLab: Sep. 2021 ~Director or R&D institute DataCommand Inc.: Jun. 2017 ~ Aug. 2021 Director or R&D institute AgileSoDA: Mar. 2016 ~ May. 2017 Director or R&D institute the world's best design team for 'ErugoWorld.' Datastreamst: Jun. 2013 ~ Feb. 2016 Director or R&D institute",
+        },
+        {
+          key: "techadvisor",
+          title: "TECH ADVISOR",
+          name: "Kwang je Cho",
+          content:
+            "Erugoworld: Apr. 2022 ~  Tech Adviser INNORULES CO.,LTD: Apr. 2018 ~  Development Project Leader DataCommand Inc: May. 2017 ~ Mar. 2018 Development of solutions Codelab: Jan. 2015 ~ Jan. 2017 Development Team Leader JDF: Sep. 2009 ~ Dec. 2014 Development Team Leader",
+        },
+        {
           key: "design",
           title: "DESIGN TEAM",
           name: "",
@@ -135,29 +167,35 @@ export default {
             "Our design team is currently recruiting. The team is working on various and unique designs for 'ErugoWorld.' In addition, the team is participating in EWC and all related design works. We are confident that we are the world's best design team for 'ErugoWorld.' Please cheer for the developing 'ErugoWorld' design team.",
         },
         {
-          key: "techadvisor",
-          title: "TECH ADVISOR",
-          name: "Gyeong su Ham",
-          content:
-            "Erugoworld: Apr. 2022 ~ Tech Adviser KoreaHudiLab: Sep. 2021 ~Director or R&D institute DataCommand Inc.: Jun. 2017 ~ Aug. 2021 Director or R&D institute AgileSoDA: Mar. 2016 ~ May. 2017 Director or R&D institute the world's best design team for 'ErugoWorld.' Datastreamst: Jun. 2013 ~ Feb. 2016 Director or R&D institute",
+          key: "you",
+          title: "... & YOU",
+          name: "",
+          content: "you are the next member of our team",
         },
-        {
-          key: "techadvisor",
-          title: "TECH ADVISOR",
-          name: "Kwang je Cho",
-          content:
-            "Erugoworld: Apr. 2022 ~  Tech Adviser INNORULES CO.,LTD: Apr. 2018 ~  Development Project Leader DataCommand Inc: May. 2017 ~ Mar. 2018 Development of solutions Codelab: Jan. 2015 ~ Jan. 2017 Development Team Leader JDF: Sep. 2009 ~ Dec. 2014 Development Team Leader",
-        },
-        { key: "", title: "", name: "", content: "" },
       ],
     };
   },
   methods: {
-    // flipCardFun(e) {
-    //   var arrowBtn = document.querySelector(".teamadvisor-arrow");
-    //   var teamadimg = document.querySelector(".flipCard-img");
-    //   console.log(teamadimg);
-    // },
+    flipCardFun(e) {
+      var front = document.querySelector(`.front${e}`);
+      //var back = document.querySelector(`.back${e}`);
+      var toggleBack = document.querySelector(`.toggleBack${e}`);
+      front.classList.toggle("toggleCard");
+      console.log(front);
+      toggleBack.classList.toggle("toggleCard");
+    },
+    flipCardBack(e) {
+      var front = document.querySelector(`.front${e}`);
+      var back = document.querySelector(`.back${e}`);
+
+      console.log(back);
+      var toggleBack = document.querySelector(`.toggleBack${e}`);
+
+      front.classList.remove("toggleBack");
+      toggleBack.classList.add("toggleBack");
+      back.removeAttribute("style");
+      back.classList.toggle("toggleCard");
+    },
   },
   setup() {
     const flipCard = ref(false);
@@ -272,6 +310,30 @@ export default {
   img {
     width: 25vw;
   }
+}
+.toggleCard {
+  visibility: collapse;
+}
+.toggleBack {
+  visibility: visible;
+}
+.hide {
+  visibility: visible;
+}
+@for $i from 1 to 7 {
+  // .front#{$i}:hover {
+  //   visibility: collapse;
+  // }
+  // .toggleBack {
+  //   background: #000;
+  // }
+
+  // #teamadvisor-img#{$i}:after {
+  //   content: "";
+  //   // background: url("./images/team07.png") no-repeat center;
+  //   background-size: contain;
+  //   background: #000;
+  // }
 }
 
 @media all and (max-width: 1024px) {

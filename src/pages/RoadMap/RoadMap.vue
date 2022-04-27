@@ -26,7 +26,7 @@
                 v-for="(r, i) in roadmap"
                 :key="i"
                 :name="i"
-                class="col-3"
+                class="col-3 list-item"
                 :id="r.title"
                 :src="r.src"
               >
@@ -42,7 +42,7 @@
                 v-for="(r, i) in roadmap2"
                 :key="i + 4"
                 :name="i + 4"
-                class="col-3"
+                class="col-3 list-item"
                 :id="r.title"
                 :src="r.src"
               >
@@ -83,7 +83,6 @@
       <div class="roadmap-subtitle2 text-h2">OF METAVERSE</div>
       <q-img src="assets/images/roadmap_map.png">
         <div class="line-vertical" />
-
         <!-- Metaverse -->
         <div class="roadmapmeta">
           <q-carousel
@@ -270,15 +269,16 @@ export default {
   data() {
     return {
       roadmap: [
-        { title: "LBANK", src: "assets/images/roadmap_01.png" },
-        { title: "CONSBIT", src: "assets/images/roadmap_02.png" },
-        { title: "BITTREX", src: "assets/images/roadmap_03.png" },
+        { title: "XEXC", src: "assets/images/roadmap_01.png" },
+        { title: "LBANK", src: "assets/images/roadmap_02.png" },
+        { title: "CONSBIT", src: "assets/images/roadmap_03.png" },
+        { title: "BITTREX", src: "assets/images/roadmap_04.png" },
       ],
       roadmap2: [
-        { title: "coinUtop", src: "assets/images/roadmap_04.png" },
-        { title: "TENNTEN", src: "assets/images/roadmap_05.png" },
-        { title: "Btrade", src: "assets/images/roadmap_06.png" },
-        { title: "XTCOM", src: "assets/images/roadmap_07.png" },
+        { title: "coinUtop", src: "assets/images/roadmap_05.png" },
+        { title: "TENNTEN", src: "assets/images/roadmap_06.png" },
+        { title: "Btrade", src: "assets/images/roadmap_07.png" },
+        { title: "XTCOM", src: "assets/images/roadmap_08.png" },
       ],
       roadmap3: [
         {
@@ -386,6 +386,10 @@ export default {
   overflow: hidden;
   position: relative;
 }
+.list-item {
+  display: flex;
+  width: 50px;
+}
 .roadmap-title,
 .roadmap-title2 {
   font-family: "S-CoreDream9";
@@ -421,7 +425,7 @@ export default {
 }
 .line-vertical {
   position: relative;
-  border-top: 0.5px solid #cfcfcf;
+  border-top: 0.5px solid black;
   position: absolute;
   width: 100vw;
   top: 50%;

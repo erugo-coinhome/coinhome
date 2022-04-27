@@ -4,7 +4,38 @@
     <q-layout class="announcement">
       <div class="announcement-title">ANNOUNCEMENT</div>
       <div class="q-pa-md announcement-table">
-        <q-table
+        <!-- 테이블 -->
+        <table class="table" style="border-collapse: collapse">
+          <thead>
+            <tr style="width: 10%; height: 5vmax; font-size: 1.2vmax">
+              <th>NO</th>
+
+              <th>Notice</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody v-for="(a, i) in 3" :key="i">
+            <tr
+              data-toggle="collapse"
+              :data-target="`#tr${i + 1}`"
+              class="accordion-toggle"
+            >
+              <td>{{ i }}</td>
+
+              <td>{{ announcement[0].notice }}</td>
+              <td>{{ announcement[0].date }}</td>
+            </tr>
+            <tr>
+              <td colspan="6" class="hiddenRow">
+                <div class="accordian-body collapse" :id="`tr${i + 1}`">
+                  {{ announcement[0].content }}
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- <q-table
           :rows="rows"
           :columns="columns"
           row-key="name"
@@ -17,7 +48,6 @@
         >
         </q-table>
 
-        <!-- 모달 -->
 
         <q-card class="modal-card" v-show="modal">
           <q-card-section style="display: flex">
@@ -47,18 +77,8 @@
           </q-card-section>
 
           <q-separator />
-        </q-card>
-
-        <!-- 모달 -->
-
-        <!-- <q-card v-show="isTogglePage">
-          <q-card-section>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem,
-            eius reprehenderit eos corrupti commodi magni quaerat ex numquam,
-            dolorum officiis modi facere maiores architecto suscipit iste
-            eveniet doloribus ullam aliquid.
-          </q-card-section>
         </q-card> -->
+
         <div class="row q-pa-md flex flex-center">
           <q-pagination
             class="announcement_page"
@@ -74,25 +94,6 @@
             icon-next="img:assets/images/announcement_btn_02.png"
           />
         </div>
-        <!-- <q-list bordered class="rounded-borders" v-for="(e, i) in 6" :key="i">
-          <q-expansion-item
-            group="somegroup"
-            icon="explore"
-            label="First"
-            caption="First"
-            default-opened
-            header-class="text-grey-10"
-          >
-            <q-card style="height: 10vw">
-              <q-card-section>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Quidem, eius reprehenderit eos corrupti commodi magni quaerat ex
-                numquam, dolorum officiis modi facere maiores architecto
-                suscipit iste eveniet doloribus ullam aliquid.
-              </q-card-section>
-            </q-card>
-          </q-expansion-item>
-        </q-list> -->
       </div>
       <PageController />
     </q-layout>
@@ -194,7 +195,28 @@ const rows = [
   },
 ];
 export default {
+  data() {
+    return {
+      announcement: [
+        {
+          notice: "I'm a really greate person",
+          date: date,
+          content:
+            "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum, corporis veritatis. Minus sed iste ipsam vel eius placeat fugiat perferendis ullam sapiente. Aliquam optio qui quia ut nesciunt perspiciatis sint tenetur minus accusamus consequatur. Placeat vitae, et iusto animi debitis maxime dolore deleniti beatae laboriosam, dicta harum voluptate ullam quibusdam perspiciatis corrupti autem minus! Est itaque reprehenderit, voluptas odit magnam suscipit cumque? Excepturi consequuntur quia inventore voluptas aliquam deleniti? Error, provident. Placeat harum saepe quis pariatur! Aliquid repudiandae autem libero quaerat, harum, vel ex omnis unde nisi ad assumenda deleniti placeat consequatur recusandae impedit quis ratione distinctio ipsa. Excepturi, autem.",
+        },
+      ],
+    };
+  },
   components: { Header, PageController },
+  mounted() {
+    $(".accordian-body").on("show.bs.collapse", function () {
+      $(this)
+        .closest("table")
+        .find(".collapse.in")
+        .not(this)
+        .collapse("toggle");
+    });
+  },
   setup() {
     const pagination = ref({
       sortBy: "desc",
@@ -219,6 +241,9 @@ export default {
 };
 </script>
 <style lang="scss" scope>
+.table tr {
+  cursor: pointer;
+}
 .announcement {
   width: 100%;
   height: 100%;
