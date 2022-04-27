@@ -6,7 +6,7 @@
       <div class="container">
         <div class="cardBoxs">
           <div
-            class="my-card q-gutter-xs justify-center menu-card"
+            class="my-card justify-center menu-card"
             v-for="(m, i) in mainBox"
             :key="i"
             @mouseover="hover(m.key)"
@@ -24,14 +24,31 @@
             </div>
           </div>
         </div>
+
         <div class="arrows">
-          <div class="arrowLeft" @click="toLeft()">
+          <!-- <div class="arrowLeft" @click="toLeft()">
             <img src="assets/images/leftBtn.png" />
+          </div> -->
+          <div class="arrowLine">
+            <q-slider
+              v-model="slide"
+              @mouseover="hover(mainBox[slide].key)"
+              @mouseleave="leave(mainBox[slide].key)"
+              @change="slideNum(slide)"
+              :min="0"
+              :max="7"
+              :step="1"
+              thumb-size="2.5vmax"
+              track-size="5px"
+              color="transparent"
+              track-color="transparent"
+              thumb-color="white"
+              class="slide"
+            />
           </div>
-          <div class="arrowLine"></div>
-          <div class="arrowRight" @click="toRight()">
+          <!-- <div class="arrowRight" @click="toRight()">
             <img src="assets/images/rightBtn.png" />
-          </div>
+          </div> -->
         </div>
       </div>
       <TotalCursor />
@@ -42,13 +59,12 @@
 import TotalCursor from "@/components/Cursor/TotalCursor.vue";
 import Header from "../../components/Header/Header.vue";
 import { ref } from "vue";
-
 const screenWidth = screen.availWidth;
 const screenHeight = screen.availHeight;
-
 export default {
   data() {
     return {
+      slide: 3.5,
       mainBox: [
         {
           key: "about",
@@ -76,7 +92,7 @@ export default {
         },
         {
           key: "roadmap",
-          name: "ROADMAP",
+          name: "ROAD MAP",
           src: "assets/images/menu05.png",
           src2: "assets/images/05.png",
         },
@@ -101,33 +117,17 @@ export default {
       ],
     };
   },
-  setup() {
-    return { slide: ref(1) };
-  },
+  // setup() {
+  //   const slide = (e) => {
+  //     var x;
+  //     for (var i = 0; i < 7; i++) {
+  //       x += i;
+  //     }
+  //   };
+  //   return { slide };
+  // },
   components: { Header, TotalCursor },
   methods: {
-    toRight() {
-      var arrowRight = document.querySelector(".arrowRight");
-      var arrowLeft = document.querySelector(".arrowLeft");
-      var cardBoxs = document.querySelector(".cardBoxs");
-      if (screenWidth > 1024) {
-        cardBoxs.style.setProperty("transform", `translateX(-50%)`);
-        cardBoxs.style.setProperty("transition", `1.3s`);
-        arrowRight.style.setProperty("opacity", "0.3");
-        arrowLeft.style.setProperty("opacity", "1");
-      }
-    },
-    toLeft() {
-      var arrowRight = document.querySelector(".arrowRight");
-      var arrowLeft = document.querySelector(".arrowLeft");
-      var cardBoxs = document.querySelector(".cardBoxs");
-      if (screenWidth > 1024) {
-        cardBoxs.style.setProperty("transform", `translateX(0%)`);
-        cardBoxs.style.setProperty("transition", `1.3s`);
-        arrowLeft.style.setProperty("opacity", "0.3");
-        arrowRight.style.setProperty("opacity", "1");
-      }
-    },
     hover(e) {
       var name = document.querySelector(`#${e}`);
       var bottomBtn = document.querySelector(`#${e} ~ .bottomBtn`);
@@ -141,7 +141,18 @@ export default {
       var bottomBtn = document.querySelector(`#${e} ~ .bottomBtn`);
       if (screenWidth > 1024) {
         name.style.setProperty("transform", "scale(1)");
-        bottomBtn.style.setProperty("width", "30%");
+        bottomBtn.style.setProperty("width", "25%");
+      }
+    },
+    slideNum(e) {
+      var cardBoxs = document.querySelector(".cardBoxs");
+      if (e > 3) {
+        if (screenWidth > 1024) {
+          cardBoxs.style.setProperty("transform", `translateX(-50%)`);
+          cardBoxs.style.setProperty("transition", `1.3s`);
+        }
+      } else if (e < 4) {
+        cardBoxs.style.setProperty("transform", `translateX(0%)`);
       }
     },
   },
@@ -170,7 +181,7 @@ export default {
   z-index: 0;
 }
 .container {
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 5;
   position: absolute;
@@ -180,32 +191,36 @@ export default {
   position: relative;
 }
 .menu-card img {
-  width: 90%;
+  width: 100%;
   margin: 0;
   transition: 0.4s;
 }
 .cardBoxs {
   display: flex;
   width: 200%;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .my-card {
-  position: relative;
+  // position: relative;
+  // display: flex;
 }
 .my-card:first-child,
 .my-card:nth-child(5) {
-  margin-left: 1%;
+  margin-left: 1.5%;
 }
-
+.my-card:last-child,
+.my-card:nth-child(4) {
+  margin-right: 1.5%;
+}
 .mainTitle {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-55%, -50%);
+  transform: translate(-50%, -50%);
   padding: 0;
   font-family: "vitro";
   font-weight: 200;
-  font-size: 2.2vw;
+  font-size: 2.3vmax;
   color: white;
   width: 100%;
 }
@@ -213,32 +228,43 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -100%;
-  width: 30%;
+  bottom: -65%;
+  width: 25%;
   transition: 0.4s;
   img {
     width: 100%;
   }
 }
+.container::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  bottom: -36%;
+  border-bottom: 2px solid #313131;
+}
 .arrows {
+  width: 50%;
+  margin: 0 auto;
   display: flex;
   position: relative;
   justify-content: space-evenly;
   margin-top: 5%;
   .arrowRight > img,
   .arrowLeft > img {
-    width: 10vw;
-    right: 50%;
+    width: 7vw;
   }
 }
 .arrowLine {
   position: absolute;
-  top: 47%;
-  width: 47%;
-  border-bottom: 5px solid rgba($color: #ffffff, $alpha: 0.5);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 55%;
   z-index: -1s;
 }
-
+.q-slider__inner {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -250,57 +276,44 @@ export default {
     background-position: 0% 50%;
   }
 }
-
 // 미디어쿼리
-@media screen and (max-width: 1920px) {
-}
-@media screen and (max-width: 1770px) {
-}
-@media screen and (max-width: 1280px) {
-}
-@media screen and (max-width: 1024px) {
-}
 @media screen and (max-width: 768px) {
   .mainBg {
-    height: 450vh;
-  }
-  .container {
-    top: 2%;
-  }
-  .cardBoxs {
-    width: 100%;
-    display: block;
-    text-align: center;
     overflow-y: scroll;
     overflow-x: hidden;
   }
-  .cardBoxs > .my-card {
-    width: 100vw;
-    margin: 0;
-    padding-top: 10%;
+  .mainBg::after {
+    background-size: 100% 100%;
+    position: fixed;
   }
-
+  .container {
+    top: calc(60px + 3vmax);
+    transform: translateY(0);
+    overflow: hidden;
+  }
+  .cardBoxs {
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  .my-card {
+    margin-bottom: 10% !important;
+  }
+  .my-card:first-child,
+  .my-card:nth-child(5),
+  .my-card:last-child,
+  .my-card:nth-child(4) {
+    margin: 0;
+  }
   .mainTitle {
-    font-size: 9vw;
-    color: white;
+    font-size: 3.7vmax;
     width: 100%;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
   .arrows,
   .bottomBtn {
     display: none;
-  }
-}
-@media screen and (max-width: 576px) {
-  .mainBg {
-    height: 400vh;
-  }
-}
-@media screen and (max-width: 420px) {
-  .mainBg {
-    height: 450vh;
   }
 }
 </style>

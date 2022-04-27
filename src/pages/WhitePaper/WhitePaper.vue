@@ -9,8 +9,8 @@
       </p>
       <p class="whitepaper-content2 text-h5">{{ whitepaper.content }}</p>
       <div class="whitepaper-file">
-        <q-img
-          class="whitepaper-img1"
+        <div
+          class="whitepaper-img1 paper-box"
           @click="
             pdfDownload('/assets/pdf/220421_EWC_WHITEPAPER_ver_2.2(KOR).pdf')
           "
@@ -19,9 +19,9 @@
             WHITE PAPER <br />
             (KOR)
           </p>
-        </q-img>
-        <q-img
-          class="whitepaper-img2"
+        </div>
+        <div
+          class="whitepaper-img2 paper-box"
           @click="
             pdfDownload('/assets/pdf/220421_EWC_WHITEPAPER_ver_2.2(ENG).pdf')
           "
@@ -30,24 +30,22 @@
             WHITE PAPER <br />
             (ENG)
           </p>
-        </q-img>
-      </div>
-      <div class="whitepaper-file">
-        <q-img
-          class="whitepaper-img3"
+        </div>
+        <div
+          class="whitepaper-img3 paper-box"
           @click="pdfDownload('/assets/pdf/210930+WC(Wins).pdf')"
         >
           <p class="img-text">
             LEGAL REVIEW <br />
             (Wins)
           </p>
-        </q-img>
-        <q-img class="whitepaper-img4">
+        </div>
+        <div class="whitepaper-img4 paper-box">
           <p class="img-text">
             LEGAL REVIEW <br />
             (J.W)
           </p>
-        </q-img>
+        </div>
       </div>
       <PageController />
     </q-layout>
@@ -61,7 +59,7 @@ export default {
     return {
       whitepaper: {
         content:
-          ' "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",',
+          "ERUGO WORLD with 'ERUGO WORLD Ecosystem Model' which connects Metaverse, business and user based on blockchain pursues sustainable growth via an independent economic ecosystem.",
       },
     };
   },
@@ -86,89 +84,148 @@ export default {
 };
 </script>
 <style lang="scss" scope>
+* {
+  margin: 0;
+  padding: 0;
+}
 .whitepaper {
   width: 100%;
   height: 100%;
+  min-height: 100% !important;
   position: relative;
 }
 .whitepaper-title {
   font-family: "S-CoreDream9";
-  font-size: 6vmax;
+  font-size: 6rem;
   margin: 10% auto;
-  margin-bottom: 3%;
+  margin-bottom: 0;
   text-align: center;
 }
 .whitepaper-content,
 .whitepaper-content2 {
-  width: 60%;
+  width: 45%;
   margin: 3% auto;
-  line-height: 3vmax;
+  line-height: 3rem;
   text-align: center;
-  font-family: "S-CoreDream6";
+  font-family: "S-CoreDream4";
   color: #363636;
+}
+.whitepaper-content {
+  font-size: 1.8vmax;
+  line-height: 3vmax;
+  margin-top: 1%;
 }
 .whitepaper-content2 {
   font-family: "S-CoreDream4";
   color: #727272;
 }
 .whitepaper-file {
-  position: relative;
-  width: 80%;
+  width: 65%;
   margin: 0 auto;
+  padding-bottom: 5%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  cursor: pointer;
 }
-.whitepaper-file > .q-img {
-  width: 40vw;
-  margin: 0;
+// .whitepaper-file > .q-img {
+//   width: 40vw;
+//   margin: 0;
+// }
+.paper-box {
+  position: relative;
+  width: 23vmax;
+  max-height: 250px;
+  min-height: 15vmin;
+  margin: 5% 0;
 }
 .img-text {
   position: absolute;
-  font-size: 2vw;
-  top: 51%;
+  width: 100%;
+  font-size: 1.5vmax;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-family: "S-CoreDream7";
+  font-family: "S-CoreDream6";
 }
-@for $i from 1 to 5 {
-  .whitepaper-img#{$i} {
-    background: url("asset/images/wp_0#{$i}.png") no-repeat center;
-    background-size: contain;
-  }
-  .whitepaper-img#{$i}:hover {
-    background: url("asset/images/wp_0#{$i}_2.png") no-repeat center;
-    background-size: contain;
-  }
+.whitepaper-img1 {
+  box-shadow: 0 0 70px 0 rgba(239, 1, 1, 0.4);
 }
-
-// .whitepaper-file:hover .whitepaper-img {
-//   background: url("images/wp_01_2.png") no-repeat center;
-//   background-size: cover;
-// }
-@media all and (max-width: 768px) {
+.whitepaper-img2 {
+  box-shadow: 0 0 70px 0 rgba(1, 104, 239, 0.4);
+}
+.whitepaper-img3 {
+  box-shadow: 0 0 70px 0 rgba(20, 6, 217, 0.4);
+}
+.whitepaper-img4 {
+  box-shadow: 0 0 70px 0 rgba(177, 1, 239, 0.4);
+}
+.whitepaper-img1:hover {
+  background-color: #ffa1a1;
+}
+.whitepaper-img2:hover {
+  background-color: #99c4fe;
+}
+.whitepaper-img3:hover {
+  background-color: #9b94ff;
+}
+.whitepaper-img4:hover {
+  background-color: #e7a2ff;
+}
+@media screen and (max-width: 920px) {
   .whitepaper-title {
     margin-top: 15%;
-    font-size: 5vmax;
+    font-size: 5rem;
   }
   .whitepaper-content,
   .whitepaper-content2 {
     width: 80%;
-    margin: 5% auto;
-    line-height: 3.5vmax;
+  }
+  .whitepaper-file {
+    margin-top: 10%;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 720px) {
+  .whitepaper-title {
+    margin-top: 15%;
+    margin-bottom: 5%;
+    font-size: 6vmax;
+  }
+  .whitepaper-content,
+  .whitepaper-content2 {
+    width: 90%;
   }
   .whitepaper-content2 {
-    font-size: 1.8vmax;
+    line-height: 4vmax;
   }
   .whitepaper-file {
     display: block;
     width: 100%;
-    .q-img {
-      width: 100vw;
-    }
-    .img-text {
-      font-size: 2vmax;
-    }
+  }
+  .paper-box {
+    margin: 7% auto;
+  }
+}
+@media screen and (max-width: 420px) {
+  .whitepaper-title {
+    margin-top: 25%;
+    margin-bottom: 2%;
+    font-size: 4vmax;
+  }
+  .whitepaper-content {
+    margin: 5% auto;
+  }
+  .whitepaper-content2 {
+    font-size: 1.5vmax;
+    line-height: 2.2vmax;
+  }
+  .whitepaper-file {
+    margin-top: 15%;
+  }
+  .paper-box {
+    margin: 12% auto;
   }
 }
 </style>

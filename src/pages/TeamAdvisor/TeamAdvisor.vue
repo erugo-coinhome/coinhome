@@ -241,6 +241,7 @@ export default {
   font-size: 0.8vw;
   top: 40%;
   line-height: 1.89;
+
   .cardtitle {
     font-family: "S-coreDream7";
     color: #000;
