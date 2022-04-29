@@ -16,12 +16,14 @@
           v-model="slide"
           ref="carousel"
           infinite
-          height="50vh"
+          height="40vh"
           transition-duration="1200"
-          style="background-color: transparent"
+          style="background-color: transparent; margin: 5% auto"
         >
-          <q-carousel-slide :name="1" class="column no-wrap">
-            <div class="row justify-center items-center q-col-gutter no-wrap">
+          <q-carousel-slide :name="1" class="column no-wrap list-container">
+            <div
+              class="row justify-center items-center q-col-gutter no-wrap listing"
+            >
               <q-img
                 v-for="(r, i) in roadmap"
                 :key="i"
@@ -36,8 +38,10 @@
             </div>
           </q-carousel-slide>
 
-          <q-carousel-slide :name="2" class="column no-wrap">
-            <div class="row justify-center items-center q-col-gutter no-wrap">
+          <q-carousel-slide :name="2" class="column no-wrap list-container">
+            <div
+              class="row justify-center items-center q-col-gutter no-wrap listing"
+            >
               <q-img
                 v-for="(r, i) in roadmap2"
                 :key="i + 4"
@@ -46,7 +50,7 @@
                 :id="r.title"
                 :src="r.src"
               >
-                <div class="roadmap-title2">2022</div>
+                <div class="roadmap-title2">{{ r.year }}</div>
                 <div class="roadmap-title3">({{ r.title }})</div>
               </q-img>
             </div>
@@ -54,27 +58,32 @@
           <template v-slot:control>
             <q-carousel-control
               position="bottom"
-              :offset="[0, 60]"
+              :offset="[0, 30]"
               class="carousel-ctrl"
             >
-              <!-- 좌우 버튼 -->
-              <q-btn flat @click="$refs.carousel.previous()">
-                <img
-                  src="assets/images/roadmap_arrow_01.png"
-                  style="width: 75px"
-                />
-              </q-btn>
+              <div>
+                <!-- 좌우 버튼 -->
+                <q-btn flat @click="$refs.carousel.previous()">
+                  <img
+                    src="assets/images/roadmap_arrow_01.png"
+                    style="width: 75px"
+                  />
+                </q-btn>
 
-              <q-btn flat>
-                <img src="assets/images/roadmap_btn.png" style="width: 75px" />
-              </q-btn>
+                <q-btn flat>
+                  <img
+                    src="assets/images/roadmap_btn.png"
+                    style="width: 75px"
+                  />
+                </q-btn>
 
-              <q-btn flat @click="$refs.carousel.next()">
-                <img
-                  src="assets/images/roadmap_arrow_02.png"
-                  style="width: 75px"
-                />
-              </q-btn>
+                <q-btn flat @click="$refs.carousel.next()">
+                  <img
+                    src="assets/images/roadmap_arrow_02.png"
+                    style="width: 75px"
+                  />
+                </q-btn>
+              </div>
             </q-carousel-control>
           </template>
         </q-carousel>
@@ -227,27 +236,32 @@
             <template v-slot:control>
               <q-carousel-control
                 position="bottom"
-                :offset="[0, 30]"
+                :offset="[0, 20]"
                 class="carousel-ctr2"
               >
-                <q-btn flat @click="$refs.metaverse.previous()">
-                  <img
-                    src="assets/images/roadmap_arrow_01.png"
-                    style="width: 75px"
-                  />
-                </q-btn>
-                <q-btn flat>
-                  <img
-                    src="assets/images/roadmap_btn.png"
-                    style="width: 75px"
-                  />
-                </q-btn>
-                <q-btn flat @click="$refs.metaverse.next()">
-                  <img
-                    src="assets/images/roadmap_arrow_02.png"
-                    style="width: 75px"
-                  />
-                </q-btn>
+                <div>
+                  <!-- 좌우 버튼 -->
+                  <q-btn flat @click="$refs.metaverse.previous()">
+                    <img
+                      src="assets/images/roadmap_arrow_01.png"
+                      style="width: 75px"
+                    />
+                  </q-btn>
+
+                  <q-btn flat>
+                    <img
+                      src="assets/images/roadmap_btn.png"
+                      style="width: 75px"
+                    />
+                  </q-btn>
+
+                  <q-btn flat @click="$refs.metaverse.next()">
+                    <img
+                      src="assets/images/roadmap_arrow_02.png"
+                      style="width: 75px"
+                    />
+                  </q-btn>
+                </div>
               </q-carousel-control>
             </template>
           </q-carousel>
@@ -262,23 +276,25 @@
 // :img-src="`assets/images/roadmap_0${i + 1}.png`"
 import Header from "../../components/Header/Header.vue";
 import PageController from "../../components/PageController/PageController.vue";
-
 import { ref } from "vue";
-
 export default {
   data() {
     return {
       roadmap: [
-        { title: "XEXC", src: "assets/images/roadmap_01.png" },
-        { title: "LBANK", src: "assets/images/roadmap_02.png" },
-        { title: "CONSBIT", src: "assets/images/roadmap_03.png" },
-        { title: "BITTREX", src: "assets/images/roadmap_04.png" },
+        { title: "XEXC", src: "assets/images/roadmap_01.png", year: "2022" },
+        { title: "LBANK", src: "assets/images/roadmap_02.jpg", year: "2022" },
+        { title: "CONSBIT", src: "assets/images/roadmap_03.jpg", year: "2022" },
+        { title: "BITTREX", src: "assets/images/roadmap_04.jpg", year: "2022" },
       ],
       roadmap2: [
-        { title: "coinUtop", src: "assets/images/roadmap_05.png" },
-        { title: "TENNTEN", src: "assets/images/roadmap_06.png" },
-        { title: "Btrade", src: "assets/images/roadmap_07.png" },
-        { title: "XTCOM", src: "assets/images/roadmap_08.png" },
+        {
+          title: "coinUtop",
+          src: "assets/images/roadmap_05.jpg",
+          year: "2022",
+        },
+        { title: "TENNTEN", src: "assets/images/roadmap_06.jpg", year: "2021" },
+        { title: "Btrade", src: "assets/images/roadmap_07.jpg", year: "2021" },
+        { title: "XTCOM", src: "assets/images/roadmap_08.jpg", year: "2021" },
       ],
       roadmap3: [
         {
@@ -307,7 +323,6 @@ export default {
           text: "Background concept, character, 3D build(3D, Making a model)",
         },
       ],
-
       roadmap4: [
         {
           content: "dd",
@@ -370,7 +385,6 @@ export default {
     };
   },
   components: { Header, PageController },
-
   setup() {
     return {
       slide: ref(1),
@@ -386,12 +400,7 @@ export default {
   overflow: hidden;
   position: relative;
 }
-.list-item {
-  display: flex;
-  width: 50px;
-}
-.roadmap-title,
-.roadmap-title2 {
+.roadmap-title {
   font-family: "S-CoreDream9";
   font-size: 6vmax;
   margin: 10% auto;
@@ -400,17 +409,18 @@ export default {
 }
 .roadmap-title2 {
   font-size: 1vmin;
+  text-align: center;
 }
 .roadmap-title3 {
   font-family: "S-CoreDream6";
-  top: 80%;
-  width: 0;
+  bottom: 0;
+  text-align: center;
 }
 .roadmap-subtitle,
 .roadmap-subtitle2 {
   font-family: "S-CoreDream6";
   margin: 0% auto;
-  font-size: 5vmax;
+  font-size: 4.5vmax;
   text-align: center;
   width: 100%;
 }
@@ -425,23 +435,118 @@ export default {
 }
 .line-vertical {
   position: relative;
-  border-top: 0.5px solid black;
+  border-top: 0.5px solid #c9c9c9;
   position: absolute;
   width: 100vw;
   top: 50%;
   z-index: 1;
 }
-
 .roadmaplist {
-  position: relative;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
   width: 100%;
-  top: 50%;
   overflow: hidden;
 }
+.list-container {
+  position: relative;
+  padding: 0;
+}
+.listing {
+  position: relative;
 
+  .list-item {
+    width: 25%;
+    height: 20vw;
+    left: 2%;
+
+    div {
+      position: absolute;
+      width: 80%;
+    }
+    img {
+      position: absolute;
+      z-index: 100;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      object-fit: contain !important;
+      object-position: 50% 50%;
+      width: 60%;
+      height: 60%;
+      background-color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      padding: 5%;
+      box-shadow: 0 0 50px 0 rgba(252, 16, 104, 0.5);
+    }
+  }
+}
+#LBANK {
+  div {
+    img {
+      box-shadow: 0 0 50px 0 rgba(255, 128, 43, 0.5);
+    }
+  }
+}
+#CONSBIT {
+  div {
+    img {
+      box-shadow: 0 0 50px 0 rgba(82, 43, 255, 0.5);
+    }
+  }
+}
+#coinUtop {
+  div {
+    img {
+      box-shadow: 0 0 50px 0 rgba(47, 255, 43, 0.5);
+    }
+  }
+}
+#Btrade {
+  div {
+    img {
+      box-shadow: 0 0 50px 0 rgba(82, 43, 255, 0.5);
+    }
+  }
+}
+#TENNTEN {
+  div {
+    img {
+      box-shadow: 0 0 50px 0 rgba(228, 58, 39, 0.5);
+    }
+  }
+}
+#XTCOM {
+  div {
+    img {
+      box-shadow: 0 0 50px 0 rgba(39, 215, 228, 0.5);
+    }
+  }
+}
+#XEXC {
+  div {
+    img {
+      box-shadow: 0 0 50px 0 rgba(39, 228, 149, 0.5);
+    }
+  }
+}
+
+.listing::before {
+  content: "";
+  display: block;
+  border-bottom: 25px solid #c9c9c9;
+  opacity: 0.15;
+  width: 100%;
+  position: absolute;
+}
+.listing::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #c9c9c9;
+  width: 100%;
+  position: absolute;
+}
 // 메타버스
 .roadmapmeta {
   display: grid;
@@ -451,7 +556,6 @@ export default {
 }
 .q-panel {
   width: 100vw;
-  // height: 50vw;
   overflow: hidden;
 }
 .carousel-ctrl,
@@ -461,11 +565,9 @@ export default {
   justify-content: space-evenly;
   width: 100%;
 }
-
 .carousel-ctr2 {
   position: fixed;
 }
-
 .q-img__content > div {
   position: absolute;
   background: transparent;
@@ -501,6 +603,139 @@ export default {
     text-align: center;
   }
 }
-@media all and (max-width: 1024px) {
+@media all and (max-width: 768px) {
+  .roadmap-title {
+    font-size: 4vmax;
+    margin: 15% auto;
+    margin-bottom: 0;
+  }
+  .roadmap-subtitle,
+  .roadmap-subtitle2 {
+    font-size: 3vmax;
+  }
+  .line {
+    border-right: 1px solid #363636;
+    height: 50px;
+    width: 50%;
+    margin: 3% 0;
+  }
+
+  .roadmap-title2 {
+    font-size: 0.5vmin;
+  }
+  .roadmap-title3 {
+    font-size: 0.3vmin;
+  }
+  .listing::before {
+    border-bottom: 10px solid #c9c9c9;
+  }
+  .listing {
+    .list-item {
+      div {
+      }
+      img {
+        box-shadow: 0 0 20px 0 rgba(252, 16, 104, 0.5);
+      }
+    }
+  }
+  #LBANK {
+    div {
+      img {
+        box-shadow: 0 0 20px 0 rgba(255, 128, 43, 0.5);
+      }
+    }
+  }
+  #CONSBIT {
+    div {
+      img {
+        box-shadow: 0 0 20px 0 rgba(82, 43, 255, 0.5);
+      }
+    }
+  }
+  #coinUtop {
+    div {
+      img {
+        box-shadow: 0 0 20px 0 rgba(47, 255, 43, 0.5);
+      }
+    }
+  }
+  #Btrade {
+    div {
+      img {
+        box-shadow: 0 0 20px 0 rgba(82, 43, 255, 0.5);
+      }
+    }
+  }
+  #TENNTEN {
+    div {
+      img {
+        box-shadow: 0 0 20px 0 rgba(228, 58, 39, 0.5);
+      }
+    }
+  }
+  #XTCOM {
+    div {
+      img {
+        box-shadow: 0 0 20px 0 rgba(39, 215, 228, 0.5);
+      }
+    }
+  }
+  #XEXC {
+    div {
+      img {
+        box-shadow: 0 0 20px 0 rgba(39, 228, 149, 0.5);
+      }
+    }
+  }
+  .carousel-ctrl {
+    height: 100px;
+    margin: 0;
+  }
+  .carousel-ctrl > div > button > span,
+  .carousel-ctr2 > div > button > span {
+    width: 7vmin;
+    img {
+      height: 7vmin;
+    }
+  }
+}
+@media all and (max-width: 610px) {
+  .roadmap-title {
+    font-size: 3.5vmax;
+    margin: 15% auto;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .roadmap-title2,
+  .roadmap-title3 {
+    margin: -10% 0;
+  }
+}
+@media all and (max-width: 440px) {
+  .q-carousel > div {
+    height: 15vh;
+  }
+  // .carousel-ctrl {
+  //   height: 5%;
+  //   margin: 0;
+  // }
+  .q-img__container > img {
+    width: 100%;
+  }
+  .roadmap-title {
+    font-size: 3vmax;
+    margin: 15% auto;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .roadmap-subtitle,
+  .roadmap-subtitle2 {
+    font-size: 2vmax;
+    line-height: 0;
+  }
+  .roadmap-title2,
+  .roadmap-title3 {
+    margin: -20% 0;
+  }
 }
 </style>

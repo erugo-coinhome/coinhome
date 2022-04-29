@@ -128,12 +128,9 @@ export default {
   flex-wrap: wrap;
   cursor: pointer;
 }
-// .whitepaper-file > .q-img {
-//   width: 40vw;
-//   margin: 0;
-// }
 .paper-box {
   position: relative;
+  border-radius: 30px;
   width: 23vmax;
   max-height: 250px;
   min-height: 15vmin;

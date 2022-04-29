@@ -15,10 +15,7 @@
         next-icon="img:assets/images/team_btn_01.png"
         class="team-carousel"
       >
-        <q-carousel-slide
-          :name="1"
-          class="teamadvisor-carousel teamadvisor-card"
-        >
+        <q-carousel-slide :name="1" class="teamadvisor-carousel">
           <div class="row fit no-wrap">
             <q-img
               v-for="(q, i) in 3"
@@ -31,7 +28,6 @@
               <img
                 src="assets/images/team-arrow-01.png"
                 class="teamadvisor-arrow"
-                :id="`arrowBtn${i + 1}`"
               />
               <h4 class="title">{{ card[i].title }}</h4>
               <h6 class="content">{{ card[i].name }}</h6>
@@ -82,7 +78,7 @@
               <!-- v-show -->
               <div :class="`row fit no-wrap toggleBack${i + 4}`">
                 <q-img
-                  :class="`rounded-borders full-height  back${i + 4}`"
+                  :class="`rounded-borders full-height back${i + 4}`"
                   src="assets/images/team07.png"
                   v-show="flipCard"
                 >
@@ -124,10 +120,9 @@
 <script>
 import Header from "../../components/Header/Header.vue";
 import PageController from "../../components/PageController/PageController.vue";
-import TACard from "../../components/TACard/TACard.vue";
 import { ref } from "vue";
 export default {
-  components: { Header, PageController, TACard },
+  components: { Header, PageController },
   data() {
     return {
       card: [
@@ -181,17 +176,13 @@ export default {
       //var back = document.querySelector(`.back${e}`);
       var toggleBack = document.querySelector(`.toggleBack${e}`);
       front.classList.toggle("toggleCard");
-      console.log(front);
       toggleBack.classList.toggle("toggleCard");
     },
     flipCardBack(e) {
       var front = document.querySelector(`.front${e}`);
       var back = document.querySelector(`.back${e}`);
-
-      console.log(back);
       var toggleBack = document.querySelector(`.toggleBack${e}`);
-
-      front.classList.remove("toggleBack");
+      front.classList.toggle("toggleBack");
       toggleBack.classList.add("toggleBack");
       back.removeAttribute("style");
       back.classList.toggle("toggleCard");
@@ -239,7 +230,6 @@ export default {
     text-align: center;
   }
 }
-
 .teamadvisor-arrow {
   width: 28%;
   position: absolute;
@@ -279,7 +269,6 @@ export default {
   font-size: 0.8vw;
   top: 40%;
   line-height: 1.89;
-
   .cardtitle {
     font-family: "S-coreDream7";
     color: #000;
@@ -317,9 +306,6 @@ export default {
 .toggleBack {
   visibility: visible;
 }
-.hide {
-  visibility: visible;
-}
 @for $i from 1 to 7 {
   // .front#{$i}:hover {
   //   visibility: collapse;
@@ -327,7 +313,6 @@ export default {
   // .toggleBack {
   //   background: #000;
   // }
-
   // #teamadvisor-img#{$i}:after {
   //   content: "";
   //   // background: url("./images/team07.png") no-repeat center;
@@ -335,7 +320,6 @@ export default {
   //   background: #000;
   // }
 }
-
 @media all and (max-width: 1024px) {
   .teamadvisor-title {
     font-size: 5vmax;
