@@ -302,9 +302,11 @@ export default {
 }
 .toggleCard {
   visibility: collapse;
+  transition: 1s ease-in-out;
 }
 .toggleBack {
   visibility: visible;
+  transition: 1s ease-in-out;
 }
 @for $i from 1 to 7 {
   // .front#{$i}:hover {
