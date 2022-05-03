@@ -137,11 +137,7 @@ export default {
       );
     },
     stakingPopup() {
-      open(
-        "https://erugocoin.com/stacking",
-        "Staking",
-        "width=1400,height=750"
-      );
+      open("/assets/pdf/stacking.html", "Staking", "width=1400,height=750");
     },
     linkHandler(url) {
       window.open(url);
@@ -425,6 +421,9 @@ li {
     }
     .list {
       width: 90%;
+      li {
+        padding-bottom: 2vmin;
+      }
     }
     .staking-btn {
       margin-top: 0;

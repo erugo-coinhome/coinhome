@@ -209,20 +209,28 @@ export default {
   .whitepaper-title {
     margin-top: 25%;
     margin-bottom: 2%;
-    font-size: 4vmax;
+    font-size: 4.5vmax;
   }
   .whitepaper-content {
     margin: 5% auto;
+    font-size: 2.2vmax;
   }
   .whitepaper-content2 {
-    font-size: 1.5vmax;
-    line-height: 2.2vmax;
+    font-size: 2vmax;
+    line-height: 2.6vmax;
   }
   .whitepaper-file {
     margin-top: 15%;
   }
   .paper-box {
-    margin: 12% auto;
+    margin: 10% auto;
+    width: 30vmax;
+    max-height: 250px;
+    min-height: 18vmin;
+  }
+  .img-text {
+    font-size: 2vmax;
+    line-height: 1.2;
   }
 }
 </style>

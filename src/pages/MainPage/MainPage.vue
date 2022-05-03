@@ -280,7 +280,7 @@ export default {
     overflow-x: hidden;
   }
   .mainBg::after {
-    background-size: 100% 100%;
+    background-size: 200% 200%;
     position: fixed;
   }
   .container {

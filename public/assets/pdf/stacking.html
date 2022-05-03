@@ -21,7 +21,7 @@
             height: 100vh;
             min-width: 900px;
             min-height: 600px;
-            background-image: url(images/stacking-background1.png);
+            background-image: url(../images/stacking-background1.png);
             background-repeat: no-repeat;
             background-size: cover;
             background-repeat: no-repeat;
@@ -33,47 +33,55 @@
         }
 
         /* content-box */
-        .content-box{
-            color:#fff;
+        .content-box {
+            color: #fff;
             width: 760px;
             height: 580px;
             text-align: left;
             margin-right: 50px;
-            font-family: 'Noto Sans KR' ,sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
             line-height: 1.2;
         }
-        .content-box>h1, h2{
+
+        .content-box>h1,
+        h2 {
             font-family: 'Oswald';
             font-stretch: normal;
             font-style: normal;
             letter-spacing: normal;
         }
-        .content-box>h1{
+
+        .content-box>h1 {
             font-size: 50px;
-            padding-bottom:25px;
+            padding-bottom: 25px;
         }
-        .content-box>h2{
+
+        .content-box>h2 {
             font-size: 30px;
-            padding-bottom:10px;
+            padding-bottom: 10px;
             font-weight: 500;
             padding-top: 40px;
         }
-        .content-box span,p, li{
-            padding:3px 0;
+
+        .content-box span,
+        p,
+        li {
+            padding: 3px 0;
             font-family: 'sans-serif';
         }
-        .content-box span{
+
+        .content-box span {
             line-height: 1.5;
         }
 
-        .content-font{
-            margin:25px 0;
-            font-size:18px;
+        .content-font {
+            margin: 25px 0;
+            font-size: 18px;
             font-weight: 400;
         }
 
-        .content-font li{
-            padding-bottom:18px ;
+        .content-font li {
+            padding-bottom: 18px;
         }
 
         /* input-box */
@@ -82,7 +90,7 @@
             height: 550px;
             background-color: white;
             padding: 30px;
-    
+
         }
 
         .title {
@@ -92,8 +100,8 @@
 
         .apply-button {
             margin-top: 18px;
-            width:100%;
-            height:60px;
+            width: 100%;
+            height: 60px;
             background-image: url(images/apply-button.jpeg);
             background-size: contain;
             background-repeat: no-repeat;
@@ -105,40 +113,45 @@
         }
 
         .input-row {
-            width:100%;
+            width: 100%;
             margin-top: 12px;
         }
+
         .input-title-wrapper {
-            display:flex;
-            justify-content:space-between;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
             width: 100%;
-            height:30px
+            height: 30px
         }
+
         .input-title {
             display: flex;
             justify-content: flex-start;
             align-items: center;
             color: #1260B7;
             font-size: 14px;
-            height:100%;
+            height: 100%;
         }
+
         .number-input-wrapper {
-            display:flex;
+            display: flex;
             justify-content: center;
             align-items: center;
             width: 50%;
             height: 100%;
         }
+
         .number-input {
-            width:calc(100% - 20px);
-            height:100%;
-            border:1px solid #1260B7;
+            width: calc(100% - 20px);
+            height: 100%;
+            border: 1px solid #1260B7;
             text-align: center;
         }
+
         .description-field {
             height: 30px;
-            width:100%;
+            width: 100%;
             border-bottom: 1px solid rgb(174, 209, 250);
             display: flex;
             justify-content: flex-start;
@@ -147,33 +160,40 @@
             padding-bottom: 4px;
             color: #1260B7;
         }
+
         .last-description {
             height: 40px;
-            width:100%;
+            width: 100%;
             display: flex;
             justify-content: flex-start;
             align-items: flex-end;
             font-size: 12px;
         }
+
         input {
             font-size: 14px;
         }
+
         input:focus {
             outline: none;
         }
+
         select:focus {
             overflow: none;
         }
-        .text-input-wrapper{
+
+        .text-input-wrapper {
             display: flex;
             justify-content: flex-start;
             align-items: center;
         }
+
         .text-input {
             width: 100%;
-            border:0px solid white;
+            border: 0px solid white;
             font-size: 14px;
         }
+
         .text-input::placeholder {
             color: #1260B7;
         }
@@ -185,7 +205,8 @@
         <div class="content-box">
             <h1>Introducing EWC Staking</h1>
             <div class="content-font">
-                <span>For the purpose of sustaining the stable development of the EWC ecosystem, the security wallet user</span>
+                <span>For the purpose of sustaining the stable development of the EWC ecosystem, the security wallet
+                    user</span>
                 <span>will be rewarded when the user deposits the EWC for a promised period.</span>
             </div>
             <div class="content-font">
@@ -194,7 +215,7 @@
                 <p>6 months = 3% / year. Coins will be deposited in the user’s account, fixed rewards</p>
                 <p>will be installment payment will be processed in ERUGO WORLD COIN (EWC).</p>
             </div>
-            
+
             <h2>Introducing EWC Staking</h2>
             <div class="content-font">
                 <ul>
@@ -213,33 +234,34 @@
                 <div class="input-title-wrapper">
                     <div class="input-title">Name:</div>
                     <div class="text-input-wrapper" style="width: calc(100% - 60px);height: 100%;">
-                        
+
                     </div>
                 </div>
                 <div class="description-field">
-                    <input id="name" class="text-input" type="text" placeholder="*Enter your name."/>
+                    <input id="name" class="text-input" type="text" placeholder="*Enter your name." />
                 </div>
             </div>
             <div class="input-row">
                 <div class="input-title-wrapper">
                     <div class="input-title">E-Mail:</div>
                     <div class="text-input-wrapper" style="width: calc(100% - 65px);height:100%;">
-                        
+
                     </div>
                 </div>
                 <div class="description-field">
-                    <input id="email" class="text-input" type="text" placeholder="*Enter your e-mail."/>
+                    <input id="email" class="text-input" type="text" placeholder="*Enter your e-mail." />
                 </div>
             </div>
             <div class="input-row">
                 <div class="input-title-wrapper">
                     <div class="input-title">Mobile:</div>
                     <div class="text-input-wrapper" style="width: calc(100% - 70px);height: 100%;">
-                        
+
                     </div>
                 </div>
                 <div class="description-field">
-                    <input id="mobile" class="text-input" type="text" placeholder="*Enter your mobile (cell phone) number."/>                    
+                    <input id="mobile" class="text-input" type="text"
+                        placeholder="*Enter your mobile (cell phone) number." />
                 </div>
             </div>
             <div class="input-row">
@@ -247,7 +269,8 @@
                     <div class="input-title">Number of options:</div>
                     <div class="number-input-wrapper">
                         <!-- 여기 단위 -->
-                        <input id="numberOfOptions" class="number-input" type="number" value="5000" min="5000" step="1000"/>
+                        <input id="numberOfOptions" class="number-input" type="number" value="5000" min="5000"
+                            step="1000" />
                     </div>
                 </div>
                 <div class="description-field">
@@ -276,7 +299,7 @@
         </div>
     </div>
     <script>
-        function apply(){
+        function apply() {
             let name = document.getElementById('name')
             let email = document.getElementById('email')
             let mobile = document.getElementById('mobile')
@@ -289,65 +312,65 @@
             console.log(mobile.value)
             console.log(numberOfMonthValue)
             console.log(numberOfOptionsValue)
-            if(isNaN(numberOfMonthValue)){
+            if (isNaN(numberOfMonthValue)) {
                 window.alert('Only number is allowed as value of option number of months.')
-                return 
+                return
             }
-            if(isNaN(numberOfOptionsValue)){
+            if (isNaN(numberOfOptionsValue)) {
                 window.alert('Only number is allowed as value of number of options.')
-                return 
+                return
             }
-            if(numberOfMonthValue !== 6 && numberOfMonthValue !== 9 && numberOfMonthValue !== 12){
+            if (numberOfMonthValue !== 6 && numberOfMonthValue !== 9 && numberOfMonthValue !== 12) {
                 window.alert('6, 9, 12 are allowed as value of option number of months.')
-                return 
+                return
             }
-            if(numberOfOptionsValue < 5000){
+            if (numberOfOptionsValue < 5000) {
                 window.alert('Number of options has to be more than 5000.')
-                return 
+                return
             }
-            if(name.value === ''){
+            if (name.value === '') {
                 window.alert('Please enter your name.')
                 return
             }
-            if(email.value === ''){
+            if (email.value === '') {
                 window.alert('Please enter your email.')
                 return
             }
-            if(mobile.value === ''){
+            if (mobile.value === '') {
                 window.alert('Please enter your mobile.')
                 return
             }
-            if(numberOfOptions.value === ''){
+            if (numberOfOptions.value === '') {
                 window.alert('Please enter the numberof options.')
                 return
             }
-            if(numberOfMonth.value === ''){
+            if (numberOfMonth.value === '') {
                 window.alert('Please enter option number of months.')
                 return
             }
             fetch('https://erugo-admin-api.appzero.services/stacking/apply', {
-                method:'post',
-                headers:{
-                    'content-type':'application/json'
+                method: 'post',
+                headers: {
+                    'content-type': 'application/json'
                 },
-                body:JSON.stringify({
-                    name : name.value,
-                    email : email.value,
-                    mobile : mobile.value,
-                    numberOfMonth : numberOfMonthValue,
-                    numberOfOptions : numberOfOptionsValue
+                body: JSON.stringify({
+                    name: name.value,
+                    email: email.value,
+                    mobile: mobile.value,
+                    numberOfMonth: numberOfMonthValue,
+                    numberOfOptions: numberOfOptionsValue
                 })
             })
-            .then((r) => { return r.json() })
-            .then((d) => {
-                if(d.result){
-                    window.alert('Success to apply!')
-                    setTimeout(() => {window.close()}, 500)
-                }
-            })
-            .catch((e) => {
-                cosnole.log(e)
-            })
+                .then((r) => { return r.json() })
+                .then((d) => {
+                    if (d.result) {
+                        window.alert('Success to apply!')
+                        setTimeout(() => { window.close() }, 500)
+                    }
+                })
+                .catch((e) => {
+                    cosnole.log(e)
+                })
         }
     </script>
 </body>

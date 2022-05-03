@@ -125,9 +125,6 @@ export default {
   width: 100%;
   height: 5vmax;
   position: fixed;
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
   padding: 0.5% 0;
   z-index: 100;
   top: 0;
@@ -135,19 +132,21 @@ export default {
 }
 .logo,
 .btnWrapper {
-  line-height: 3vw;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .logo {
+  left: 5%;
   background: url("mainLogo.png") no-repeat center;
   background-position: left;
   background-size: contain;
-  width: 70%;
+  width: 100%;
+  height: 50%;
   text-indent: -99999999999999px;
 }
 .btnWrapper {
-  position: relative;
-  top: 60%;
-  transform: translateY(-50%);
+  right: 5%;
   font-size: 1vw;
 }
 .menuLink {

@@ -387,18 +387,23 @@ export default {
     right: -25%;
   }
   .about-content {
-    width: 65%;
+    width: 75%;
+    font-size: 2vmax;
   }
   .about-content2 {
-    line-height: 2;
-    font-size: 1.5vmax;
+    line-height: 1.5;
+    font-size: 2vmax;
     width: 70%;
   }
+  .readmore-bg > div:nth-child(3) .readmoreTitle {
+    padding: 0;
+  }
   .about-content3 {
-    font-size: 1vmax;
+    width: 90%;
+    font-size: 1.8vmax;
   }
   .text-caption {
-    font-size: 0.7vmax;
+    font-size: 1.8vmax;
     line-height: 1.8;
   }
   .numbering {
@@ -406,9 +411,10 @@ export default {
     line-height: 1.2;
   }
   .readmoreTitle {
-    font-size: 1.5vmax;
+    font-size: 2vmax;
     line-height: 1.5;
   }
+
   .img-container {
     height: 30vmax;
   }
@@ -417,7 +423,8 @@ export default {
   }
   .about-content4 {
     width: 80%;
-    line-height: calc(10px + 1vmax);
+    font-size: 1.8vmax;
+    line-height: calc(10px + 1.5vmax);
   }
 }
 </style>

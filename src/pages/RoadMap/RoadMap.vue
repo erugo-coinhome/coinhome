@@ -32,8 +32,8 @@
                 :src="r.src"
               >
                 <div class="dot"></div>
-                <div class="roadmap-title2">2022</div>
-                <div class="roadmap-title3">({{ r.title }})</div>
+                <div class="roadmap-title2 list-font">2022</div>
+                <div class="roadmap-title3 list-font">({{ r.title }})</div>
               </q-img>
             </div>
           </q-carousel-slide>
@@ -51,8 +51,8 @@
                 :src="r.src"
               >
                 <div class="dot"></div>
-                <div class="roadmap-title2">{{ r.year }}</div>
-                <div class="roadmap-title3">({{ r.title }})</div>
+                <div class="roadmap-title2 list-font">{{ r.year }}</div>
+                <div class="roadmap-title3 list-font">({{ r.title }})</div>
               </q-img>
             </div>
           </q-carousel-slide>
@@ -439,14 +439,14 @@ div,
   margin-bottom: 0;
   text-align: center;
 }
-.roadmap-title2 {
-  font-size: 1vmin;
+.list-font {
+  font-family: "S-CoreDream6";
+  font-size: 1vmax;
   text-align: center;
 }
+
 .roadmap-title3 {
-  font-family: "S-CoreDream6";
   bottom: 0;
-  text-align: center;
 }
 .roadmap-subtitle,
 .roadmap-subtitle2 {
@@ -495,13 +495,12 @@ div,
   position: relative;
 
   .list-item {
-    width: 25%;
+    width: 20%;
     height: 20vw;
-    left: 2%;
+    margin: 0 2%;
 
     div {
       position: absolute;
-      width: 80%;
     }
 
     img {
@@ -529,10 +528,10 @@ div,
   border: 2px solid #fff;
   position: absolute;
   top: 50%;
-  left: 40%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 44%;
-  height: 55%;
+  width: 53%;
+  height: 53%;
   z-index: 15;
 }
 
@@ -838,6 +837,11 @@ div,
   }
   .q-carousel__slide {
     padding: 0;
+  }
+  .list-item::before {
+    border: 1px solid #fff;
+    width: 55%;
+    height: 55%;
   }
   .flex-center {
     justify-content: space-around;

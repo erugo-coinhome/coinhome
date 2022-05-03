@@ -67,6 +67,7 @@ export default {
   font-weight: 700;
   background: transparent;
 }
+
 .readmore-title {
   font-family: "S-CoreDream7";
   font-size: 0.9vmax;
@@ -90,6 +91,11 @@ export default {
   }
   .readmore-padding {
     margin-top: 5%;
+  }
+}
+@media screen and (max-width: 420px) {
+  .q-card__section {
+    padding: 10px;
   }
 }
 </style>
