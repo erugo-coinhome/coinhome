@@ -52,7 +52,6 @@ export default {
         }, // data
         options: {
           responsive: true,
-
           animation: {
             onComplete: () => {
               delayed = true;
@@ -64,7 +63,7 @@ export default {
                 context.mode === "default" &&
                 !delayed
               ) {
-                delay = context.dataIndex * 500 + context.datasetIndex * 100;
+                delay = context.dataIndex * 300 + context.datasetIndex * 100;
               }
               return delay;
             },

@@ -178,7 +178,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .about {
   width: 100%;
   height: 100%;
@@ -210,7 +210,6 @@ export default {
   font-size: 3.5vmax;
   width: 100%;
 }
-
 .about-content,
 .about-content2,
 .about-content3,
@@ -226,7 +225,6 @@ export default {
 .about-content {
   width: 42%;
 }
-
 .about-content2 {
   margin: 2% auto;
   width: 50%;
@@ -263,7 +261,6 @@ export default {
   margin: 0 auto;
   padding: 0;
 }
-
 .readmore-bg > div:nth-child(3) .readmoreTitle {
   padding: calc(10px + 0.2vmax) 0;
 }
@@ -285,7 +282,6 @@ export default {
 .promotion-video {
   margin: 1% auto;
 }
-
 .img-container {
   position: relative;
   height: 35vmax;
@@ -301,18 +297,15 @@ export default {
 .about-img > img {
   width: 60%;
 }
-
 // 미디어쿼리
 @media screen and (max-width: 1280px) {
   .about-subtitle {
     margin: 1% auto;
     font-size: 3vmax;
   }
-
   .line {
     height: 5vmax;
   }
-
   .about-content {
     width: 42%;
     line-height: calc(15px + 1vmax);
@@ -372,7 +365,6 @@ export default {
     }
   }
 }
-
 @media screen and (max-width: 420px) {
   .q-layout {
     overflow: hidden;

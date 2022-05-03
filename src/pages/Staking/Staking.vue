@@ -87,15 +87,12 @@ export default {
     stakingNum() {
       const stakingMaxCount = 2487267;
       let stacking = 1800000;
-
       function formatNumber(x) {
         var parts = x.toString().split(".");
         parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         return parts.join(".");
       }
-
       let totalStaking = document.querySelector(".stakingNum");
-
       let timer = setInterval(
         () => {
           if (stacking <= stakingMaxCount) {
@@ -146,12 +143,10 @@ export default {
         "width=1400,height=750"
       );
     },
-
     linkHandler(url) {
       window.open(url);
     },
   },
-
   mounted() {
     this.stakingNum();
     this.interestNum();
@@ -179,7 +174,6 @@ li {
   width: 50%;
   margin: 3% 0;
 }
-
 .staking {
   width: 100%;
   height: 100%;
@@ -199,7 +193,6 @@ li {
   justify-content: space-between;
   margin: 0 auto;
 }
-
 .staking-img {
   width: 45%;
   background: url("images/staking_btn_01.png") no-repeat center center;
@@ -257,7 +250,6 @@ li {
 .staking-right {
   width: 50%;
 }
-
 // staking-left
 .staking-subtitle2 {
   text-align: start;
@@ -291,7 +283,6 @@ li {
   background-size: contain;
   cursor: pointer;
 }
-
 //staking-right
 .chart-title {
   text-align: center;
@@ -303,13 +294,11 @@ li {
   height: 24vmax;
   margin: auto;
 }
-
 @media screen and (max-width: 1920px) {
   .staking-content {
     width: 65%;
   }
 }
-
 @media screen and (max-width: 1024px) {
   .stacking-container {
     width: 90%;
@@ -333,7 +322,6 @@ li {
   .staking-btn {
     margin-top: 5%;
   }
-
   @media screen and (max-width: 920px) {
     .staking-content {
       width: 80%;
@@ -350,7 +338,6 @@ li {
       font-size: 1.5vmax;
       line-height: 2.5vmax;
     }
-
     .staking-btn {
       margin-top: 5%;
     }
@@ -394,11 +381,9 @@ li {
     .list {
       width: 80%;
     }
-
     .staking-subtitle2 {
       width: 60%;
     }
-
     .list {
       margin: 0 auto;
       li {

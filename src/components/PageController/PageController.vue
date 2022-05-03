@@ -4,7 +4,7 @@
     position="bottom-right"
     :scroll-offset="150"
     :offset="[18, 18]"
-    style="z-index: 9999"
+    style="z-index: 100"
   >
     <q-img
       class="pagescroller"

@@ -1,8 +1,8 @@
 <template>
   <div class="q-pa-md row readmore">
-    <q-card class="my-card" flat bordered>
+    <q-card class="about-card">
       <q-img src="assets/images/readmore.png" class="readmore-img">
-        <div class="d">
+        <div>
           <slot name="numbering"></slot>
         </div>
       </q-img>
@@ -13,18 +13,16 @@
       </q-card-section>
       <div v-show="expanded">
         <q-card-section class="readmore-font">
-          <div class="card-padding">
+          <div>
             <slot name="content"></slot>
           </div>
           <div class="readmore-padding" />
           <q-separator />
         </q-card-section>
       </div>
-
       <q-slide-transition>
         <q-card-actions>
           <q-space />
-
           <q-img
             :src="
               expanded
@@ -46,7 +44,7 @@ export default {
   data() {
     return {
       lorem:
-        "To overcome the limitation of previous mass-type Metaverse platforms that only focus on the value of digital assets and transaction volumes, ERUGO WORLD aims to be the sustainable Metaverse platform which connects with reality by providing valuable services to our investors.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     };
   },
   setup() {
@@ -57,19 +55,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.q-card--bordered {
-  border: none;
-}
-.q-card {
-  border-radius: 0;
-}
-.q-card__section--vert {
-  padding: 0;
-}
-.my-card {
+<style lang="scss" scope>
+.about-card {
   width: 100%;
-  max-width: 22vmax;
+  max-width: 500px;
   margin: 0 auto;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16) !important;
 }
@@ -81,17 +70,13 @@ export default {
 .readmore-title {
   font-family: "S-CoreDream7";
   font-size: 0.9vmax;
-  padding: 1vmax 1.5vmax 0 1.5vmax;
 }
 .readmore-content {
   font-family: "S-CoreDream4";
 }
-.card-padding {
-  padding: 1vmax 1.5vmax 1.5vmax 1.5vmax;
-}
+
 .readmore-btn {
-  width: 15%;
-  max-width: 80px;
+  width: 50px;
   text-align: center;
   cursor: pointer;
 }
@@ -105,11 +90,6 @@ export default {
   }
   .readmore-padding {
     margin-top: 5%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .my-card {
-    max-width: 100%;
   }
 }
 </style>
