@@ -28,7 +28,7 @@
               <span class="col-2 font-bold">{{ a.date }}</span>
             </div>
             <div v-show="a.showDetail" class="announcement-detail">
-              <p>{{ a.summary }}</p>
+              <p style="white-space: pre-line">{{ announcement[i].summary }}</p>
             </div>
           </li>
         </ul>
@@ -118,48 +118,71 @@ export default {
             "[Notice] Erugo World Coin (EWC) listed in Coin Market Cap (CMC), Cryptocurrency site",
           date: "2022.01.27",
           summary:
-            "Erugo World Coin (EWC) was listed on Coin Market Cap (CMC), the world's largest cryptocurrency information site, on January 27, 2022.Coin Market Cap (CMC) is a website that provides trading volume, white papers, and rankings of the world's largest cryptocurrency and cryptocurrency exchanges established in 2013. It is currently the most reliable cryptocurrency site.ERUGO INC CEO Kim Jung-soo said “I am happy to be able to give more trust and faith to everyone who accompanies the EWC by registering it on a trusted cryptocurrency site.” Also, he said “I will continue to deliver better news through continuous updates and project announcements” too.",
+            "Erugo World Coin (EWC) was listed on Coin Market Cap (CMC), the world's largest cryptocurrency information site, on January 27, 2022. \n Coin Market Cap (CMC) is a website that provides trading volume, white papers, and rankings of the world's largest cryptocurrency and cryptocurrency exchanges established in 2013. It is currently the most reliable cryptocurrency site. \n ERUGO INC CEO Kim Jung-soo said “I am happy to be able to give more trust and faith to everyone who accompanies the EWC by registering it on a trusted cryptocurrency site.” Also, he said “I will continue to deliver better news through continuous updates and project announcements” too.",
           type: "nonfiction",
-          contributor: "Barack Obama",
-          showDetail: false,
         },
         {
           title: "[Notice] ErugoWorldCoin will be list on Bittrex Global",
           date: "2022.01.19",
-          summary: `Erugo World Coin will be listed on Bittrex Global at 07:00 on January 20, 2022(KST). 
-          As a result, you will be able to create a wallet for transactions from 07:00 on January 19th(KST). Bittrex is an American cryptocurrency exchange that opened on February 28, 2014, and has considerable public confidence.
-Bittrex is one of Forbes' top 10 cryptocurrency exchanges in the world. In 2019, they entered the European cryptocurrency market by establishing Bittrex Global in Lichtenstein.
-Kim Jung-soo, CEO of Erugo INC, said Erugo World Coin chose Bittrex as its first listed exchange in 2022. As stated in the roadmap, we will continue to be listed so that the base of Erugo World Coin can be expanded.
-In the future, we, Erugo World Coin, will continue to create a reasonable value for Erugo World Coin through a continuous base expansion strategy.`,
+          summary: `Erugo World Coin will be listed on Bittrex Global at 07:00 on January 20, 2022(KST). As a result, you will be able to create a wallet for transactions from 07:00 on January 19th(KST). \n Bittrex is an American cryptocurrency exchange that opened on February 28, 2014, and has considerable public confidence. \n Bittrex is one of Forbes' top 10 cryptocurrency exchanges in the world. In 2019, they entered the European cryptocurrency market by establishing Bittrex Global in Lichtenstein. \n Kim Jung-soo, CEO of Erugo INC, said Erugo World Coin chose Bittrex as its first listed exchange in 2022. As stated in the roadmap, we will continue to be listed so that the base of Erugo World Coin can be expanded. \n In the future, we, Erugo World Coin, will continue to create a reasonable value for Erugo World Coin through a continuous base expansion strategy.`,
           type: "nonfiction",
-          contributor: "Glennon Doyle",
-          showDetail: false,
         },
         {
           title: "[Notice] Erugo World Coin staking policy change.",
           date: "2022.01.18",
-          summary: `Hello, this is the official blog of Erugo World Coin.
-
-The EWC Staking Option will change from 00:00 on January 20, 2022(KST)
-
-The 'three-month option' disappears from the existing EWC Staking Option, and the overall interest rate is lowered. The minimum quantity of the EWC Staking Option also changes.
-
-Existing users and those who applied by 24:00 on January 19, 2022 will be subject to the existing EWC Staking Option.
-
-- Existing
-12 months = 12% / year
-9 months = 9% / year
-6 months = 6% / year
-3 months = 3% / year
-- New
-12 months = 6% / year (0.5% / month)
-9 months = 4.5% / year (0.325% / month)
-6 months = 3% / year (0.25% / month)
-3 months = Cancelled
-The minimum deposit start at 5,000`,
+          summary: `Hello, this is the official blog of Erugo World Coin. \n The EWC Staking Option will change from 00:00 on January 20, 2022(KST) \n The 'three-month option' disappears from the existing EWC Staking Option, and the overall interest rate is lowered. The minimum quantity of the EWC Staking Option also changes. \n Existing users and those who applied by 24:00 on January 19, 2022 will be subject to the existing EWC Staking Option. \n ■ Existing \n 12 months = 12% / year \n 9 months = 9% / year \n 6 months = 6% / year \n 3 months = 3% / year \n ■ New 12 months = 6% / year (0.5% / month) \n 9 months = 4.5% / year (0.325% / month) \n 6 months = 3% / year (0.25% / month) \n 3 months = Cancelled \n The minimum deposit start at 5,000`,
           type: "nonfiction",
-          contributor: "Matthew McConaughey",
-          showDetail: false,
+        },
+        {
+          title: "[Notice] ErugoWorldCoin will be list on LBank.",
+          date: "2022.03.25",
+          summary: `Hello, this is "Erugo World Coin". \n 
+          Erugo World Coin (EWC) will be listed on L Bank on March 29, 2022 at 5:00 PM. \n Deposit time: 28th Mar 5pm (KST) \n Trading start: 29th Mar 5pm (KST) \n 
+          Withdrawal time: 30th Mar 5pm (KST) \n L Bank is a global exchange in Singapore established in October 2017. As of May 2019, it is a large global exchange that ranks 16th in the ‘Adjusted Volume’ chart and 20th in the ‘Reported Volume’ chart. \n
+          In the future, we, Erugo World Coin, will continue to create a reasonable value for Erugo World Coin through a continuous base expansion strategy. \n thank you.\n`,
+          type: "nonfiction",
+        },
+        {
+          title: "[Notice] ErugoWorldCoin will be list on Coinsbit",
+          date: "2022.03.25",
+          summary: `Hello, this is "Erugo World Coin". \n
+          Erugo World Coin (EWC) will be listed on Coinsbit on March 29, 2022 at 5:00 PM. \n
+          Deposit time: 29th Mar 6pm (KST) \nTrading start: 29th Mar 6pm (KST) \nWithdrawal time: 29th Mar 6pm (KST) \n
+          Coinsbit is a global exchange established in 2018 and provides 24/7 multilingual services. Coinsbit currently supports services in over 38 countries. \n We would like to thank those who have been waiting for the news of EWC for a long time, and we will continue to develop and ourselves to it. \n
+          thank you. \n`,
+          type: "nonfiction",
+        },
+        {
+          title: "[Notice] ErugoWorldCoin will be list on Azbit",
+          date: "2022.03.25",
+          summary: `Hello, this is "Erugo World Coin". \n
+          Erugo World Coin (EWC) will be listed on Azbit on March 31, 2022 at 3:00 AM(KST). \n
+          Deposit time: 31th Mar 3am (KST) \nTrading start: 31th Mar 3am (KST) \nWithdrawal time: 31th Mar 3am (KST) \n
+          Azbit is an exchange that opened in December 2019 and has grown to be one of the top 50 exchanges in the world. It provides a variety of services such as spot trading, staking, and OTC. \nGoing forward, we will continue to expand our Erugo World Coin according to the public roadmap.\n
+          thank you.\n`,
+          type: "nonfiction",
+        },
+        {
+          title: "[Notice] ErugoWorldCoin will be list on Okx.",
+          date: "2022.04.08",
+          summary: `Hello, this is "Erugo World Coin". \n
+          Erugo World Coin (EWC) will be listed on Okx on April 11, 2022 at 19:00 PM(KST). \n
+          Okx is a cryptocurrency exchange founded in June 2014 in Beijing, China, and is currently based in Hong Kong. \n
+          It is ranked 5th in the exchange ranking based on ‘Daily trading volume (24h)’ as of April 2022, and is a large global exchange that can respond to ‘travel rules’, which are currently an issue in Korea. \n
+          In the future, we will continue to work hard to provide improved convenience to our holders.\n
+          thank you.`,
+          type: "nonfiction",
+        },
+        {
+          title: "[Notice] ErugoWorldCoin will be list on Mexc.",
+          date: "2022.04.25",
+          summary: `Hello, this is "Erugo World Coin". \n
+          Erugo World Coin (EWC) will be listed on Mexc on April 26, 2022 at 12:00 PM(KST). \n
+          EWC Listing Schedule \n
+          Deposit: 18:00, April 25 (KST) \nAnnouncement: 18:00, April 25 (KST) \nListing: 12:00, April 26 (KST) \n 
+          Launched in April 2018, MEXC is a centralized cryptocurrency exchange registered in Seychelles. The exchange supports USD, GBP, EUR, AUD and VND deposit and withdrawal. \nIn the future, we will continue to work hard to deliver good news to everyone who is interested in our company. \n
+          thank you.​`,
+          type: "nonfiction",
         },
       ],
     };
