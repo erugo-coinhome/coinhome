@@ -158,7 +158,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scope>
+<style lang="scss" scoped>
 .mainBg {
   width: 100%;
   height: 100vh;
@@ -280,7 +280,7 @@ export default {
     overflow-x: hidden;
   }
   .mainBg::after {
-    background-size: 100% 100%;
+    background-size: 200% 200%;
     position: fixed;
   }
   .container {
