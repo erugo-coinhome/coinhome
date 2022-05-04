@@ -31,6 +31,7 @@
             "
             @click="expanded = !expanded"
             class="readmore-btn"
+            :style="expanded ? 'height: 100%' : 'height: 30%'"
           />
         </q-card-actions>
       </q-slide-transition>
@@ -78,13 +79,11 @@ export default {
 
 .readmore-btn {
   width: 50px;
-  text-align: center;
   cursor: pointer;
-}
-.row {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
+
 @media screen and (max-width: 768px) {
   .readmore-btn {
     width: 40px;

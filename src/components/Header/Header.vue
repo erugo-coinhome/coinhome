@@ -22,9 +22,11 @@
           <q-card class="bg-black text-white q-pt-lg">
             <q-bar>
               <q-space></q-space>
-              <q-btn size="lg" dense flat icon="close" v-close-popup>
-                <div class="closeBtn"></div>
-              </q-btn>
+              <div class="closeBtnWrapper">
+                <q-btn size="lg" dense flat icon="close" v-close-popup>
+                  <div class="closeBtn"></div>
+                </q-btn>
+              </div>
             </q-bar>
 
             <q-card-section class="fixed-center">
@@ -129,6 +131,14 @@ export default {
   z-index: 100;
   top: 0;
   border-bottom: 0.5px solid #707070;
+}
+.closeBtnWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  .row {
+    flex-direction: none;
+  }
 }
 .logo,
 .btnWrapper {

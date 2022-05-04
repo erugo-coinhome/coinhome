@@ -158,7 +158,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss" scope>
 .mainBg {
   width: 100%;
   height: 100vh;
