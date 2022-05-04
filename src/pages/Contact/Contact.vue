@@ -50,7 +50,7 @@
               <th>Address</th>
               <td>
                 <address>
-                  129, Seochojungang-ro 8-gil, Gangnam-gu, Seoul, Republic of
+                  129, Seochojungang-ro 8-gil, Seocho-gu, Seoul, Republic of
                   Korea
                 </address>
               </td>

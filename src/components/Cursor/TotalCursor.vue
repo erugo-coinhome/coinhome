@@ -7,7 +7,9 @@
     ]"
   >
     <div :style="cursorCircle" class="g-cursor__circle"></div>
-    <div class="g-cursor__point" ref="point" :style="cursorPoint"></div>
+    <div class="g-cursor__point" ref="point" :style="cursorPoint">
+      <img src="./images/logo.png" style="width: 40%" />
+    </div>
   </div>
 </template>
 <script>
@@ -48,13 +50,21 @@ export default {
     },
   },
   mounted() {
-    document.addEventListener("mousemove", this.moveCursor);
-    document.addEventListener("mouseleave", (e) => {
-      this.hideCursor = true;
-    });
-    document.addEventListener("mouseenter", (e) => {
-      this.hideCursor = false;
-    });
+    document.addEventListener("mousemove", this.moveCursor, { passive: true });
+    document.addEventListener(
+      "mouseleave",
+      (e) => {
+        this.hideCursor = true;
+      },
+      { passive: true }
+    );
+    document.addEventListener(
+      "mouseenter",
+      (e) => {
+        this.hideCursor = false;
+      },
+      { passive: true }
+    );
   },
 };
 </script>
@@ -74,37 +84,44 @@ html {
     height: 60px;
     transition: width 0.6s ease, height 0.6s ease, opacity 0.6s ease;
   }
-
   &__circle {
     pointer-events: none;
     user-select: none;
     top: 0;
     left: 0;
     position: fixed;
-    width: 40px;
-    height: 40px;
-    border: 2px solid red;
+    width: 10%;
+    height: 10%;
+    // background-color: violet;
+    // border: 2px solid palegreen;
+    // background: url(./images/logo.png) no-repeat center;
     border-radius: 100%;
     z-index: 5555;
     backface-visibility: hidden;
     transition: opacity 0.6s ease;
   }
-
   &__point {
-    top: 0;
-    left: 0;
+    top: -1%;
+    left: -0.8%;
     position: fixed;
-    width: 10px;
-    height: 10px;
+    width: 5%;
+    height: 5%;
     pointer-events: none;
     user-select: none;
     border-radius: 100%;
-    background: red;
     z-index: 55555555;
     backface-visibility: hidden;
     will-change: transform;
+    img {
+      animation: rotateImg 5s linear infinite;
+      transform-origin: 50% 50%;
+    }
   }
-
+  @keyframes rotateImg {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
   &_hover {
     .g-cursor__circle {
       opacity: 0;

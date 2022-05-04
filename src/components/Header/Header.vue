@@ -22,7 +22,7 @@
           <q-card class="bg-black text-white q-pt-lg">
             <q-bar>
               <q-space></q-space>
-              <q-btn size="xl" dense flat icon="close" v-close-popup>
+              <q-btn size="lg" dense flat icon="close" v-close-popup>
                 <div class="closeBtn"></div>
               </q-btn>
             </q-bar>
@@ -36,7 +36,7 @@
                 <router-link :to="m.path">{{ m.name }}</router-link>
               </div>
 
-              <div class="row q-mt-xl">
+              <div class="row q-mt-xl snsBtn">
                 <div
                   v-for="(h, i) in sns"
                   :key="i"
@@ -68,7 +68,7 @@ export default {
         { name: "White Paper", path: "/whitepaper" },
         // { name: "Partner", path: "/partner" },
         { name: "Road Map", path: "/roadmap" },
-        { name: "Staking", path: "/staking" },
+        // { name: "Staking", path: "/staking" },
         { name: "Announcement", path: "/announcement" },
         { name: "Contact", path: "/contact" },
       ],
@@ -157,13 +157,14 @@ export default {
 .menuLink:hover > a {
   color: #ff6906;
 }
+
 .closeBtn::after {
   content: "";
   display: block;
   border: 1px solid #fff;
   position: absolute;
-  width: 60px;
-  height: 60px;
+  width: 2.5vmax;
+  height: 2.5vmax;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -174,9 +175,14 @@ export default {
   width: 100%;
   display: flex;
   letter-spacing: 5px;
+  line-height: 1.5vmax;
   font-size: 1.5vmax;
   text-align: center;
   font-family: "S-CoreDream8";
+}
+.snsBtn {
+  display: flex;
+  flex-direction: row !important;
 }
 .menu-btn {
   position: relative;
@@ -203,6 +209,11 @@ export default {
   .btnWrapper {
     line-height: 4vmax;
   }
+  .closeBtn::after {
+    content: "";
+    width: 3.5vmax;
+    height: 3.5vmax;
+  }
 }
 @media screen and (max-width: 760px) {
   .logo {
@@ -210,10 +221,19 @@ export default {
   }
   .menuLink {
     font-size: 8vmin;
-    line-height: 10vmin;
+    line-height: 8vmin;
+  }
+  .closeBtn::after {
+    content: "";
+    width: 5vmax;
+    height: 5vmax;
   }
 }
 @media screen and (max-width: 420px) {
+  .menuLink {
+    font-size: 12vmin;
+    line-height: 13vmin;
+  }
   .webMenu {
     letter-spacing: 2px;
   }

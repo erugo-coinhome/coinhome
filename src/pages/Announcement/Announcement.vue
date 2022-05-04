@@ -22,9 +22,7 @@
               <span class="col-1 font-bold" style="text-align: left">{{
                 i + 1
               }}</span>
-              <span class="col-9" style="text-align: center">{{
-                a.title
-              }}</span>
+              <span class="col-9" style="text-align: left">{{ a.title }}</span>
               <span class="col-2 font-bold">{{ a.date }}</span>
             </div>
             <div v-show="a.showDetail" class="announcement-detail">
@@ -107,7 +105,6 @@ const rows = [
     date: date,
   },
 ];
-console.log(now);
 export default {
   components: { Header, PageController },
   data() {

@@ -35,11 +35,11 @@ const routes = [
     name: "RoadMap",
     component: () => import("@/pages/RoadMap/RoadMap"),
   },
-  {
-    path: "/staking",
-    name: "Staking",
-    component: () => import("@/pages/Staking/Staking"),
-  },
+  // {
+  //   path: "/staking",
+  //   name: "Staking",
+  //   component: () => import("@/pages/Staking/Staking"),
+  // },
   {
     path: "/teamadvisor",
     name: "TeamAdvisor",

@@ -96,23 +96,23 @@ export default {
           src: "assets/images/menu05.png",
           src2: "assets/images/05.png",
         },
-        {
-          key: "staking",
-          name: "STAKING",
-          src: "assets/images/menu06.png",
-          src2: "assets/images/06.png",
-        },
+        // {
+        //   key: "staking",
+        //   name: "STAKING",
+        //   src: "assets/images/menu06.png",
+        //   src2: "assets/images/06.png",
+        // },
         {
           key: "announcement",
           name: "ANNOUNCEMENT",
           src: "assets/images/menu07.png",
-          src2: "assets/images/07.png",
+          src2: "assets/images/06.png",
         },
         {
           key: "contact",
           name: "CONTACT",
           src: "assets/images/menu08.png",
-          src2: "assets/images/08.png",
+          src2: "assets/images/07.png",
         },
       ],
     };
@@ -205,10 +205,10 @@ export default {
 .my-card:nth-child(5) {
   margin-left: 1.5%;
 }
-.my-card:last-child,
-.my-card:nth-child(4) {
-  margin-right: 1.5%;
-}
+// .my-card:last-child,
+// .my-card:nth-child(4) {
+//   margin-right: 1.5%;
+// }
 .mainTitle {
   position: absolute;
   left: 50%;

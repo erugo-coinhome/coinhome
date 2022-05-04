@@ -4,6 +4,7 @@
       <video
         src="assets/videos/ewc-landing-video.mp4"
         autoplay
+        playsinline
         muted
         loop
       ></video>

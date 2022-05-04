@@ -868,8 +868,30 @@ div,
   }
 }
 @media all and (max-width: 380px) {
+  .roadmap-title {
+    font-size: 5vmax;
+    margin: 15% auto;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .line {
+    border-right: 1px solid #363636;
+    height: 40px;
+    width: 50%;
+    margin: 1% 0;
+  }
+  .roadmap-subtitle,
+  .roadmap-subtitle2 {
+    font-size: 3vmax;
+    margin: 1% auto;
+  }
+
   .carousel-ctrl {
     margin: 0 auto !important;
+  }
+  .roadmap-title2,
+  .roadmap-title3 {
+    font-size: 1vmin;
   }
 }
 </style>
