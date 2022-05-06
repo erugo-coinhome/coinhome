@@ -23,8 +23,8 @@
             <q-bar>
               <q-space></q-space>
               <div class="closeBtnWrapper">
-                <q-btn size="lg" dense flat icon="close" v-close-popup>
-                  <div class="closeBtn"></div>
+                <q-btn size="md" v-close-popup>
+                  <div class="closeBtn">X</div>
                 </q-btn>
               </div>
             </q-bar>

@@ -105,27 +105,18 @@ export default {
         {
           key: "announcement",
           name: "ANNOUNCEMENT",
-          src: "assets/images/menu07.png",
+          src: "assets/images/menu06.png",
           src2: "assets/images/06.png",
         },
         {
           key: "contact",
           name: "CONTACT",
-          src: "assets/images/menu08.png",
+          src: "assets/images/menu07.png",
           src2: "assets/images/07.png",
         },
       ],
     };
   },
-  // setup() {
-  //   const slide = (e) => {
-  //     var x;
-  //     for (var i = 0; i < 7; i++) {
-  //       x += i;
-  //     }
-  //   };
-  //   return { slide };
-  // },
   components: { Header, TotalCursor },
   methods: {
     hover(e) {

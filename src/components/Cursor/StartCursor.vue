@@ -48,7 +48,7 @@ export default {
     },
   },
   mounted() {
-    document.addEventListener("mousemove", this.moveCursor, passiveEvent);
+    document.addEventListener("mousemove", this.moveCursor, { passive: true });
     document.addEventListener(
       "mouseleave",
       (e) => {
