@@ -38,6 +38,8 @@ export default {
       video.src = "assets/videos/ewc-landing-video.mp4";
       video.muted = true;
       video.loop = true;
+      video.autoplay = true;
+      video.presinline = false;
       if (
         uaMatch[0] == "iphone" ||
         uaMatch[0] == "ipad" ||
@@ -121,7 +123,7 @@ video {
   bottom: 5%;
   text-align: center;
   width: 100%;
-  font-size: 2vw;
+  font-size: 2vmax;
 }
 @media screen and (max-width: 770px) {
   .landingTxt {
@@ -133,7 +135,7 @@ video {
     }
   }
   .landingFoot {
-    font-size: 2.5vw;
+    font-size: 2.5vmax;
   }
 }
 @media screen and (max-width: 420px) {
@@ -144,7 +146,7 @@ video {
     }
   }
   .landingFoot {
-    font-size: 2vw;
+    font-size: 2vmax;
   }
 }
 </style>

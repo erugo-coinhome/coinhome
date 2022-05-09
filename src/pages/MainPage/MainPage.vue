@@ -36,7 +36,7 @@
               @mouseleave="leave(mainBox[slide].key)"
               @change="slideNum(slide)"
               :min="0"
-              :max="7"
+              :max="6"
               :step="1"
               thumb-size="2.5vmax"
               track-size="5px"
@@ -193,13 +193,13 @@ export default {
 }
 
 .my-card:first-child,
-.my-card:nth-child(5) {
-  margin-left: 1.5%;
+.my-card:first-child {
+  margin-left: 3%;
 }
-// .my-card:last-child,
-// .my-card:nth-child(4) {
-//   margin-right: 1.5%;
-// }
+.my-card:last-child,
+.my-card:last-child {
+  margin-right: 3%;
+}
 .mainTitle {
   position: absolute;
   left: 50%;
@@ -228,8 +228,8 @@ export default {
   display: block;
   position: absolute;
   width: 100%;
-  bottom: -36%;
-  border-bottom: 2px solid #313131;
+  bottom: -39%;
+  border-bottom: 1.5px solid #313131;
 }
 .arrows {
   width: 50%;

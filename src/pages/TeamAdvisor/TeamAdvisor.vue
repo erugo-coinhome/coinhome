@@ -550,6 +550,9 @@ h4,
   }
 }
 @media all and (max-width: 500px) {
+  .scroll {
+    overflow: hidden;
+  }
   .teamadvisor-carousel,
   .team-carousel {
     display: none;
