@@ -160,8 +160,10 @@ h4,
 }
 .contact {
   width: 85%;
-  height: 100%;
-  margin: 10% auto;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
 }
 .contact-left {
   display: flex;

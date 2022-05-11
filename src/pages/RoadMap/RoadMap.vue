@@ -16,7 +16,7 @@
           v-model="slide"
           ref="carousel"
           infinite
-          transition-duration="1200"
+          transition-duration="9000"
           class="roadmap-container"
         >
           <q-carousel-slide :name="1" class="column no-wrap list-container">
@@ -66,7 +66,7 @@
                 <!-- 좌우 버튼 -->
                 <q-btn flat @click="$refs.carousel.previous()">
                   <img
-                    src="assets/images/roadmap_arrow_01.png"
+                    src="assets/images/roadmap_arrow_left.png"
                     style="width: 4vmax"
                   />
                 </q-btn>
@@ -80,7 +80,7 @@
 
                 <q-btn flat @click="$refs.carousel.next()">
                   <img
-                    src="assets/images/roadmap_arrow_02.png"
+                    src="assets/images/roadmap_arrow_right.png"
                     style="width: 4vmax"
                   />
                 </q-btn>
@@ -104,7 +104,7 @@
             v-model="slide2"
             ref="metaverse"
             infinite
-            transition-duration="1200"
+            transition-duration="5000"
             class="roadmapmeta-container"
           >
             <q-carousel-slide :name="1" class="column no-wrap">
@@ -263,7 +263,7 @@
                   <!-- 좌우 버튼 -->
                   <q-btn flat @click="$refs.metaverse.previous()">
                     <img
-                      src="assets/images/roadmap_arrow_01.png"
+                      src="assets/images/roadmap_arrow_left.png"
                       style="width: 75px"
                     />
                   </q-btn>
@@ -277,7 +277,7 @@
 
                   <q-btn flat @click="$refs.metaverse.next()">
                     <img
-                      src="assets/images/roadmap_arrow_02.png"
+                      src="assets/images/roadmap_arrow_right.png"
                       style="width: 75px"
                     />
                   </q-btn>

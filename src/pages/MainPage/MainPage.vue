@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-
+    <Popup />
     <div class="mainBg">
       <div class="container">
         <div class="cardBoxs">
@@ -58,6 +58,7 @@
 <script>
 import TotalCursor from "@/components/Cursor/TotalCursor.vue";
 import Header from "../../components/Header/Header.vue";
+import Popup from "../../components/Popup/Popup.vue";
 import { ref } from "vue";
 const screenWidth = screen.availWidth;
 const screenHeight = screen.availHeight;
@@ -117,7 +118,7 @@ export default {
       ],
     };
   },
-  components: { Header, TotalCursor },
+  components: { Header, TotalCursor, Popup },
   methods: {
     hover(e) {
       var name = document.querySelector(`#${e}`);
