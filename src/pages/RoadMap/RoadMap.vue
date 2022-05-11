@@ -301,9 +301,13 @@ export default {
   data() {
     return {
       roadmap: [
-        { title: "XEXC", src: "assets/images/roadmap_01.png", year: "2022" },
+        { title: "MEXC", src: "assets/images/roadmap_01.png", year: "2022" },
         { title: "LBANK", src: "assets/images/roadmap_02.jpg", year: "2022" },
-        { title: "CONSBIT", src: "assets/images/roadmap_03.jpg", year: "2022" },
+        {
+          title: "COINSBIT",
+          src: "assets/images/roadmap_03.jpg",
+          year: "2022",
+        },
         { title: "BITTREX", src: "assets/images/roadmap_04.jpg", year: "2022" },
       ],
       roadmap2: [
@@ -542,7 +546,7 @@ div,
     }
   }
 }
-#CONSBIT {
+#COINSBIT {
   div {
     img {
       box-shadow: 0 0 50px 0 rgba(82, 43, 255, 0.5);
@@ -577,7 +581,7 @@ div,
     }
   }
 }
-#XEXC {
+#MEXC {
   div {
     img {
       box-shadow: 0 0 50px 0 rgba(39, 228, 149, 0.5);
@@ -868,8 +872,30 @@ div,
   }
 }
 @media all and (max-width: 380px) {
+  .roadmap-title {
+    font-size: 5vmax;
+    margin: 15% auto;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .line {
+    border-right: 1px solid #363636;
+    height: 40px;
+    width: 50%;
+    margin: 1% 0;
+  }
+  .roadmap-subtitle,
+  .roadmap-subtitle2 {
+    font-size: 3vmax;
+    margin: 1% auto;
+  }
+
   .carousel-ctrl {
     margin: 0 auto !important;
+  }
+  .roadmap-title2,
+  .roadmap-title3 {
+    font-size: 1vmin;
   }
 }
 </style>

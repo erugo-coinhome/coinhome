@@ -9,6 +9,14 @@ const routes = [
     path: "/landing",
     name: "Landing",
     component: () => import("@/pages/Landing/Landing"),
+    before: (to, from, next) => {
+      var isLanding = true;
+      if (isLanding) {
+        history.go();
+        isLanding = false;
+      }
+      next();
+    },
   },
   {
     path: "/main",
@@ -35,11 +43,11 @@ const routes = [
     name: "RoadMap",
     component: () => import("@/pages/RoadMap/RoadMap"),
   },
-  {
-    path: "/staking",
-    name: "Staking",
-    component: () => import("@/pages/Staking/Staking"),
-  },
+  // {
+  //   path: "/staking",
+  //   name: "Staking",
+  //   component: () => import("@/pages/Staking/Staking"),
+  // },
   {
     path: "/teamadvisor",
     name: "TeamAdvisor",

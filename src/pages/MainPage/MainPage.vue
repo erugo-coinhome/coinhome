@@ -36,7 +36,7 @@
               @mouseleave="leave(mainBox[slide].key)"
               @change="slideNum(slide)"
               :min="0"
-              :max="7"
+              :max="6"
               :step="1"
               thumb-size="2.5vmax"
               track-size="5px"
@@ -64,7 +64,7 @@ const screenHeight = screen.availHeight;
 export default {
   data() {
     return {
-      slide: 3.5,
+      slide: 3,
       mainBox: [
         {
           key: "about",
@@ -96,36 +96,27 @@ export default {
           src: "assets/images/menu05.png",
           src2: "assets/images/05.png",
         },
+        // {
+        //   key: "staking",
+        //   name: "STAKING",
+        //   src: "assets/images/menu06.png",
+        //   src2: "assets/images/06.png",
+        // },
         {
-          key: "staking",
-          name: "STAKING",
+          key: "announcement",
+          name: "ANNOUNCEMENT",
           src: "assets/images/menu06.png",
           src2: "assets/images/06.png",
         },
         {
-          key: "announcement",
-          name: "ANNOUNCEMENT",
-          src: "assets/images/menu07.png",
-          src2: "assets/images/07.png",
-        },
-        {
           key: "contact",
           name: "CONTACT",
-          src: "assets/images/menu08.png",
-          src2: "assets/images/08.png",
+          src: "assets/images/menu07.png",
+          src2: "assets/images/07.png",
         },
       ],
     };
   },
-  // setup() {
-  //   const slide = (e) => {
-  //     var x;
-  //     for (var i = 0; i < 7; i++) {
-  //       x += i;
-  //     }
-  //   };
-  //   return { slide };
-  // },
   components: { Header, TotalCursor },
   methods: {
     hover(e) {
@@ -158,7 +149,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss" scope>
 .mainBg {
   width: 100%;
   height: 100vh;
@@ -202,12 +193,12 @@ export default {
 }
 
 .my-card:first-child,
-.my-card:nth-child(5) {
-  margin-left: 1.5%;
+.my-card:first-child {
+  margin-left: 3%;
 }
 .my-card:last-child,
-.my-card:nth-child(4) {
-  margin-right: 1.5%;
+.my-card:last-child {
+  margin-right: 3%;
 }
 .mainTitle {
   position: absolute;
@@ -225,7 +216,7 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -65%;
+  bottom: -70%;
   width: 25%;
   transition: 0.4s;
   img {
@@ -237,8 +228,9 @@ export default {
   display: block;
   position: absolute;
   width: 100%;
-  bottom: -36%;
-  border-bottom: 2px solid #313131;
+  bottom: -39%;
+  border-bottom: 1.5px solid #313131;
+  opacity: 0.3;
 }
 .arrows {
   width: 50%;
