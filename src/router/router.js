@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
 import MainPage from "../pages/MainPage/MainPage.vue";
-//import RoadMap from "../pages/RoadMap/RoadMap.vue";
 
 const routes = [
   {
@@ -44,7 +43,6 @@ const routes = [
   {
     path: "/roadmap",
     name: "RoadMap",
-    //component: RoadMap,
     component: () => import("@/pages/RoadMap/RoadMap"),
   },
   // {

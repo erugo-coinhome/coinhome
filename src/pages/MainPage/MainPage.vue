@@ -4,7 +4,6 @@
     <div v-if="isChecked()" id="popupBg">
       <Popup imgPath="assets/images/popup-05.jpg" :display="{ display }" />
     </div>
-
     <div class="mainBg">
       <div class="main-container">
         <div class="cardBoxs">

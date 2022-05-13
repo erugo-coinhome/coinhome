@@ -104,7 +104,11 @@
             v-model="slide2"
             ref="metaverse"
             infinite
+<<<<<<< HEAD
             transition-duration="3500"
+=======
+            transition-duration="5000"
+>>>>>>> 94721d3eb60d9638d0bc18979dc331a6960d3f93
             class="roadmapmeta-container"
           >
             <q-carousel-slide :name="1" class="column no-wrap">
