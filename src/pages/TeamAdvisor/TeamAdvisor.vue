@@ -14,6 +14,7 @@
         prev-icon="img:assets/images/team_btn_02.png"
         next-icon="img:assets/images/team_btn_01.png"
         class="team-carousel"
+        transition-duration="3000"
       >
         <q-carousel-slide :name="1" class="teamadvisor-carousel">
           <div

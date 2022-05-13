@@ -9,7 +9,7 @@
         playsinline
       ></video>
     </div>
-    <h1 class="logo">
+    <h1 class="landingLogo">
       <img
         src="assets/images/logo.png"
         alt="ERUGOWORLD COIN"
@@ -121,7 +121,7 @@ video {
   transform: translateX(-50%);
   color: white;
 }
-.logo {
+.landingLogo {
   position: absolute;
   top: 5%;
   left: 50%;

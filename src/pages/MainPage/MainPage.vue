@@ -1,9 +1,12 @@
 <template>
   <div>
     <Header />
+    <div v-if="isChecked()" id="popupBg">
+      <Popup imgPath="assets/images/popup-05.jpg" :display="{ display }" />
+    </div>
 
     <div class="mainBg">
-      <div class="container">
+      <div class="main-container">
         <div class="cardBoxs">
           <div
             class="my-card justify-center menu-card"
@@ -58,13 +61,19 @@
 <script>
 import TotalCursor from "@/components/Cursor/TotalCursor.vue";
 import Header from "../../components/Header/Header.vue";
+import Popup from "../../components/Popup/Popup.vue";
 import { ref } from "vue";
 const screenWidth = screen.availWidth;
-const screenHeight = screen.availHeight;
+let cnum = parseInt(localStorage.getItem("popup-close-time"));
+var expiredays = 1;
+var todayDate = new Date();
+var display = todayDate.setDate(todayDate.getDate() + expiredays);
+var popup = document.getElementById("popupBg");
 export default {
   data() {
     return {
       slide: 3,
+      isPopupClose: false,
       mainBox: [
         {
           key: "about",
@@ -117,7 +126,7 @@ export default {
       ],
     };
   },
-  components: { Header, TotalCursor },
+  components: { Header, TotalCursor, Popup },
   methods: {
     hover(e) {
       var name = document.querySelector(`#${e}`);
@@ -146,10 +155,25 @@ export default {
         cardBoxs.style.setProperty("transform", `translateX(0%)`);
       }
     },
+    isChecked() {
+      if (isNaN(cnum)) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
 };
 </script>
 <style lang="scss" scope>
+#popupBg {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
 .mainBg {
   width: 100%;
   height: 100vh;
@@ -171,7 +195,7 @@ export default {
   opacity: 0.5;
   z-index: 0;
 }
-.container {
+.main-container {
   top: 50%;
   transform: translateY(-50%);
   z-index: 5;
@@ -223,7 +247,7 @@ export default {
     width: 100%;
   }
 }
-.container::after {
+.main-container::after {
   content: "";
   display: block;
   position: absolute;
@@ -275,7 +299,7 @@ export default {
     background-size: 200% 200%;
     position: fixed;
   }
-  .container {
+  .main-container {
     top: calc(60px + 3vmax);
     transform: translateY(0);
     overflow: hidden;
