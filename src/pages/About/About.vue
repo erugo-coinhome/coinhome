@@ -24,7 +24,7 @@
       </span>
       <div class="about-title">ABOUT</div>
       <div class="line" />
-      <div class="about-subtitle text-h2">ERUGOWORLD</div>
+      <div class="about-subtitle">ERUGOWORLD</div>
       <p class="about-content text-h5">
         To overcome the limitation of previous mass-type Metaverse platforms
         that only focus on the value of digital assets and transaction volumes,
@@ -32,7 +32,7 @@
         with reality by providing valuable services to our investors.
       </p>
       <div class="line" />
-      <div class="about-subtitle text-h2">Principles</div>
+      <div class="about-subtitle">Principles</div>
       <p class="about-content2 text-h4">
         The Metaverse that ERUGOWORLD pursue follows principles.
       </p>
@@ -68,7 +68,7 @@
         not only Korea but also the world.
       </p>
       <div class="line" />
-      <div class="about-subtitle text-h2">Promotion clip</div>
+      <div class="about-subtitle">Promotion clip</div>
       <p class="about-content2 text-h4">ERUGOWORLD and EVC Promotion Clip</p>
       <div class="q-pa-md promotion-video">
         <q-video
@@ -77,7 +77,7 @@
         />
       </div>
       <div class="line" />
-      <div class="about-subtitle text-h2">Rugo</div>
+      <div class="about-subtitle">Rugo</div>
       <p class="about-content2 text-h4">ERUGOWORLD and EWC Promotion clip</p>
 
       <div class="img-container">

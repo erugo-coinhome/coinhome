@@ -91,9 +91,6 @@ export default {
       uaMatch,
     };
   },
-  mounted() {
-    console.log(this.uaMatch);
-  },
 };
 </script>
 <style lang="scss" scope>

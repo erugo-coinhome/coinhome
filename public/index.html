@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="ko">
 
 <head>
   <meta charset="utf-8" />
@@ -27,6 +27,7 @@
 
   <!-- chart.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/lisbs/jquery/3.3.1/jquery.min.js"></script>
 
   <title>
     <%= htmlWebpackPlugin.options.title %>
@@ -44,6 +45,8 @@
 
   <!-- built files will be auto injected -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-EYSGXWW06L"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -55,7 +58,6 @@
   </script>
   <script>
     function reload() {
-
       var old = location.href;
       setInterval(function () {
         if (location.href != old) {

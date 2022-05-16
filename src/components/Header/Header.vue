@@ -30,11 +30,7 @@
             </q-bar>
 
             <q-card-section class="fixed-center">
-              <div
-                class="text-h2 q-pt-lg menuLink"
-                v-for="(m, i) in mainMenu"
-                :key="i"
-              >
+              <div class="q-pt-lg menuLink" v-for="(m, i) in mainMenu" :key="i">
                 <router-link :to="m.path">{{ m.name }}</router-link>
               </div>
 
@@ -241,7 +237,7 @@ export default {
 }
 @media screen and (max-width: 420px) {
   .menuLink {
-    font-size: 12vmin;
+    font-size: 4vmax;
     line-height: 13vmin;
   }
   .webMenu {

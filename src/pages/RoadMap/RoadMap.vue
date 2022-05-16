@@ -4,7 +4,7 @@
     <q-layout class="roadmap">
       <div class="roadmap-title">Road Map</div>
       <div class="line" />
-      <div class="roadmap-subtitle text-h2">OF LISTING</div>
+      <div class="roadmap-subtitle">OF LISTING</div>
       <!-- Listing -->
       <div class="roadmaplist" @mousewheel="$refs.carousel.next()">
         <q-carousel
@@ -90,7 +90,7 @@
         </q-carousel>
       </div>
       <!-- Listing -->
-      <div class="roadmap-subtitle2 text-h2">OF METAVERSE</div>
+      <div class="roadmap-subtitle2">OF METAVERSE</div>
       <q-img src="assets/images/roadmap_map.png">
         <div class="line-vertical" />
         <!-- Metaverse -->
@@ -104,11 +104,7 @@
             v-model="slide2"
             ref="metaverse"
             infinite
-<<<<<<< HEAD
             transition-duration="3500"
-=======
-            transition-duration="5000"
->>>>>>> 94721d3eb60d9638d0bc18979dc331a6960d3f93
             class="roadmapmeta-container"
           >
             <q-carousel-slide :name="1" class="column no-wrap">

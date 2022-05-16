@@ -48,6 +48,18 @@
               class="slide"
             />
           </div>
+          <!-- <div class="inputLine">
+            <input
+              @mouseover="hover(mainBox[slide].key)"
+              @mouseleave="leave(mainBox[slide].key)"
+              @change="slideNum(slide)"
+              type="range"
+              min="0"
+              max="6"
+              class="slider"
+              v-model="slide"
+            />
+          </div> -->
           <!-- <div class="arrowRight" @click="toRight()">
             <img src="assets/images/rightBtn.png" />
           </div> -->
@@ -145,13 +157,21 @@ export default {
     },
     slideNum(e) {
       var cardBoxs = document.querySelector(".cardBoxs");
-      if (e > 3) {
-        if (screenWidth > 1024) {
-          cardBoxs.style.setProperty("transform", `translateX(-50%)`);
-          cardBoxs.style.setProperty("transition", `1.3s`);
-        }
-      } else if (e < 4) {
+      // var line = document.querySelector(".arrowLine");
+      // var slideDot = document.querySelector(".slide");
+      // var cardWidth = cardBoxs.clientWidth;
+      // var dragWidth = line.clientWidth;
+
+      //console.log(cardWidth);
+
+      if (e == 0) {
         cardBoxs.style.setProperty("transform", `translateX(0%)`);
+      } else if (e > 0 && e < 6) {
+        cardBoxs.style.setProperty("transform", `translateX(-${e * 10}%)`);
+        cardBoxs.style.setProperty("transition", `1.3s`);
+      } else {
+        cardBoxs.style.setProperty("transform", `translateX(-50%)`);
+        cardBoxs.style.setProperty("transition", `1.3s`);
       }
     },
     isChecked() {
